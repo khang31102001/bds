@@ -9,6 +9,8 @@ const socialLinks = [
 ];
 
 export default function Home() {
+  
+
   return (
     <section
       className="relative flex flex-col min-h-screen justify-center bg-cover bg-center"
@@ -42,8 +44,13 @@ export default function Home() {
           For Sale
         </motion.h1>
         <motion.button 
-          // whileHover={{ scale: 1.05 }}
           whileTap={{ scale: 0.95 }}
+          onClick={() => {
+            const aboutSection = document.getElementById('about');
+            if (aboutSection) {
+              aboutSection.scrollIntoView({ behavior: 'smooth' });
+            }
+          }}
           className="mt-6 sm:mt-8 px-12 sm:px-8 py-3 sm:py-3 bg-cyan-900 text-white font-semibold rounded shadow hover:bg-cyan-800 transition-all duration-300 hover:shadow-xl"
         >
           Explore
@@ -76,8 +83,18 @@ export default function Home() {
             <div>
               <h2 className="text-white text-base sm:text-lg font-semibold">5 Reasons to Live in Boyup Brook</h2>
             </div>
-            <a href="#Reasons" className="text-cyan-200 mt-2 sm:mt-4 flex items-center gap-1 font-medium hover:underline">
-              More <span aria-hidden="true">&rarr;</span>
+            <a 
+              href="#discover"
+              onClick={(e) => {
+                e.preventDefault();
+                const discoverSection = document.getElementById('discover');
+                if (discoverSection) {
+                  discoverSection.scrollIntoView({ behavior: 'smooth' });
+                }
+              }}
+              className="text-cyan-200 mt-2 sm:mt-4 flex items-center gap-1 font-medium hover:underline"
+            >
+              More too <span aria-hidden="true">&rarr;</span>
             </a>
           </div>
         </div>

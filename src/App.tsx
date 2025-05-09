@@ -7,7 +7,7 @@ const App = () => {
     <HelmetProvider>
       <div className="min-h-screen w-full max-w-[2000px] mx-auto">
         <Helmet>
-          <title>Boyup Brook acreage for sale</title>
+          <title>Boyup Brook Acreage for sale</title>
           <meta name="description" content="Acreage for sale in Boyup Brook. Riverlane property, full details, gallery, and contact." />
         </Helmet>
         <div className="mx-auto">

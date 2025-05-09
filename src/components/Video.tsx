@@ -1,6 +1,6 @@
 import { useRef, useState } from 'react';
 import { PlayIcon } from '@heroicons/react/24/solid';
-const VIDEO_SRC = "https://bds-plum.vercel.app/public/video/video.mp4"; // Replace with your own video if needed
+const VIDEO_SRC = "https://cdn.pixabay.com/video/2022/12/07/141964-778907198_large.mp4"; // Replace with your own video if needed
 const THUMBNAIL = "https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=900&q=80"; // Replace with your own thumbnail if needed
 
 const Video = () => {

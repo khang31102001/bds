@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 
 const places = [
@@ -64,7 +64,7 @@ export default function Places() {
           Discover this exceptional Boyup Brook acreage for sale, featuring pristine natural bushland, stunning river views, and gently rolling hills. This rare opportunity offers 2000m² of prime Western Australian land, perfect for building your dream country home. 
         </p>
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8 justify-items-center">
-          {places.map((place, idx) => (
+          {places.map((place) => (
             <div
               key={place.name}
               className="relative w-full max-w-xs rounded-xl overflow-hidden shadow-lg group bg-white cursor-pointer"

@@ -1,5 +1,3 @@
-import React from 'react';
-
 export default function ContactSection() {
   return (
     <section className="w-full py-16">

@@ -69,7 +69,7 @@ const Header = () => {
         </button>
 
         {/* Desktop menu */}
-        <ul className={`md:flex md:gap-10 font-medium ${
+        <ul className={`md:flex md:gap-10 font-medium text-normal ${
           isMenuOpen 
             ? `absolute top-full left-0 w-full ${ scrolled ? 'text-cyan-900 bg-white shadow-lg' : 'text-white bg-transparent'} py-4 flex flex-col items-end gap-4  px-4`
             : 'hidden'

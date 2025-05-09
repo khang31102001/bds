@@ -1,4 +1,4 @@
-import React, { useRef, useState } from 'react';
+import { useRef, useState } from 'react';
 import { PlayIcon } from '@heroicons/react/24/solid';
 const VIDEO_SRC = "https://www.w3schools.com/html/mov_bbb.mp4"; // Replace with your own video if needed
 const THUMBNAIL = "https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=900&q=80"; // Replace with your own thumbnail if needed

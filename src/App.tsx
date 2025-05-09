@@ -1,4 +1,3 @@
-import React from 'react';
 import { HelmetProvider, Helmet } from 'react-helmet-async';
 import { Header,Places, Home, About, Discover, Video, Footer, ScrollToTop, ContactSection, ImgGallery } from './components';
 

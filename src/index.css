@@ -61,6 +61,22 @@ h6 {
   overflow-wrap: break-word;
 }
 
+
+section {
+  scroll-margin-top: 80px;
+}
+main {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+@media (min-width: 768px) {
+  main {
+    gap: 0px;
+  }
+}
+
 #root,
 #__next {
   isolation: isolate;

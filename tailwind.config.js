@@ -23,12 +23,12 @@ export default {
         title: ['Raleway', 'sans-serif'],
       },
       fontSize: {
-        biggest: '2.5rem',
-        h1: '1.5rem',
-        h2: '1.25rem',
-        h3: '1rem',
-        normal: '0.938rem',
-        small: '0.813rem',
+        biggest: '3.5rem',
+        h1: '2.5rem',
+        h2: '2rem',
+        h3: '1.5rem',
+        normal: '1rem',
+        small: '0.875rem',
         smaller: '0.75rem',
       },
       fontWeight: {

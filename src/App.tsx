@@ -1,25 +1,33 @@
 import React from 'react';
-import { Header, Home, About, Discover, Places, Video, Subscribe, Footer, ScrollToTop } from './components';
+import { HelmetProvider, Helmet } from 'react-helmet-async';
+import { Header,Places, Home, About, Discover, Video, Footer, ScrollToTop, ContactSection, ImgGallery } from './components';
+
 
 const App = () => {
   return (
-    <div className="min-h-screen w-full">
-     
-      <div className="max-w-screen-2xl mx-auto">
-      <Header />
-      <main className="main">
-        <Home />
-        <About />
-        <Discover />
-        <Places />
-        <Video />
-        <Subscribe />
-      </main>
-      <Footer />
-      <ScrollToTop />
+    <HelmetProvider>
+      <div className="min-h-screen w-full max-w-[2000px] mx-auto">
+        <Helmet>
+          <title>Boyup Brook acreage for sale</title>
+          <meta name="description" content="Acreage for sale in Boyup Brook. Riverlane property, full details, gallery, and contact." />
+        </Helmet>
+        <div className="mx-auto">
+          <Header />
+          <main className="main">
+            <Home />
+            <About />
+            <ImgGallery />
+            <Discover />
+            <Places />
+            <Video />
+            <ContactSection />
+          </main>
+          <Footer />
+          <ScrollToTop />
+        </div>
       </div>
-    </div>
+    </HelmetProvider>
   );
 }
 
-export default App; 
+export default App;

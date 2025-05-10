@@ -74,7 +74,7 @@ export default function ContactSection() {
       },
       'a3Wq8WGDg50mE54Tg'
     )
-    .then((result) => {
+    .then((_result) => {
       setLoading(false)
       showPopup('success', 'Your message has been sent successfully');
       setForm({
@@ -82,7 +82,8 @@ export default function ContactSection() {
         email: '',
         message: ''
       })
-    }, (error) => {
+    })
+    .catch((_error) => {
       setLoading(false)
       showPopup('error', 'Failed to send message. Please try again.');
     })

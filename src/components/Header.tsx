@@ -52,7 +52,14 @@ const Header = () => {
       <nav className={`flex justify-between items-center px-4 md:px-12 py-4 md:py-8 max-w-[1640px] mx-auto ${
         scrolled ? 'text-emerald-900 bg-white' : 'text-white bg-transparent'
       }`}>
-        <a href="#home" className="font-bold text-h3">Boyup Brook</a>
+        <a className="font-bold text-h3 cursor-pointer"
+        onClick={() => {
+          const homeSection = document.getElementById('home');
+          if (homeSection) {
+            homeSection.scrollIntoView({ behavior: 'smooth' });
+          }
+        }}
+        >Boyup Brook</a>
         
         {/* Mobile menu button */}
         <button 

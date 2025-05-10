@@ -90,7 +90,7 @@ export default function Home() {
           <span className="text-emerald-200">Boyup Brook Acreage</span> <br />
           For Sale
         </motion.h1>
-        <motion.button 
+        {/* <motion.button 
           whileTap={{ scale: 0.95 }}
           onClick={() => {
             const aboutSection = document.getElementById('about');
@@ -101,13 +101,15 @@ export default function Home() {
           className="mt-6 sm:mt-8 px-12 sm:px-8 py-3 sm:py-3 bg-emerald-900 text-white font-semibold rounded shadow hover:bg-emerald-800 transition-all duration-300 hover:shadow-xl"
         >
           Explore
-        </motion.button>
+        </motion.button> */}
 
         <motion.div 
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
+          // whileHover={{ scale: 1.2, rotate: 5 }}
+          whileTap={{ scale: 0.9 }}
           transition={{ duration: 0.8, delay: 0.3 }}
-          className="mt-6 text-white text-lg sm:text-xl font-medium"
+          className="mt-6 md:mt-12 text-white text-lg sm:text-xl font-medium"
         >
           <a href="tel:+61412345678" className="flex items-center justify-center sm:justify-start gap-2 hover:text-emerald-200 transition-colors">
             <i className="fas fa-phone"></i>
@@ -116,7 +118,7 @@ export default function Home() {
         </motion.div>
 
         {/* Social Links */}
-        <div className="flex items-center justify-center sm:items-start sm:justify-start gap-6 mt-8 sm:mt-12 text-lg sm:text-xl text-emerald-200">
+        <div className="flex items-center justify-center sm:items-start sm:justify-start gap-6 mt-6 text-lg sm:text-xl text-white">
           {socialLinks.map((social) => (
             <motion.a
               key={social.name}
@@ -126,7 +128,7 @@ export default function Home() {
               target="_blank"
               rel="noopener noreferrer"
               aria-label={`Visit our ${social.name} page`}
-              className="hover:text-white"
+              className="hover:text-emerald-200"
             >
               <i className={social.icon}></i>
             </motion.a>

@@ -59,7 +59,15 @@ const Footer = () => {
                   whileHover={{ x: 5 }}
                   className="text-gray-300 hover:text-white transition-colors"
                 >
-                  <a href={link.href}>{link.name}</a>
+                  <a
+                  className="cursor-pointer"
+                  onClick={() => {
+                    const targetSection = document.getElementById(link.href.substring(1));
+                    if (targetSection) {
+                      targetSection.scrollIntoView({ behavior: 'smooth' });
+                    }
+                  }}
+                  >{link.name}</a>
                 </motion.li>
               ))}
             </ul>

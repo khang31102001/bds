@@ -2,44 +2,40 @@ import { Swiper, SwiperSlide } from 'swiper/react'
 import { Autoplay } from 'swiper/modules'
 import 'swiper/css'
 
+import img1 from '../public/img/img1.jpg'
+import img2 from '../public/img/img2.jpg'
+import img3 from '../public/img/img3.jpg'
+import img4 from '../public/img/img4.jpg'
+import img5 from '../public/img/img5.jpg'
+
 const ImgGallery = () => {
   const images = [
     {
-      src: "https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=800&q=80",
-      price: "$850,000",
-      location: "23 Smith Road",
-      size: "5 acres"
+      src: img1,
+      info: "Natural Bushland"
     },
     {
-      src: "https://images.unsplash.com/photo-1464983953574-0892a716854b?auto=format&fit=crop&w=600&q=80",
-      price: "$920,000", 
-      location: "45 River View",
-      size: "4.5 acres"
+      src: img3,
+      info: "River Views"
     },
     {
-      src: "https://images.unsplash.com/photo-1500534314209-a25ddb2bd429?auto=format&fit=crop&w=600&q=80",
-      price: "$780,000",
-      location: "12 Valley Road",
-      size: "3.8 acres"
+      src: img2,
+      info: "Rolling Hills"
     },
     {
-      src: "https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=800&q=80",
-      price: "$895,000",
-      location: "67 Hill Street",
-      size: "4.2 acres"
+      src: img4,
+      info: "Natural Bushland"
     },
     {
-      src: "https://images.unsplash.com/photo-1464983953574-0892a716854b?auto=format&fit=crop&w=600&q=80",
-      price: "$950,000",
-      location: "89 Brook Avenue",
-      size: "5.5 acres"
+      src: img5,
+      info: "Natural Bushland"
     }
   ]
 
   return (
     <section className="w-full px-4 py-8 md:py-16 lg:py-20">
       <div className="max-w-7xl mx-auto">
-        <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl text-center font-semibold text-cyan-800 mb-4 md:mb-6">
+        <h1 className="text-3xl lg:text-5xl text-center font-semibold text-cyan-900">
           Boyup Brook Acreage Gallery
         </h1>
         <p className="text-base sm:text-lg text-gray-700 max-w-3xl mx-auto text-center mb-8 md:mb-12 px-4">
@@ -73,12 +69,11 @@ const ImgGallery = () => {
                 />
                 <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/70 to-transparent p-4">
                   <div className="text-white">
-                    <p className="text-xl font-bold">{property.price}</p>
-                    <p className="text-sm">{property.location}</p>
-                    <p className="text-sm">{property.size}</p>
+
+                    <p className="text-sm">{property.info}</p>
                   </div>
                 </div>
-                <div className="absolute top-4 left-4 bg-cyan-600 text-white px-3 py-1 rounded-full text-sm">
+                <div className="absolute top-4 left-4 bg-emerald-600 text-white px-3 py-1 rounded-full text-sm">
                   For Sale
                 </div>
               </div>

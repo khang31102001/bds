@@ -1,20 +1,24 @@
 import React from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 
+import img1 from '../public/img/img1.jpg'
+import img2 from '../public/img/img2.jpg'
+import img3 from '../public/img/img3.jpg'
+
 const places = [
   {
     name: "Natural Bushland",
-    img: "https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=600&q=80", 
+    img: img1, 
     description: "Explore the pristine natural bushland on this stunning acreage. Native flora and fauna abound in this untouched corner of Boyup Brook, perfect for nature lovers."
   },
   {
     name: "River Views",
-    img: "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=600&q=80",
+    img: img3,
     description: "Take in the spectacular views of the Blackwood River from elevated vantage points on the property. The perfect backdrop for your dream country home."
   },
   {
     name: "Rolling Hills",
-    img: "https://images.unsplash.com/photo-1465101046530-73398c7f28ca?auto=format&fit=crop&w=600&q=80", 
+    img: img2,
     description: "Gently undulating terrain offers multiple building sites with sweeping views across the valley. Ideal for a hobby farm or rural retreat."
   }
 ];
@@ -116,11 +120,11 @@ const Discover = () => {
                 <h2 className="text-3xl font-bold text-cyan-900 mb-2">{selectedPlace.name}</h2>
                 <p className="text-gray-600 mb-4">{selectedPlace.description}</p>
                 <div className="flex items-center gap-4">
-                  <span className="px-4 py-2 bg-cyan-100 text-cyan-800 rounded-full">
+                  <span className="px-4 py-2 bg-emerald-100 text-emerald-800 rounded-full">
                    Information
                   </span>
                   <button 
-                    className="px-6 py-2 bg-cyan-600 text-white rounded-full hover:bg-cyan-700 transition-colors"
+                    className="px-6 py-2 bg-emerald-600 text-white rounded-full hover:bg-emerald-700 transition-colors"
                     onClick={() => setSelectedPlace(null)}
                   >
                     Close

@@ -18,14 +18,14 @@ const Footer = () => {
   ];
 
   const socialLinks = [
-    { icon: 'fab fa-facebook-f', href: '#' },
-    { icon: 'fab fa-instagram', href: '#' },
-    { icon: 'fab fa-twitter', href: '#' },
-    { icon: 'fab fa-linkedin-in', href: '#' }
+    { icon: 'fab fa-facebook-f', href: 'https://www.facebook.com/profile.php?id=100088916504867' },
+    { icon: 'fab fa-instagram', href: 'https://www.instagram.com/boyupbrook/' },
+    { icon: 'fab fa-twitter', href: 'https://twitter.com/boyupbrook' },
+    { icon: 'fab fa-linkedin-in', href: 'https://www.linkedin.com/company/boyup-brook' }
   ];
 
   return (
-    <footer className="bg-cyan-900 text-white pt-16 pb-8">
+    <footer className="bg-emerald-800 text-white pt-16 pb-8">
       <div className="max-w-7xl mx-auto px-4">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-12">
           {/* About Section */}
@@ -41,7 +41,7 @@ const Footer = () => {
                   href={social.href}
                   whileHover={{ scale: 1.2, rotate: 5 }}
                   whileTap={{ scale: 0.9 }}
-                  className="w-10 h-10 rounded-full bg-cyan-800 flex items-center justify-center hover:bg-cyan-700 transition-colors"
+                  className="w-10 h-10 rounded-full bg-emerald-800 flex items-center justify-center hover:bg-emerald-700 transition-colors"
                 >
                   <i className={social.icon}></i>
                 </motion.a>
@@ -71,7 +71,7 @@ const Footer = () => {
             <ul className="space-y-3">
               {contactInfo.map((info, index) => (
                 <li key={index} className="flex items-center space-x-3 text-gray-300">
-                  <i className={`${info.icon} text-cyan-400`}></i>
+                  <i className={`${info.icon} text-emerald-400`}></i>
                   <span>{info.text}</span>
                 </li>
               ))}
@@ -88,12 +88,13 @@ const Footer = () => {
               <input
                 type="email"
                 placeholder="Enter your email"
-                className="px-4 py-2 rounded bg-cyan-800 text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-cyan-400"
+                className="px-4 py-2 border border-emerald-400 rounded bg-emerald-900 text-white placeholder-white
+                focus:outline-none focus:ring-2 focus:ring-emerald-400"
               />
               <motion.button
                 whileHover={{ scale: 1.02 }}
                 whileTap={{ scale: 0.98 }}
-                className="px-4 py-2 bg-cyan-400 text-cyan-900 font-semibold rounded hover:bg-cyan-300 transition-colors"
+                className="px-4 py-2 bg-emerald-400 text-emerald-900 font-semibold rounded hover:bg-emerald-300 transition-colors"
               >
                 Subscribe
               </motion.button>
@@ -102,7 +103,7 @@ const Footer = () => {
         </div>
 
         {/* Copyright */}
-        <div className="border-t border-cyan-800 pt-8 text-center text-gray-300">
+        <div className="border-t border-emerald-800 pt-8 text-center text-gray-300">
           <p>&copy; {currentYear} Boyup Brook. All rights reserved.</p>
         </div>
       </div>

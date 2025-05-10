@@ -31,7 +31,8 @@ const Header = () => {
     { href: '#home', label: 'Home' },
     { href: '#about', label: 'About' },
     { href: '#discover', label: 'Discover' },
-    { href: '#places', label: 'Places' }
+    { href: '#places', label: 'Places' },
+    { href: '#contact', label: 'Contact' }
   ];
 
   const handleNavClick = (e: React.MouseEvent<HTMLAnchorElement>, href: string) => {
@@ -48,8 +49,8 @@ const Header = () => {
     <header className={`fixed top-0 left-0 w-full z-[20] transition-colors duration-300 ${
       scrolled ? 'bg-white shadow-lg' : 'bg-transparent'
     }`}>
-      <nav className={`flex justify-between items-center px-4 md:px-12 py-4 md:py-8 max-w-[2000px] mx-auto ${
-        scrolled ? 'text-cyan-900 bg-white' : 'text-white bg-transparent'
+      <nav className={`flex justify-between items-center px-4 md:px-12 py-4 md:py-8 max-w-[1640px] mx-auto ${
+        scrolled ? 'text-emerald-900 bg-white' : 'text-white bg-transparent'
       }`}>
         <a href="#home" className="font-bold text-h3">Boyup Brook</a>
         
@@ -71,7 +72,7 @@ const Header = () => {
         {/* Desktop menu */}
         <ul className={`md:flex md:gap-10 font-medium text-normal ${
           isMenuOpen 
-            ? `absolute top-full left-0 w-full ${ scrolled ? 'text-cyan-900 bg-white shadow-lg' : 'text-white bg-transparent'} py-4 flex flex-col items-end gap-4  px-4`
+            ? `absolute top-full left-0 w-full ${ scrolled ? 'text-emerald-900 bg-white shadow-lg' : 'text-white bg-transparent'} py-4 flex flex-col items-end gap-4  px-4`
             : 'hidden'
         }`}>
           {navLinks.map(({ href, label }) => (
@@ -81,7 +82,7 @@ const Header = () => {
                 onClick={(e) => handleNavClick(e, href)}
                 className={`${activeSection === href.substring(1) ? 'border-b-2' : 'hover:border-b-2'} pb-1 ${
                   (scrolled || isMenuOpen) 
-                    ? (activeSection === href.substring(1) ? 'border-cyan-900' : 'hover:border-cyan-900') 
+                    ? (activeSection === href.substring(1) ? 'border-emerald-900' : 'hover:border-emerald-900') 
                     : (activeSection === href.substring(1) ? 'border-white' : 'hover:border-white')
                 }`}
               >

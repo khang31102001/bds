@@ -42,6 +42,20 @@ export default {
         tooltip: '10',
         fixed: '100',
       },
+      keyframes: {
+        'fade-in': {
+          '0%': { opacity: '0', transform: 'translate(-50%, -48%)' },
+          '100%': { opacity: '1', transform: 'translate(-50%, -50%)' },
+        },
+        'fade-out': {
+          '0%': { opacity: '1', transform: 'translate(-50%, -50%)' },
+          '100%': { opacity: '0', transform: 'translate(-50%, -48%)' },
+        },
+      },
+      animation: {
+        'fade-in': 'fade-in 0.3s ease-out',
+        'fade-out': 'fade-out 0.3s ease-in',
+      },
     },
   },
   plugins: [],

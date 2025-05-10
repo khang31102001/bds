@@ -32,9 +32,9 @@ const ScrollToTop = () => {
       <div className="relative group">
         <a 
           href="tel:+61123456789"
-          className={`bg-primary text-white p-3 rounded-full shadow-lg transition-all duration-300 ${
+          className={`bg-emerald-900 text-white p-3 rounded-full shadow-lg transition-all duration-300 ${
             isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10 pointer-events-none'
-          } hover:bg-primary-dark flex items-center justify-center`}
+          } hover:bg-emerald-800 flex items-center justify-center`}
           title="Call us"
         >
           <svg xmlns="http://www.w3.org/2000/svg" className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -48,7 +48,7 @@ const ScrollToTop = () => {
 
       <button
         onClick={scrollToTop}
-        className={`bg-primary text-white p-3 rounded-full shadow-lg transition-all duration-300 hover:bg-primary-dark ${
+        className={`bg-emerald-900 text-white p-3 rounded-full shadow-lg transition-all duration-300 hover:bg-emerald-800 ${
           isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10 pointer-events-none'
         }`}
         aria-label="Scroll to top"

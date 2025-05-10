@@ -112,7 +112,7 @@ const About = () => {
           })}
         </div>
         {/* Gallery layout */}
-        <motion.div 
+        <div 
           className="flex justify-center mt-4 md:mt-12"
         >
           <BounceCards
@@ -120,13 +120,13 @@ const About = () => {
             images={images}
             containerWidth={window.innerWidth < 768 ? 300 : 500}
             containerHeight={window.innerWidth < 768 ? 250 : 350}
-            animationDelay={1}
+            animationDelay={0}
             animationStagger={0.08}
             easeType="elastic.out(1, 0.5)"
             transformStyles={transformStyles}
             enableHover={false}
           />
-        </motion.div>
+        </div>
       </div>
     </motion.section>
   );

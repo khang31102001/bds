@@ -27,7 +27,7 @@ const Video = () => {
           initial={{ opacity: 0, y: -50 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
-          className="text-3xl md:text-5xl font-bold text-cyan-900"
+          className="text-3xl md:text-5xl text-center font-bold text-cyan-900"
         >
           Video Boyup Brook Acreage
         </motion.h2>

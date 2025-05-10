@@ -102,6 +102,20 @@ export default function Home() {
         >
           Explore
         </motion.button>
+
+        <motion.div 
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, delay: 0.3 }}
+          className="mt-6 text-white text-lg sm:text-xl font-medium"
+        >
+          <a href="tel:+61412345678" className="flex items-center justify-center sm:justify-start gap-2 hover:text-emerald-200 transition-colors">
+            <i className="fas fa-phone"></i>
+            <span>0412 345 678</span>
+          </a>
+        </motion.div>
+
+        {/* Social Links */}
         <div className="flex items-center justify-center sm:items-start sm:justify-start gap-6 mt-8 sm:mt-12 text-lg sm:text-xl text-emerald-200">
           {socialLinks.map((social) => (
             <motion.a

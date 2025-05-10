@@ -1,5 +1,6 @@
-import { useEffect } from "react";
+import { useEffect, useRef } from "react";
 import { gsap } from "gsap";
+import { useInView } from "framer-motion";
 
 interface BounceCardsProps {
   className?: string;
@@ -30,18 +31,23 @@ export default function BounceCards({
   ],
   enableHover = false,
 }: BounceCardsProps) {
+  const containerRef = useRef(null);
+  const isInView = useInView(containerRef, { once: false, amount: 0.3 });
+
   useEffect(() => {
-    gsap.fromTo(
-      ".card",
-      { scale: 0 },
-      {
-        scale: 1,
-        stagger: animationStagger,
-        ease: easeType,
-        delay: animationDelay,
-      }
-    );
-  }, [animationDelay, animationStagger, easeType]);
+    if (isInView) {
+      gsap.fromTo(
+        ".card",
+        { scale: 0 },
+        {
+          scale: 1,
+          stagger: animationStagger,
+          ease: easeType,
+          delay: animationDelay,
+        }
+      );
+    }
+  }, [isInView, animationDelay, animationStagger, easeType]);
 
   const getNoRotationTransform = (transformStr: string): string => {
     const hasRotate = /rotate\([\s\S]*?\)/.test(transformStr);
@@ -128,7 +134,8 @@ export default function BounceCards({
 
   return (
     <div
-      className={`relative flex items-center justify-center ${className}`}
+      ref={containerRef}
+      className={`relative my-8 flex items-center justify-center ${className}`}
       style={{
         width: containerWidth,
         height: containerHeight,
@@ -137,7 +144,7 @@ export default function BounceCards({
       {images.map((src, idx) => (
         <div
           key={idx}
-          className={`card card-${idx} absolute w-[150px] sm:w-[200px] md:w-[250px] aspect-square border-4 sm:border-6 md:border-8 border-white rounded-[15px] sm:rounded-[20px] md:rounded-[30px] overflow-hidden`}
+          className={`card card-${idx} absolute w-[250px] sm:w-[250px] md:w-[350px] aspect-square border-4 sm:border-6 md:border-8 border-white rounded-[15px] sm:rounded-[20px] md:rounded-[30px] overflow-hidden`}
           style={{
             boxShadow: "0 4px 10px rgba(0, 0, 0, 0.2)",
             transform: transformStyles[idx] || "none",

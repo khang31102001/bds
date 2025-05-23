@@ -1,0 +1,32 @@
+@keyframes shimmer {
+  0% {
+    background-position: -200% 0;
+  }
+  100% {
+    background-position: 200% 0;
+  }
+}
+
+.image-placeholder {
+  background: linear-gradient(
+    90deg,
+    rgba(243, 244, 246, 0.1) 25%,
+    rgba(243, 244, 246, 0.3) 37%,
+    rgba(243, 244, 246, 0.1) 63%
+  );
+  background-size: 200% 100%;
+  animation: shimmer 1.5s infinite linear;
+}
+
+.image-error-container {
+  background-color: rgba(243, 244, 246, 0.1);
+  backdrop-filter: blur(4px);
+}
+
+.optimized-image {
+  transition: transform 0.3s ease-in-out;
+}
+
+.optimized-image:hover {
+  transform: scale(1.05);
+} 

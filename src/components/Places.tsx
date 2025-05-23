@@ -1,5 +1,10 @@
 import { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
+import { Swiper, SwiperSlide } from 'swiper/react';
+import { Navigation, Pagination } from 'swiper/modules';
+import 'swiper/css';
+import 'swiper/css/navigation';
+import 'swiper/css/pagination';
 
 import img1 from '../public/img/img1.jpg'
 import img2 from '../public/img/img2.jpg'
@@ -7,31 +12,41 @@ import img3 from '../public/img/img3.jpg'
 import img4 from '../public/img/img4.jpg'
 import img5 from '../public/img/img5.jpg'
 
+import img_hill from '../public/img/img_hill.jpg'
+import img_hill1 from '../public/img/img_hill-1.jpg'
+import img_hill2 from '../public/img/img_hill-2.jpg'
+import img_hill3 from '../public/img/img_hill-3.jpg'
+
 const places = [
   {
     name: 'Natural Bushland',
     country: 'Western Australia',
     image: img1,
+    gallery: [img1]
   },
   {
     name: 'River Views',
     country: 'Western Australia', 
     image: img3,
+    gallery: [img3]
   },
   {
     name: 'Rolling Hills',
     country: 'Western Australia',
     image: img2,
+    gallery: [img2, img_hill, img_hill1, img_hill2, img_hill3]
   },
   {
     name: 'Building Site',
     country: 'Western Australia',
     image: img4,
+    gallery: [img4]
   },
   {
     name: 'Valley Views',
     country: 'Western Australia',
     image: img5,
+    gallery: [img5]
   },
 ];
 
@@ -182,11 +197,23 @@ export default function Places() {
                 exit="exit"
                 onClick={e => e.stopPropagation()}
               >
-                <img
-                  src={selectedPlace.image}
-                  alt={selectedPlace.name}
-                  className="w-full h-[60vh] object-cover"
-                />
+                <Swiper
+                  modules={[Navigation, Pagination]}
+                  // navigation
+                  pagination={{ clickable: true }}
+                  loop={true}
+                  className="w-full h-[60vh]"
+                >
+                  {selectedPlace.gallery.map((image, index) => (
+                    <SwiperSlide key={index}>
+                      <img
+                        src={image}
+                        alt={`${selectedPlace.name} view ${index + 1}`}
+                        className="w-full h-full object-cover"
+                      />
+                    </SwiperSlide>
+                  ))}
+                </Swiper>
                 <motion.div 
                   initial={{ opacity: 0, y: 20 }}
                   animate={{ opacity: 1, y: 0 }}

@@ -214,7 +214,7 @@ export default function ContactSection() {
           >
             <iframe
               title="Boyup Brook Location"
-              src="https://www.google.com/maps?q=Boyup+Brook+WA,+Australia&output=embed"
+              src="https://www.google.com/maps?q=Boyup+Brook+WA,+Australia&hl=en&output=embed"
               width="100%"
               height="100%"
               style={{ border: 0 }}

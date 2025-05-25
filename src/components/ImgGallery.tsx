@@ -6,11 +6,7 @@ import 'swiper/css/pagination'
 import { useState } from 'react'
 import { motion } from 'framer-motion'
 
-import img1 from '../public/img/img1.jpg'
-import img2 from '../public/img/img2.jpg'
-import img3 from '../public/img/img3.jpg'
-import img4 from '../public/img/img4.jpg'
-import img5 from '../public/img/img5.jpg'
+
 
 import img_hill from '../public/img/img_hill.jpg'
 import img_hill1 from '../public/img/img_hill-1.jpg'

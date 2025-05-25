@@ -1,6 +1,6 @@
 import { motion } from 'framer-motion';
 import { Swiper, SwiperSlide } from 'swiper/react';
-import { Autoplay, EffectFade, Pagination, Navigation } from 'swiper/modules';
+import { Autoplay, EffectFade, Pagination } from 'swiper/modules';
 import 'swiper/css';
 import 'swiper/css/effect-fade';
 import 'swiper/css/pagination';
@@ -9,12 +9,6 @@ import '../styles/swiper.css';
 import { useState } from 'react';
 
 import img1 from '../public/img/img1.jpg' 
-import img2 from '../public/img/img2.jpg'
-import img3 from '../public/img/img3.jpg'
-import img5 from '../public/img/img5.jpg'
-
-import video_2 from '../public/video/video-2.mp4'
-import video_river from '../public/video/video-river.mp4'
 
 import img_hill from '../public/img/img_hill.jpg'
 import img_hill1 from '../public/img/img_hill-1.jpg'
@@ -27,102 +21,11 @@ import img_river2 from '../public/img/img_river-2.jpg'
 import img_river3 from '../public/img/img_river-3.jpg'
 import img_river4 from '../public/img/img_river-4.jpg'
 
-import img_asp from '../public/img/img_asp.jpg'
-import img_asp1 from '../public/img/img_asp-1.jpg'
-import img_asp2 from '../public/img/img_asp-2.jpg'
-import img_asp3 from '../public/img/img_asp-3.jpg'
 
 import img_family from '../public/img/img_family.jpg'
 import img_family2 from '../public/img/img_family-2.jpg'
 import img_family3 from '../public/img/img_family-3.jpg'
 
-const images = [
-  {
-    src: img1,
-    title: "Natural Bushland",
-    description: "Experience the beauty of untouched wilderness"
-  },
-  {
-    src: img2,
-    title: "Rolling Hills",
-    description: "Panoramic views of stunning landscapes"
-  },
-  {
-    src: img3,
-    title: "River Views",
-    description: "Serene waterfront living at its finest"
-  },
-  {
-    src: img5,
-    title: "Luxury Living",
-    description: "Your dream property awaits"
-  },
-  {
-    src: img_hill,
-    title: "Hill Views",
-    description: "Breathtaking views from the hills"
-  },
-  {
-    src: img_hill1,
-    title: "Hill Estate",
-    description: "Exclusive hilltop property"
-  },
-  {
-    src: img_hill2,
-    title: "Hill Retreat",
-    description: "Peaceful hill retreat with stunning views"
-  },
-  {
-    src: img_hill3,
-    title: "Hill Haven",
-    description: "Your perfect hill sanctuary"
-  },
-  {
-    src: img_river,
-    title: "River Front",
-    description: "Exclusive river front property"
-  },
-  {
-    src: img_river1,
-    title: "River Estate",
-    description: "Luxurious river side living"
-  },
-  {
-    src: img_river2,
-    title: "River View",
-    description: "Stunning river views from every angle"
-  },
-  {
-    src: img_river3,
-    title: "River Paradise",
-    description: "Your own piece of river paradise"
-  },
-  {
-    src: img_river4,
-    title: "River Haven",
-    description: "Tranquil river side retreat"
-  },
-  {
-    src: img_asp,
-    title: "Asparagus Farm",
-    description: "Established farm with modern facilities"
-  },
-  {
-    src: img_asp1,
-    title: "Farm Views",
-    description: "Beautiful views of the working farm"
-  },
-  {
-    src: img_asp2,
-    title: "Farm Estate",
-    description: "Spacious farm with modern amenities"
-  },
-  {
-    src: img_asp3,
-    title: "Farm Haven",
-    description: "Your perfect farm retreat"
-  }
-];
 
 const socialLinks = [
   { name: 'facebook', icon: 'fab fa-facebook-f', link: 'https://www.facebook.com/profile.php?id=100088916504867' },

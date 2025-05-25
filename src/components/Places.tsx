@@ -6,11 +6,6 @@ import 'swiper/css';
 import 'swiper/css/navigation';
 import 'swiper/css/pagination';
 
-import img1 from '../public/img/img1.jpg'
-import img2 from '../public/img/img2.jpg'
-import img3 from '../public/img/img3.jpg'
-import img4 from '../public/img/img4.jpg'
-import img5 from '../public/img/img5.jpg'
 
 import img_hill from '../public/img/img_hill.jpg'
 import img_hill1 from '../public/img/img_hill-1.jpg'
@@ -29,8 +24,6 @@ import img_asp1 from '../public/img/img_asp-1.jpg'
 import img_asp2 from '../public/img/img_asp-2.jpg'
 import img_asp3 from '../public/img/img_asp-3.jpg'
 
-import img_plan from '../public/img/PlanView.jpg'
-import landgate from '../public/img/LandgateAerial.jpg'
 
 const places = [
   {
@@ -143,7 +136,7 @@ export default function Places() {
           viewport={{ once: true }}
           className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8 justify-items-center"
         >
-          {places.map((place, idx) => (
+          {places.map((place) => (
             <motion.div
               key={place.name}
               variants={cardVariants}

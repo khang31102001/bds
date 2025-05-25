@@ -9,11 +9,12 @@ import img4 from '../public/img/img4.jpg'
 import img5 from '../public/img/img5.jpg'
 
 const About = () => {
+  // Actual property measurements and features
   const landInfo = [
-    { value: 2000, label: 'Area (m²)', desc: 'Total area' },
-    { value: 50, label: 'Length (m)', desc: 'Land length' },
-    { value: 40, label: 'Width (m)', desc: 'Land width' },
-    { value: 1, label: 'House', desc: 'House' },
+    { value: 1220000, label: 'Area (m²)', desc: 'Total land area (301 acres)' },
+    { value: 1500, label: 'River Frontage (m)', desc: 'Blackwood River frontage' },
+    { value: 3, label: 'Distinct Areas', desc: 'River, Hills & Farm zones' },
+    { value: 1, label: 'House', desc: 'Traditional timber house' },
   ];
 
   function useCountUp(end: number, duration = 1.5): number {
@@ -55,11 +56,11 @@ const About = () => {
       initial={{ opacity: 0 }}
       whileInView={{ opacity: 1 }}
       transition={{ duration: 0.8 }}
-      className="relative py-16 px-4 md:px-12"
+      className="relative py-16 xl:py-32 px-4 md:px-12"
       id="about"
       aria-label="Boyup Brook acreage for sale"
     >
-      <div className="max-w-5xl mx-auto flex flex-col items-center justify-center gap-4">
+      <div className="max-w-5xl mx-auto flex flex-col items-center justify-center gap-4 xl:gap-12">
         {/* Title */}
         <motion.h1 
           initial={{ opacity: 0, y: -50 }}
@@ -67,7 +68,7 @@ const About = () => {
           transition={{ duration: 0.6 }}
           className="text-3xl lg:text-5xl font-bold text-cyan-900 text-center"
         >
-          About Boyup Brook
+          301 Acres – Your Opportunity to Own Prime Land in Boyup Brook, WA
         </motion.h1>
 
         <motion.p 
@@ -76,8 +77,14 @@ const About = () => {
           transition={{ duration: 0.6, delay: 0.2 }}
           className="text-normal text-gray-700 max-w-3xl mx-auto text-center"
         >
-          Nestled in the heart of Western Australia's Southwest, Boyup Brook is a charming rural community known for its pristine natural beauty and rich agricultural heritage.
+          Own an expansive 301-acre property (over 1.2 million square meters) in Boyup Brook – the heart of Western Australia's Southwest. This remarkable estate features diverse landscapes: the scenic Blackwood River, gentle hills, open pastures, natural bushland, and farming areas. It's an ideal setting for peaceful living, family bonding, outdoor activities, and potential agricultural or eco-tourism development.
         </motion.p>
+
+        <ul className="text-gray-700 text-base max-w-3xl mx-auto mt-2 mb-4 list-disc list-inside">
+          <li><b>Family Heritage</b>: This land has been cherished through generations, preserving memories and traditional activities including camping, canoeing, sports, bonfires, and wildlife observation.</li>
+          <li><b>Landscape & Amenities</b>: River frontage, hills, bushland, pastures, timber house, sheds, walking trails, camping areas, and fruit orchards.</li>
+          <li><b>Development Potential</b>: Suitable for farming, retreat development, eco-tourism ventures, or long-term investment.</li>
+        </ul>
 
         <div className="md:flex md:flex-wrap grid grid-cols-2 items-center justify-center gap-4 md:gap-8">
           {landInfo.map((item, idx) => {
@@ -113,7 +120,7 @@ const About = () => {
         </div>
         {/* Gallery layout */}
         <div 
-          className="flex justify-center mt-4 md:mt-12"
+          className="flex flex-col items-center justify-center mt-4 md:mt-12 w-full"
         >
           <BounceCards
             className="custom-bounceCards"
@@ -126,6 +133,7 @@ const About = () => {
             transformStyles={transformStyles}
             enableHover={false}
           />
+         
         </div>
       </div>
     </motion.section>

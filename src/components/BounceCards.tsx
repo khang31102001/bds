@@ -1,4 +1,4 @@
-import { useEffect, useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 import { gsap } from "gsap";
 import { useInView } from "framer-motion";
 
@@ -33,6 +33,7 @@ export default function BounceCards({
 }: BounceCardsProps) {
   const containerRef = useRef(null);
   const isInView = useInView(containerRef, { once: false, amount: 0.3 });
+  const [selectedIndex, setSelectedIndex] = useState<number | null>(null);
 
   useEffect(() => {
     if (isInView) {
@@ -133,32 +134,76 @@ export default function BounceCards({
   };
 
   return (
-    <div
-      ref={containerRef}
-      className={`relative my-8 flex items-center justify-center ${className}`}
-      style={{
-        width: containerWidth,
-        height: containerHeight,
-      }}
-    >
-      {images.map((src, idx) => (
+    <>
+      <div
+        ref={containerRef}
+        className={`relative my-8 flex items-center justify-center ${className}`}
+        style={{
+          width: containerWidth,
+          height: containerHeight,
+        }}
+      >
+        {images.map((src, idx) => (
+          <div
+            key={idx}
+            className={`card card-${idx} absolute w-[250px] sm:w-[250px] md:w-[350px] aspect-square border-4 sm:border-6 md:border-8 border-white rounded-[15px] sm:rounded-[20px] md:rounded-[30px] overflow-hidden`}
+            style={{
+              boxShadow: "0 4px 10px rgba(0, 0, 0, 0.2)",
+              transform: transformStyles[idx] || "none",
+            }}
+            onMouseEnter={() => pushSiblings(idx)}
+            onMouseLeave={resetSiblings}
+            onClick={() => setSelectedIndex(idx)}
+          >
+            <img
+              className="w-full h-full object-cover"
+              src={src}
+              alt={`card-${idx}`}
+            />
+          </div>
+        ))}
+      </div>
+      {/* Modal xem ảnh lớn */}
+      {selectedIndex !== null && (
         <div
-          key={idx}
-          className={`card card-${idx} absolute w-[250px] sm:w-[250px] md:w-[350px] aspect-square border-4 sm:border-6 md:border-8 border-white rounded-[15px] sm:rounded-[20px] md:rounded-[30px] overflow-hidden`}
-          style={{
-            boxShadow: "0 4px 10px rgba(0, 0, 0, 0.2)",
-            transform: transformStyles[idx] || "none",
-          }}
-          onMouseEnter={() => pushSiblings(idx)}
-          onMouseLeave={resetSiblings}
+          className="fixed inset-0 z-[100] bg-black/80 flex items-center justify-center p-2 sm:p-6"
+          onClick={() => setSelectedIndex(null)}
         >
-          <img
-            className="w-full h-full object-cover"
-            src={src}
-            alt={`card-${idx}`}
-          />
+          <div className="absolute inset-0 bg-white/90 z-0" />
+          <div className="relative max-w-3xl w-full flex flex-col items-center z-10" onClick={e => e.stopPropagation()}>
+            <img
+              src={images[selectedIndex]}
+              alt={`Preview ${selectedIndex + 1}`}
+              className="max-h-[70vh] w-auto rounded-xl shadow-2xl object-contain"
+            />
+            <button
+              className="absolute top-2 right-2 bg-gray-200 hover:bg-gray-400 text-gray-700 hover:text-white rounded-full p-2"
+              onClick={() => setSelectedIndex(null)}
+            >
+              <svg xmlns="http://www.w3.org/2000/svg" className="h-7 w-7" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+              </svg>
+            </button>
+            {/* Prev/Next buttons */}
+            {images.length > 1 && (
+              <>
+                <button
+                  className="absolute left-2 top-1/2 -translate-y-1/2 bg-gray-200 hover:bg-gray-400 text-gray-700 hover:text-white rounded-full p-2"
+                  onClick={() => setSelectedIndex((selectedIndex - 1 + images.length) % images.length)}
+                >
+                  <svg width={24} height={24} fill="none" stroke="currentColor" strokeWidth={2}><path strokeLinecap="round" strokeLinejoin="round" d="M15 19l-7-7 7-7"/></svg>
+                </button>
+                <button
+                  className="absolute right-2 top-1/2 -translate-y-1/2 bg-gray-200 hover:bg-gray-400 text-gray-700 hover:text-white rounded-full p-2"
+                  onClick={() => setSelectedIndex((selectedIndex + 1) % images.length)}
+                >
+                  <svg width={24} height={24} fill="none" stroke="currentColor" strokeWidth={2}><path strokeLinecap="round" strokeLinejoin="round" d="M9 5l7 7-7 7"/></svg>
+                </button>
+              </>
+            )}
+          </div>
         </div>
-      ))}
-    </div>
+      )}
+    </>
   );
 }

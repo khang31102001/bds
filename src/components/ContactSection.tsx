@@ -1,6 +1,14 @@
 import { motion } from 'framer-motion';
 import { useRef, useState } from 'react';
 import emailjs from '@emailjs/browser';
+import { Swiper, SwiperSlide } from 'swiper/react';
+import { Pagination, Navigation } from 'swiper/modules';
+import 'swiper/css';
+import 'swiper/css/pagination';
+import 'swiper/css/navigation';
+
+import img_plan from '../public/img/PlanView.jpg'
+import img_land from '../public/img/LandgateAerial.jpg'
 
 export default function ContactSection() {
   const formRef = useRef<HTMLFormElement>(null);
@@ -207,20 +215,68 @@ export default function ContactSection() {
           </motion.div>
           
           <motion.div 
-            className="w-full lg:w-1/2 h-[600px] rounded-lg overflow-hidden shadow-xl"
+            className="w-full lg:w-1/2 h-[600px] rounded-lg overflow-hidden shadow-xl relative"
             initial={{ opacity: 0, x: 50 }}
             whileInView={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.6, delay: 0.4 }}
           >
-            <iframe
-              title="Boyup Brook Location"
-              src="https://www.google.com/maps?q=Boyup+Brook+WA,+Australia&hl=en&output=embed"
-              width="100%"
-              height="100%"
-              style={{ border: 0 }}
-              allowFullScreen
-              loading="lazy"
-            />
+            <Swiper
+              modules={[Pagination, Navigation]}
+              spaceBetween={0}
+              slidesPerView={1}
+              pagination={{ 
+                clickable: true,
+                bulletClass: 'swiper-pagination-bullet !bg-emerald-600 !opacity-50',
+                bulletActiveClass: 'swiper-pagination-bullet-active !bg-emerald-600 !opacity-100'
+              }}
+              navigation={{
+                nextEl: '.swiper-button-next',
+                prevEl: '.swiper-button-prev',
+              }}
+              className="h-full"
+            >
+              <SwiperSlide>
+                <div className="relative w-full h-full bg-gray-100 flex items-center justify-center">
+                  <img 
+                    src={img_plan} 
+                    alt="Property Plan View" 
+                    className="max-w-full max-h-full object-contain"
+                  />
+                  <div className="absolute bottom-0 left-0 right-0 bg-black bg-opacity-50 text-white p-4">
+                    <h3 className="text-lg font-semibold">Property Plan View</h3>
+                    <p className="text-sm">Detailed layout of the 301-acre property</p>
+                  </div>
+                </div>
+              </SwiperSlide>
+              <SwiperSlide>
+                <div className="relative w-full h-full bg-gray-100 flex items-center justify-center">
+                  <img 
+                    src={img_land} 
+                    alt="Aerial View" 
+                    className="max-w-full max-h-full object-contain"
+                  />
+                  <div className="absolute bottom-0 left-0 right-0 bg-black bg-opacity-50 text-white p-4">
+                    <h3 className="text-lg font-semibold">Aerial View</h3>
+                    <p className="text-sm">Landgate aerial perspective of the property</p>
+                  </div>
+                </div>
+              </SwiperSlide>
+              <SwiperSlide>
+                <iframe
+                  title="Boyup Brook Location"
+                  src="https://www.google.com/maps?q=Boyup+Brook+WA,+Australia&hl=en&output=embed"
+                  width="100%"
+                  height="100%"
+                  style={{ border: 0 }}
+                  allowFullScreen
+                  loading="lazy"
+                />
+              </SwiperSlide>
+
+              {/* Custom Navigation Buttons */}
+              <div className="swiper-button-prev !w-12 !h-12 !bg-white/80 hover:!bg-white !rounded-full !shadow-lg after:!text-emerald-600 after:!text-2xl"></div>
+              <div className="swiper-button-next !w-12 !h-12 !bg-white/80 hover:!bg-white !rounded-full !shadow-lg after:!text-emerald-600 after:!text-2xl"></div>
+            </Swiper>
           </motion.div>
         </div>
       </div>

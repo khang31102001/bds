@@ -49,7 +49,7 @@ const Header = () => {
     <header className={`fixed top-0 left-0 w-full z-[20] transition-colors duration-300 ${
       scrolled ? 'bg-white shadow-lg' : 'bg-transparent'
     }`}>
-      <nav className={`flex justify-between items-center px-4 md:px-12 py-4 md:py-8 max-w-[1640px] mx-auto ${
+      <nav className={`flex justify-between items-center px-4 md:px-12 py-4 md:py-8 max-w-[2050px] mx-auto ${
         scrolled ? 'text-emerald-900 bg-white' : 'text-white bg-transparent'
       }`}>
         <a className="font-bold text-h3 cursor-pointer"

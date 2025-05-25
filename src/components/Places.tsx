@@ -17,37 +17,55 @@ import img_hill1 from '../public/img/img_hill-1.jpg'
 import img_hill2 from '../public/img/img_hill-2.jpg'
 import img_hill3 from '../public/img/img_hill-3.jpg'
 
+
+import img_river from '../public/img/img_river.jpg'
+import img_river1 from '../public/img/img_river-1.jpg'
+import img_river2 from '../public/img/img_river-2.jpg'
+import img_river3 from '../public/img/img_river-3.jpg'
+import img_river4 from '../public/img/img_river-4.jpg'
+
+import img_asp from '../public/img/img_asp.jpg'
+import img_asp1 from '../public/img/img_asp-1.jpg'
+import img_asp2 from '../public/img/img_asp-2.jpg'
+import img_asp3 from '../public/img/img_asp-3.jpg'
+
+import img_plan from '../public/img/PlanView.jpg'
+import landgate from '../public/img/LandgateAerial.jpg'
+
 const places = [
   {
-    name: 'Natural Bushland',
+    name: 'River Front Area',
     country: 'Western Australia',
-    image: img1,
-    gallery: [img1]
+    image: img_river,
+    gallery: [img_river, img_river1, img_river2, img_river3, img_river4],
+    description: "Long private frontage to the Blackwood River with deep pools, rock formations, and sandy river-bed. Perfect for water activities and enjoying the natural beauty.",
+    icon: (
+      <svg className="w-7 h-7 text-emerald-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 18s3-4 9-4 9 4 9 4M4 14s1.5-2 8-2 8 2 8 2" /></svg>
+    ),
+    features: ["Blackwood River", "Deep pools", "Private frontage"]
   },
   {
-    name: 'River Views',
-    country: 'Western Australia', 
-    image: img3,
-    gallery: [img3]
+    name: 'Hill Views Area',
+    country: 'Western Australia',
+    image: img_hill,
+    gallery: [img_hill, img_hill1, img_hill2, img_hill3],
+    description: "Panoramic views from elevated positions, featuring mature Redgum and Jarrah trees. Ideal for building your dream home with stunning vistas.",
+    icon: (
+      <svg className="w-7 h-7 text-yellow-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 17l6-6 4 4 8-8" /></svg>
+    ),
+    features: ["Hilltop views", "Redgum & Jarrah", "Building potential"]
   },
   {
-    name: 'Rolling Hills',
+    name: 'Farm Area',
     country: 'Western Australia',
-    image: img2,
-    gallery: [img2, img_hill, img_hill1, img_hill2, img_hill3]
-  },
-  {
-    name: 'Building Site',
-    country: 'Western Australia',
-    image: img4,
-    gallery: [img4]
-  },
-  {
-    name: 'Valley Views',
-    country: 'Western Australia',
-    image: img5,
-    gallery: [img5]
-  },
+    image: img_asp,
+    gallery: [img_asp, img_asp1, img_asp2, img_asp3],
+    description: "Fertile land with established infrastructure, perfect for agricultural activities or development. Currently used for sheep farming with excellent results.",
+    icon: (
+      <svg className="w-7 h-7 text-orange-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" /></svg>
+    ),
+    features: ["Fertile soil", "Sheep farming", "Development ready"]
+  }
 ];
 
 const modalVariants = {
@@ -97,9 +115,10 @@ const cardVariants = {
 
 export default function Places() {
   const [selectedPlace, setSelectedPlace] = useState<typeof places[0] | null>(null);
+  const [selectedImageIndex, setSelectedImageIndex] = useState<number | null>(null);
 
   return (
-    <section className='relative py-16 px-4 md:px-12' id="places">
+    <section className="relative py-16 xl:pt-32 xl:pb-64 px-4 md:px-12 bg-gradient-to-b from-emerald-50 via-white to-cyan-50" id="places">
       <div className="max-w-5xl mx-auto px-4 flex flex-col items-center justify-center gap-8">
         <motion.h2 
           initial={{ opacity: 0, y: -50 }}
@@ -115,7 +134,7 @@ export default function Places() {
           transition={{ delay: 0.3, duration: 0.6 }}
           className="text-lg text-gray-700 max-w-3xl mx-auto text-center"
         >
-          Discover this exceptional Boyup Brook acreage for sale, featuring pristine natural bushland, stunning river views, and gently rolling hills. This rare opportunity offers 2000m² of prime Western Australian land, perfect for building your dream country home. 
+          Discover this unique 301-acre Boyup Brook property for private sale, featuring exclusive Blackwood River frontage, panoramic hill views, and fertile farmland. Explore the diverse landscapes and development potential of this rare Western Australian opportunity.
         </motion.p>
         <motion.div 
           variants={containerVariants}
@@ -124,7 +143,7 @@ export default function Places() {
           viewport={{ once: true }}
           className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8 justify-items-center"
         >
-          {places.map((place) => (
+          {places.map((place, idx) => (
             <motion.div
               key={place.name}
               variants={cardVariants}
@@ -138,6 +157,7 @@ export default function Places() {
                 alt={place.name}
                 className="w-full h-56 object-cover group-hover:scale-105 transition-transform duration-300"
               />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/30 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
               <motion.div 
                 initial={{ opacity: 0 }}
                 whileInView={{ opacity: 1 }}
@@ -182,74 +202,116 @@ export default function Places() {
 
         <AnimatePresence>
           {selectedPlace && (
-            <motion.div 
-              className="fixed inset-0 bg-black/80 z-50 flex items-center justify-center p-4"
+            <motion.div
+              className="fixed inset-0 bg-black/80 z-50 flex items-center justify-center p-2 md:p-6"
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               exit={{ opacity: 0 }}
               onClick={() => setSelectedPlace(null)}
             >
               <motion.div
-                className="relative bg-white rounded-xl overflow-hidden max-w-4xl w-full"
+                className="relative bg-white rounded-2xl shadow-2xl max-w-5xl w-full flex flex-col md:flex-row overflow-hidden max-h-[90vh] overflow-y-auto"
                 variants={modalVariants}
                 initial="hidden"
                 animate="visible"
                 exit="exit"
                 onClick={e => e.stopPropagation()}
               >
-                <Swiper
-                  modules={[Navigation, Pagination]}
-                  // navigation
-                  pagination={{ clickable: true }}
-                  loop={true}
-                  className="w-full h-[60vh]"
+                <button
+                  onClick={() => setSelectedPlace(null)}
+                  className="absolute top-4 right-4 z-20 bg-gray-200 hover:bg-gray-400 text-gray-700 hover:text-white rounded-full p-2 transition-colors"
+                  aria-label="Close"
                 >
-                  {selectedPlace.gallery.map((image, index) => (
-                    <SwiperSlide key={index}>
-                      <img
-                        src={image}
-                        alt={`${selectedPlace.name} view ${index + 1}`}
-                        className="w-full h-full object-cover"
-                      />
-                    </SwiperSlide>
-                  ))}
-                </Swiper>
-                <motion.div 
-                  initial={{ opacity: 0, y: 20 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ delay: 0.2 }}
-                  className="p-6 bg-white"
-                >
-                  <h2 className="text-3xl font-bold text-cyan-900 mb-2">Boyup Brook For Sale</h2>
-                  <p className="text-gray-600 mb-4">
-                    Experience the beauty of Boyup Brook with this exceptional property. Featuring pristine natural bushland, stunning river views, and gently rolling hills. Perfect for your dream country home with 2000m² of prime Western Australian land.
-                  </p>
-                  <div className="flex items-center gap-4">
-                    <motion.a 
-                      whileHover={{ scale: 1.05 }}
-                      whileTap={{ scale: 0.95 }}
-                      href="#contact" 
-                      className="px-4 py-2 bg-emerald-100 text-emerald-800 rounded-full"
-                      onClick={(e) => {
-                        e.preventDefault();
-                        const element = document.querySelector('#contact');
-                        element?.scrollIntoView({
-                          behavior: 'smooth'
-                        });
-                      }}
+                  <svg xmlns="http://www.w3.org/2000/svg" className="h-7 w-7" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+                  </svg>
+                </button>
+                <div className="md:w-7/12 w-full flex items-center justify-center bg-gray-50 p-2 md:p-6">
+                  {selectedPlace.gallery && (
+                    <Swiper
+                      modules={[Navigation, Pagination]}
+                      pagination={{ clickable: true }}
+                      loop={true}
+                      className="w-full h-[250px] md:h-[420px]"
                     >
-                      Contact Us
-                    </motion.a>
-                    <motion.button 
-                      whileHover={{ scale: 1.05 }}
-                      whileTap={{ scale: 0.95 }}
-                      className="px-6 py-2 bg-emerald-600 text-white rounded-full hover:bg-emerald-700 transition-colors"
-                      onClick={() => setSelectedPlace(null)}
-                    >
-                      Close
-                    </motion.button>
+                      {selectedPlace.gallery.map((image, index) => (
+                        <SwiperSlide key={index}>
+                          <img
+                            src={image}
+                            alt={`${selectedPlace.name} view ${index + 1}`}
+                            className="w-full h-full object-cover rounded-xl shadow-lg cursor-pointer"
+                            onClick={() => setSelectedImageIndex(index)}
+                          />
+                        </SwiperSlide>
+                      ))}
+                    </Swiper>
+                  )}
+                </div>
+                <div className="md:w-5/12 w-full flex flex-col gap-4 p-4 md:p-8">
+                  <div className="flex items-center gap-3 mb-2">
+                    {selectedPlace.icon}
+                    <h2 className="text-2xl md:text-3xl font-bold text-cyan-900">{selectedPlace.name}</h2>
                   </div>
-                </motion.div>
+                  {selectedPlace.features && (
+                    <div className="flex flex-wrap gap-2 mb-2">
+                      {selectedPlace.features.map((f, i) => (
+                        <span key={i} className="bg-emerald-100 text-emerald-700 text-xs px-3 py-1 rounded-full font-semibold border border-emerald-200">{f}</span>
+                      ))}
+                    </div>
+                  )}
+                  <p className="text-gray-700 text-base md:text-lg mb-2">{selectedPlace.description}</p>
+                  <button
+                    className="w-full bg-emerald-500 text-white py-3 rounded-xl font-bold text-lg hover:bg-emerald-700 transition-colors"
+                    onClick={() => {
+                      const element = document.querySelector('#contact');
+                      element?.scrollIntoView({ behavior: 'smooth' });
+                    }}
+                  >
+                    Contact Us
+                  </button>
+                </div>
+                {/* Modal xem ảnh lớn */}
+                {selectedImageIndex !== null && selectedPlace.gallery && (
+                  <div
+                    className="fixed inset-0 z-[100] flex items-center justify-center"
+                    onClick={() => setSelectedImageIndex(null)}
+                  >
+                    {/* Nền trắng mờ phía sau modal ảnh */}
+                    <div className="absolute inset-0 bg-white/90 z-0" />
+                    <div className="relative max-w-3xl w-full flex flex-col items-center z-10" onClick={e => e.stopPropagation()}>
+                      <img
+                        src={selectedPlace.gallery[selectedImageIndex]}
+                        alt={`Preview ${selectedImageIndex + 1}`}
+                        className="max-h-[80vh] w-auto rounded-xl shadow-2xl"
+                      />
+                      <button
+                        className="absolute top-2 right-2 bg-gray-200 hover:bg-gray-400 text-gray-700 hover:text-white rounded-full p-2"
+                        onClick={() => setSelectedImageIndex(null)}
+                      >
+                        <svg xmlns="http://www.w3.org/2000/svg" className="h-7 w-7" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+                        </svg>
+                      </button>
+                      {/* Prev/Next buttons */}
+                      {selectedPlace.gallery.length > 1 && (
+                        <>
+                          <button
+                            className="absolute left-2 top-1/2 -translate-y-1/2 bg-gray-200 hover:bg-gray-400 text-gray-700 hover:text-white rounded-full p-2"
+                            onClick={() => setSelectedImageIndex((selectedImageIndex - 1 + selectedPlace.gallery.length) % selectedPlace.gallery.length)}
+                          >
+                            <svg width={24} height={24} fill="none" stroke="currentColor" strokeWidth={2}><path strokeLinecap="round" strokeLinejoin="round" d="M15 19l-7-7 7-7"/></svg>
+                          </button>
+                          <button
+                            className="absolute right-2 top-1/2 -translate-y-1/2 bg-gray-200 hover:bg-gray-400 text-gray-700 hover:text-white rounded-full p-2"
+                            onClick={() => setSelectedImageIndex((selectedImageIndex + 1) % selectedPlace.gallery.length)}
+                          >
+                            <svg width={24} height={24} fill="none" stroke="currentColor" strokeWidth={2}><path strokeLinecap="round" strokeLinejoin="round" d="M9 5l7 7-7 7"/></svg>
+                          </button>
+                        </>
+                      )}
+                    </div>
+                  </div>
+                )}
               </motion.div>
             </motion.div>
           )}

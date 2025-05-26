@@ -13,8 +13,8 @@ const Footer = () => {
 
   const contactInfo = [
     { icon: 'fas fa-map-marker-alt', text: 'Boyup Brook, Western Australia' },
-    { icon: 'fas fa-phone', text: '+61 123 456 789' },
-    { icon: 'fas fa-envelope', text: 'info@eaglescreens.com.au' }
+    { icon: 'fas fa-phone', text: '0457 230 191' },
+    { icon: 'fas fa-envelope', text: 'eaglescreensjr@gmail.com' }
   ];
 
   const socialLinks = [

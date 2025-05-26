@@ -28,7 +28,7 @@ const ScrollToTop = () => {
   };
 
   return (
-    <div className="fixed right-8 bottom-8 flex flex-col gap-4">
+    <div className="fixed z-[100] right-2 md:right-8 bottom-2 md:bottom-8 flex flex-col gap-4">
       <div className="relative group">
         <a 
           href="tel:+61123456789"
@@ -42,7 +42,7 @@ const ScrollToTop = () => {
           </svg>
         </a>
         <div className="absolute right-full mr-3 top-1/2 -translate-y-1/2 bg-black text-white px-3 py-1 rounded opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 whitespace-nowrap">
-          +61 123 456 789
+          0457 230 191
         </div>
       </div>
 

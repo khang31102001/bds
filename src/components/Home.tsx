@@ -4,34 +4,19 @@ import { Autoplay, EffectFade, Pagination } from 'swiper/modules';
 import 'swiper/css';
 import 'swiper/css/effect-fade';
 import 'swiper/css/pagination';
-import 'swiper/css/navigation';
 import '../styles/swiper.css';
 import { useState } from 'react';
 
 import img1 from '../public/img/img1.jpg' 
 
-import img_hill from '../public/img/img_hill.jpg'
-import img_hill1 from '../public/img/img_hill-1.jpg'
-import img_hill2 from '../public/img/img_hill-2.jpg'
-import img_hill3 from '../public/img/img_hill-3.jpg'
-
-import img_river from '../public/img/img_river.jpg'
-import img_river1 from '../public/img/img_river-1.jpg'
-import img_river2 from '../public/img/img_river-2.jpg'
-import img_river3 from '../public/img/img_river-3.jpg'
-import img_river4 from '../public/img/img_river-4.jpg'
-
-
-import img_family from '../public/img/img_family.jpg'
-import img_family2 from '../public/img/img_family-2.jpg'
-import img_family3 from '../public/img/img_family-3.jpg'
+import { heroImages } from '../constants/images';
 
 
 const socialLinks = [
   { name: 'facebook', icon: 'fab fa-facebook-f', link: 'https://www.facebook.com/profile.php?id=100088916504867' },
   { name: 'instagram', icon: 'fab fa-instagram', link: 'https://www.instagram.com/boyupbrook/' },
   { name: 'twitter', icon: 'fab fa-twitter', link: 'https://twitter.com/boyupbrook' },
-  { name: 'phone', icon: 'fas fa-phone', link: 'tel:+61412345678' }
+  { name: 'phone', icon: 'fas fa-phone', link: 'tel:0457230191' }
 ];
 
 interface Property {
@@ -57,19 +42,19 @@ interface Property {
 const propertyGroups = {
   hills: [
     {
-      src: img_hill,
+      src: heroImages.img_hill,
       title: "Hill Views",
       description: "Breathtaking views from the hills",
       details: {
         price: "Private sale",
-        size: "50 acres",
+        size: "301 acres",
         location: "Boyup Brook Hills",
         features: ["Panoramic views", "Natural bushland", "Wildlife sanctuary"],
         amenities: ["Water tanks", "Solar power", "Access road"]
       }
     },
     {
-      src: img_hill1,
+      src: heroImages.img_hill1,
       title: "Hill Estate",
       description: "Exclusive hilltop property",
       details: {
@@ -81,7 +66,7 @@ const propertyGroups = {
       }
     },
     {
-      src: img_hill2,
+      src: heroImages.img_hill2,
       title: "Hill Retreat",
       description: "Peaceful hill retreat with stunning views",
       details: {
@@ -93,7 +78,7 @@ const propertyGroups = {
       }
     },
     {
-      src: img_hill3,
+      src: heroImages.img_hill3,
       title: "Hill Haven",
       description: "Your perfect hill sanctuary",
       details: {
@@ -107,7 +92,7 @@ const propertyGroups = {
   ],
   rivers: [
     {
-      src: img_river,
+      src: heroImages.img_river,
       title: "Boyup Brook Rural Lifestyle Property",
       description: "301 acres of beautiful rural property with exclusive Blackwood River frontage, offering diverse landscapes and activities",
       details: {
@@ -167,7 +152,7 @@ const propertyGroups = {
       }
     },
     {
-      src: img_river1,
+      src: heroImages.img_river1,
       title: "River Estate",
       description: "Luxurious river side living",
       details: {
@@ -179,7 +164,7 @@ const propertyGroups = {
       }
     },
     {
-      src: img_river2,
+      src: heroImages.img_river2,
       title: "River View",
       description: "Stunning river views from every angle",
       details: {
@@ -191,7 +176,7 @@ const propertyGroups = {
       }
     },
     {
-      src: img_river3,
+      src: heroImages.img_river3,
       title: "River Paradise",
       description: "Your own piece of river paradise",
       details: {
@@ -203,7 +188,7 @@ const propertyGroups = {
       }
     },
     {
-      src: img_river4,
+      src: heroImages.img_river4,
       title: "River Haven",
       description: "Tranquil river side retreat",
       details: {
@@ -217,7 +202,7 @@ const propertyGroups = {
   ],
   outdoors: [
     {
-      src: img_family,
+      src: heroImages.img_family,
       title: "Family Memories & Outdoor Fun",
       description: "Unforgettable family activities: canoeing, camping, sports, bonfires, fishing, and more.",
       details: {
@@ -269,7 +254,7 @@ const propertyGroups = {
       }
     },
     {
-      src: img_family2,
+      src: heroImages.img_family2,
       title: "Family Sports & Adventure",
       description: "Golf, hockey, trail motorbikes, and more for the whole family.",
       details: {
@@ -304,7 +289,7 @@ const propertyGroups = {
       }
     },
     {
-      src: img_family3,
+      src: heroImages.img_family3,
       title: "Camping",
       description: "Experience camping with your loved ones.",
       details: {
@@ -339,7 +324,7 @@ const propertyGroups = {
       }
     },
     {
-      src: img_family3,
+      src: heroImages.img_family3,
       title: "Nature Exploration & Wildlife",
       description: "Discover wildflowers, bird watching, and the beauty of nature.",
       details: {
@@ -388,23 +373,36 @@ export default function Home() {
       id="home"
     >
       {/* Main Content - All info in one blur box, responsive */}
-      <div className="flex w-full justify-center xl:justify-start items-center xl:items-start z-10 select-none xl:px-10">
+      <div className="flex w-full justify-center xl:justify-start items-center xl:items-start z-10 select-none px-0 xl:px-10">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.6 }}
-          className="w-full xl:w-auto max-w-lg sm:max-w-xl md:max-w-2xl lg:max-w-3xl bg-black/10 backdrop-blur-sm rounded-2xl shadow-2xl border border-white/10 px-4 py-8 sm:px-8 sm:py-10 flex flex-col gap-4 sm:gap-6 md:gap-8 mx-8 xl:mx-0"
+          className={`
+            w-full xl:w-auto
+            max-w-full md:max-w-2xl lg:max-w-3xl
+            bg-transparent md:bg-black/10
+            backdrop-blur-0 md:backdrop-blur-sm
+            rounded-2xl
+            shadow-none md:shadow-2xl
+            border-none md:border border-white/10
+            px-4 sm:px-8
+            py-8 sm:py-10
+            flex flex-col
+            gap-4 sm:gap-6 md:gap-8
+            mx-2 ms:mx-8 xl:mx-0
+          `}
         >
-          <span className="text-emerald-200 text-xs sm:text-base font-semibold tracking-wide uppercase mb-1 sm:mb-2 text-center sm:text-left">Boyup Brook Acreage</span>
-          <h1 className="text-white text-2xl sm:text-4xl md:text-5xl font-extrabold leading-tight text-center sm:text-left">
+          <span className="text-emerald-200 text-xs sm:text-base font-semibold tracking-wide uppercase mb-1 sm:mb-2 text-center xl:text-left">Boyup Brook Acreage</span>
+          <h1 className="text-white text-4xl sm:text-4xl md:text-5xl font-extrabold leading-tight text-center xl:text-left">
             Explore <br />
             <span className="text-emerald-200">Boyup Brook Acreage</span> <br />
             For Sale
           </h1>
           <div className="flex flex-col xl:items-start items-center gap-3 sm:gap-6 mt-2 w-full justify-center sm:justify-start">
-            <a href="tel:+61412345678" className="flex items-center gap-2 text-white font-medium hover:text-emerald-200 transition-colors text-base sm:text-lg justify-center sm:justify-start">
+            <a href="tel:0457230191" className="flex items-center gap-2 text-white font-medium hover:text-emerald-200 transition-colors text-base sm:text-lg justify-center sm:justify-start">
               <i className="fas fa-phone text-emerald-300"></i>
-              0412 345 678
+              0457 230 191
             </a>
             <div className="flex items-center gap-4 text-lg sm:text-xl text-white justify-center sm:justify-start">
               {socialLinks.map((social) => (
@@ -420,12 +418,16 @@ export default function Home() {
                 </a>
               ))}
             </div>
+            <a href="mailto:eaglescreensjr@gmail.com" className="flex items-center gap-2 text-white font-medium hover:text-emerald-200 transition-colors text-base sm:text-lg justify-center sm:justify-start">
+              <i className="fas fa-envelope text-emerald-300"></i>
+              eaglescreensjr@gmail.com
+            </a>
           </div>
         </motion.div>
       </div>
 
       {/* Group Navigation */}
-      <div className="absolute top-32  xl:top-4 left-1/2 -translate-x-1/2 z-50 flex gap-4">
+      <div className="absolute top-24  xl:top-4 left-1/2 -translate-x-1/2 z-10 md:z-50 flex gap-4">
         {Object.keys(propertyGroups).map((group) => (
           <button
             key={group}
@@ -478,10 +480,10 @@ export default function Home() {
           }, index: number) => (
             <SwiperSlide key={index}>
               <div className="h-full w-full overflow-hidden relative">
-                <motion.div 
-                  initial={{ opacity: 0 }}
-                  animate={{ opacity: 1 }}
-                  transition={{ duration: 1 }}
+      <motion.div 
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ duration: 1 }}
                   className="absolute inset-0 bg-black/10 z-10"
                 />
                 <img 
@@ -492,30 +494,32 @@ export default function Home() {
                 <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent z-20" />
                 <div className="absolute bottom-0 left-0 right-0 p-8 md:p-12 z-30 text-white">
                   <motion.h2 
-                    initial={{ opacity: 0, y: 20 }}
-                    animate={{ opacity: 1, y: 0 }}
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.8, delay: 0.2 }}
-                    className="text-4xl md:text-5xl font-bold mb-4 drop-shadow-lg"
+                    className="text-4xl hidden md:block md:text-5xl font-bold mb-4 drop-shadow-lg"
                   >
                     {property.title}
                   </motion.h2>
                   <motion.p 
-                    initial={{ opacity: 0, y: 20 }}
-                    animate={{ opacity: 1, y: 0 }}
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.8, delay: 0.4 }}
-                    className="text-lg md:text-xl text-gray-200 drop-shadow-lg mb-6"
+                    className=" hidden md:block text-lg md:text-xl text-gray-200 drop-shadow-lg mb-6"
                   >
                     {property.description}
                   </motion.p>
-                  <motion.button
-                    initial={{ opacity: 0, y: 20 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    transition={{ duration: 0.8, delay: 0.6 }}
-                    onClick={() => setSelectedProperty(property)}
-                    className="bg-emerald-600 hover:bg-emerald-700 text-white px-6 py-2 rounded-full transition-colors duration-300"
+                  <div className="flex justify-center md:justify-start mb-12 md:mb-0">
+        <motion.button 
+                      initial={{ opacity: 0, y: 20 }}
+                      animate={{ opacity: 1, y: 0 }}
+                      transition={{ duration: 0.8, delay: 0.6 }}
+                      onClick={() => setSelectedProperty(property)}
+                    className="bg-emerald-600 hover:bg-emerald-700 text-white px-6 py-2 rounded-full transition-colors duration-300 "
                   >
                     View Details
-                  </motion.button>
+        </motion.button>
+                  </div>
                 </div>
               </div>
             </SwiperSlide>
@@ -529,7 +533,7 @@ export default function Home() {
         initial={{ opacity: 0, x: 50 }}
         animate={{ opacity: 1, x: 0 }}
         transition={{ duration: 0.8, delay: 0.4 }}
-        className="hidden lg:block absolute right-8 xl:right-40 bottom-12 sm:bottom-24 z-10"
+        className="hidden xl:block absolute right-8 xl:right-40 bottom-12 sm:bottom-24 z-10"
       >
         <div className="flex bg-black/40 backdrop-blur-md rounded-lg shadow-2xl overflow-hidden w-[300px] sm:w-[400px] hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1 border border-white/10 cursor-pointer"
           onClick={() => setShowReasons(!showReasons)}

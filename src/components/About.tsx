@@ -11,8 +11,8 @@ import img5 from '../public/img/img5.jpg'
 const About = () => {
   // Actual property measurements and features
   const landInfo = [
-    { value: 1220000, label: 'Area (m²)', desc: 'Total land area (301 acres)' },
-    { value: 1500, label: 'River Frontage (m)', desc: 'Blackwood River frontage' },
+    { value: 301, label: 'Acres', desc: 'Total land area (301 acres)' },
+    { value: 1500, label: 'River Frontage', desc: 'Blackwood River frontage' },
     { value: 3, label: 'Distinct Areas', desc: 'River, Hills & Farm zones' },
     { value: 1, label: 'House', desc: 'Traditional timber house' },
   ];
@@ -66,7 +66,7 @@ const About = () => {
           initial={{ opacity: 0, y: -50 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
-          className="text-3xl lg:text-5xl font-bold text-cyan-900 text-center"
+          className="text-4xl lg:text-5xl font-bold text-cyan-900 text-center"
         >
           301 Acres – Your Opportunity to Own Prime Land in Boyup Brook, WA
         </motion.h1>
@@ -75,7 +75,7 @@ const About = () => {
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.2 }}
-          className="text-normal text-gray-700 max-w-3xl mx-auto text-center"
+          className="text-normal text-gray-700 max-w-3xl mx-auto text-justify px-0 md:px-4"
         >
           Own an expansive 301-acre property (over 1.2 million square meters) in Boyup Brook – the heart of Western Australia's Southwest. This remarkable estate features diverse landscapes: the scenic Blackwood River, gentle hills, open pastures, natural bushland, and farming areas. It's an ideal setting for peaceful living, family bonding, outdoor activities, and potential agricultural or eco-tourism development.
         </motion.p>

@@ -5,32 +5,14 @@ import { Navigation, Pagination } from 'swiper/modules';
 import 'swiper/css';
 import 'swiper/css/navigation';
 import 'swiper/css/pagination';
-
-
-import img_hill from '../public/img/img_hill.jpg'
-import img_hill1 from '../public/img/img_hill-1.jpg'
-import img_hill2 from '../public/img/img_hill-2.jpg'
-import img_hill3 from '../public/img/img_hill-3.jpg'
-
-
-import img_river from '../public/img/img_river.jpg'
-import img_river1 from '../public/img/img_river-1.jpg'
-import img_river2 from '../public/img/img_river-2.jpg'
-import img_river3 from '../public/img/img_river-3.jpg'
-import img_river4 from '../public/img/img_river-4.jpg'
-
-import img_asp from '../public/img/img_asp.jpg'
-import img_asp1 from '../public/img/img_asp-1.jpg'
-import img_asp2 from '../public/img/img_asp-2.jpg'
-import img_asp3 from '../public/img/img_asp-3.jpg'
-
+import { heroImages } from '../constants/images';
 
 const places = [
   {
     name: 'River Front Area',
     country: 'Western Australia',
-    image: img_river,
-    gallery: [img_river, img_river1, img_river2, img_river3, img_river4],
+    image: heroImages.img_river,
+    gallery: [heroImages.img_river, heroImages.img_river1, heroImages.img_river2, heroImages.img_river3, heroImages.img_river4],
     description: "Long private frontage to the Blackwood River with deep pools, rock formations, and sandy river-bed. Perfect for water activities and enjoying the natural beauty.",
     icon: (
       <svg className="w-7 h-7 text-emerald-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 18s3-4 9-4 9 4 9 4M4 14s1.5-2 8-2 8 2 8 2" /></svg>
@@ -40,8 +22,8 @@ const places = [
   {
     name: 'Hill Views Area',
     country: 'Western Australia',
-    image: img_hill,
-    gallery: [img_hill, img_hill1, img_hill2, img_hill3],
+    image: heroImages.img_hill,
+    gallery: [heroImages.img_hill, heroImages.img_hill1, heroImages.img_hill2, heroImages.img_hill3],
     description: "Panoramic views from elevated positions, featuring mature Redgum and Jarrah trees. Ideal for building your dream home with stunning vistas.",
     icon: (
       <svg className="w-7 h-7 text-yellow-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 17l6-6 4 4 8-8" /></svg>
@@ -51,8 +33,8 @@ const places = [
   {
     name: 'Farm Area',
     country: 'Western Australia',
-    image: img_asp,
-    gallery: [img_asp, img_asp1, img_asp2, img_asp3],
+    image: heroImages.img_asp,
+    gallery: [heroImages.img_asp, heroImages.img_asp1, heroImages.img_asp2, heroImages. img_asp3],
     description: "Fertile land with established infrastructure, perfect for agricultural activities or development. Currently used for sheep farming with excellent results.",
     icon: (
       <svg className="w-7 h-7 text-orange-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" /></svg>
@@ -111,7 +93,7 @@ export default function Places() {
   const [selectedImageIndex, setSelectedImageIndex] = useState<number | null>(null);
 
   return (
-    <section className="relative py-16 xl:pt-32 xl:pb-64 px-4 md:px-12 bg-gradient-to-b from-emerald-50 via-white to-cyan-50" id="places">
+    <section className="relative py-16 xl:pt-32 px-4 md:px-12 bg-gradient-to-b from-emerald-50 via-white to-cyan-50" id="places">
       <div className="max-w-5xl mx-auto px-4 flex flex-col items-center justify-center gap-8">
         <motion.h2 
           initial={{ opacity: 0, y: -50 }}
@@ -125,7 +107,7 @@ export default function Places() {
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
           transition={{ delay: 0.3, duration: 0.6 }}
-          className="text-lg text-gray-700 max-w-3xl mx-auto text-center"
+          className="text-lg text-gray-700 max-w-3xl mx-auto text-justify md:text-center px-0 md:px-4"
         >
           Discover this unique 301-acre Boyup Brook property for private sale, featuring exclusive Blackwood River frontage, panoramic hill views, and fertile farmland. Explore the diverse landscapes and development potential of this rare Western Australian opportunity.
         </motion.p>
@@ -142,7 +124,7 @@ export default function Places() {
               variants={cardVariants}
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
-              className="relative w-full max-w-xs rounded-xl overflow-hidden shadow-lg group bg-white cursor-pointer"
+              className="relative w-full md:max-w-xs rounded-xl overflow-hidden shadow-lg group bg-white cursor-pointer"
               onClick={() => setSelectedPlace(place)}
             >
               <img
@@ -256,6 +238,7 @@ export default function Places() {
                   <button
                     className="w-full bg-emerald-500 text-white py-3 rounded-xl font-bold text-lg hover:bg-emerald-700 transition-colors"
                     onClick={() => {
+                      setSelectedPlace(null);
                       const element = document.querySelector('#contact');
                       element?.scrollIntoView({ behavior: 'smooth' });
                     }}
@@ -310,6 +293,114 @@ export default function Places() {
           )}
         </AnimatePresence>
       </div>
+
+      {/* Polaroid Image Strip */}
+      <motion.div 
+        initial={{ opacity: 0, y: 50 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.7, delay: 0.2 }}
+        className="hidden md:block max-w-7xl mx-auto mt-24 md:mt-32 relative px-4"
+      >
+        <div className="relative w-full overflow-hidden pb-8">
+          <motion.div 
+            className="flex gap-6 min-w-max px-4 cursor-grab active:cursor-grabbing"
+            drag="x"
+            dragConstraints={{
+              left: -2800,
+              right: 0
+            }}
+            dragElastic={0.1}
+            dragTransition={{ bounceStiffness: 600, bounceDamping: 20 }}
+            whileTap={{ cursor: "grabbing" }}
+            animate={{
+              x: [0, -1400],
+            }}
+            transition={{
+              duration: 30,
+              repeat: Infinity,
+              repeatType: "loop",
+              ease: "linear"
+            }}
+            whileHover={{ 
+              animationPlayState: "paused" 
+            }}
+          >
+            {/* First Set of Polaroids */}
+            {[...Array(2)].map((_, setIndex) => (
+              <>
+                {/* Polaroid 1 */}
+                <motion.div 
+                  key={`set-${setIndex}-1`}
+                  initial={{ rotate: -2 }}
+                  whileHover={{ rotate: 0, scale: 1.02 }}
+                  className="w-[280px] bg-white p-4 shadow-xl rounded-sm transform rotate-[-2deg] cursor-pointer group"
+                >
+                  <div className="aspect-[4/3] overflow-hidden mb-4">
+                    <img src={heroImages.img_river} alt="River view" className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" />
+                  </div>
+                  <p className="text-gray-600 text-sm font-handwriting">Peaceful river views</p>
+                </motion.div>
+
+                {/* Polaroid 2 */}
+                <motion.div 
+                  key={`set-${setIndex}-2`}
+                  initial={{ rotate: 2 }}
+                  whileHover={{ rotate: 0, scale: 1.02 }}
+                  className="w-[280px] bg-white p-4 shadow-xl rounded-sm transform rotate-[2deg] cursor-pointer group"
+                >
+                  <div className="aspect-[4/3] overflow-hidden mb-4">
+                    <img src={heroImages.img_hill} alt="Hill view" className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" />
+                  </div>
+                  <p className="text-gray-600 text-sm font-handwriting">Stunning hilltop vistas</p>
+                </motion.div>
+
+                {/* Polaroid 3 */}
+                <motion.div 
+                  key={`set-${setIndex}-3`}
+                  initial={{ rotate: -1 }}
+                  whileHover={{ rotate: 0, scale: 1.02 }}
+                  className="w-[280px] bg-white p-4 shadow-xl rounded-sm transform rotate-[-1deg] cursor-pointer group"
+                >
+                  <div className="aspect-[4/3] overflow-hidden mb-4">
+                    <img src={heroImages.img_asp} alt="Farm view" className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" />
+                  </div>
+                  <p className="text-gray-600 text-sm font-handwriting">Fertile farmland</p>
+                </motion.div>
+
+                {/* Polaroid 4 */}
+                <motion.div 
+                  key={`set-${setIndex}-4`}
+                  initial={{ rotate: 1 }}
+                  whileHover={{ rotate: 0, scale: 1.02 }}
+                  className="w-[280px] bg-white p-4 shadow-xl rounded-sm transform rotate-[1deg] cursor-pointer group"
+                >
+                  <div className="aspect-[4/3] overflow-hidden mb-4">
+                    <img src={heroImages.img_river1} alt="Additional view" className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" />
+                  </div>
+                  <p className="text-gray-600 text-sm font-handwriting">Natural beauty</p>
+                </motion.div>
+
+                {/* Polaroid 5 */}
+                <motion.div 
+                  key={`set-${setIndex}-5`}
+                  initial={{ rotate: -2 }}
+                  whileHover={{ rotate: 0, scale: 1.02 }}
+                  className="w-[280px] bg-white p-4 shadow-xl rounded-sm transform rotate-[-2deg] cursor-pointer group"
+                >
+                  <div className="aspect-[4/3] overflow-hidden mb-4">
+                    <img src={heroImages.img_hill1} alt="Additional view" className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" />
+                  </div>
+                  <p className="text-gray-600 text-sm font-handwriting">Perfect serenity</p>
+                </motion.div>
+              </>
+            ))}
+          </motion.div>
+
+          {/* Add gradient overlays to create fade effect on edges */}
+          <div className="absolute left-0 top-0 bottom-0 w-32 bg-gradient-to-r from-white to-transparent pointer-events-none"></div>
+          <div className="absolute right-0 top-0 bottom-0 w-32 bg-gradient-to-l from-white to-transparent pointer-events-none"></div>
+        </div>
+      </motion.div>
     </section>
   );
 }

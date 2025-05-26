@@ -6,24 +6,7 @@ import 'swiper/css/pagination'
 import { useState } from 'react'
 import { motion } from 'framer-motion'
 
-
-
-import img_hill from '../public/img/img_hill.jpg'
-import img_hill1 from '../public/img/img_hill-1.jpg'
-import img_hill2 from '../public/img/img_hill-2.jpg'
-import img_hill3 from '../public/img/img_hill-3.jpg'
-
-
-import img_river from '../public/img/img_river.jpg'
-import img_river1 from '../public/img/img_river-1.jpg'
-import img_river2 from '../public/img/img_river-2.jpg'
-import img_river3 from '../public/img/img_river-3.jpg'
-import img_river4 from '../public/img/img_river-4.jpg'
-
-import img_asp from '../public/img/img_asp.jpg'
-import img_asp1 from '../public/img/img_asp-1.jpg'
-import img_asp2 from '../public/img/img_asp-2.jpg'
-import img_asp3 from '../public/img/img_asp-3.jpg'
+import { heroImages } from '../constants/images';
 
 interface Property {
   src: string;
@@ -40,7 +23,7 @@ const ImgGallery = () => {
 
   const images = [
     {
-      src: img_river,
+      src: heroImages.img_river,
       info: "Boyup Brook Rural Lifestyle Property - River Front",
       price: "Private Sale",
       description: "Long private frontage to the Blackwood River with deep pools, rock formations, and sandy river-bed. Perfect for water activities and enjoying the natural beauty.",
@@ -55,10 +38,10 @@ const ImgGallery = () => {
         "Tested construction sand",
         "Natural beauty and wildlife"
       ],
-      gallery: [img_river, img_river1, img_river2, img_river3, img_river4]
+      gallery: [heroImages.img_river, heroImages.img_river1, heroImages.img_river2, heroImages.img_river3, heroImages.img_river4]
     },
     {
-      src: img_hill,
+      src: heroImages.img_hill,
       info: "Boyup Brook Rural Lifestyle Property - Hill Views",
       price: "Private Sale",
       description: "Panoramic views from elevated positions, featuring mature Redgum and Jarrah trees. Ideal for building your dream home with stunning vistas.",
@@ -73,10 +56,10 @@ const ImgGallery = () => {
         "Tested construction sand",
         "Natural beauty and wildlife"
       ],
-      gallery: [img_hill, img_hill1, img_hill2, img_hill3]
+      gallery: [heroImages.img_hill, heroImages.img_hill1, heroImages.img_hill2, heroImages.img_hill3]
     },
     {
-      src: img_asp,
+      src: heroImages.img_asp,
       info: "Boyup Brook Rural Lifestyle Property - Farm Area",
       price: "Private Sale",
       description: "Fertile land with established infrastructure, perfect for agricultural activities or development. Currently used for sheep farming with excellent results.",
@@ -91,7 +74,7 @@ const ImgGallery = () => {
         "Tested construction sand",
         "Natural beauty and wildlife"
       ],
-      gallery: [img_asp, img_asp1, img_asp2, img_asp3]
+      gallery: [heroImages.img_asp, heroImages.img_asp1, heroImages.img_asp2, heroImages. img_asp3]
     }
   ]
 
@@ -110,7 +93,7 @@ const ImgGallery = () => {
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
           transition={{ delay: 0.3, duration: 0.6 }}
-          className="text-base sm:text-lg text-gray-700 max-w-3xl mx-auto text-center mb-12 px-4"
+          className="text-base sm:text-lg text-gray-700 max-w-3xl mx-auto text-justify md:text-center mb-12 px-4"
         >
           Explore our stunning 301-acre property showcasing the natural beauty of Boyup Brook. From scenic river views to lush landscapes, these images capture the essence of this pristine Western Australian property with exclusive Blackwood River frontage.
         </motion.p>
@@ -144,7 +127,7 @@ const ImgGallery = () => {
               640: { slidesPerView: 2, spaceBetween: 24 },
               1024: { slidesPerView: 3, spaceBetween: 32 }
             }}
-            className="w-full cursor-grab px-2 md:px-4"
+            className="w-full cursor-grab px-2 md:px-4 group"
           >
             {images.map((property, idx) => (
               <SwiperSlide key={idx}>
@@ -201,12 +184,50 @@ const ImgGallery = () => {
             ))}
             
             {/* Navigation Buttons */}
-            <div className="swiper-button-prev !text-emerald-600 !w-12 !h-12 !bg-white/90 !rounded-full !shadow-lg after:!text-2xl"></div>
-            <div className="swiper-button-next !text-emerald-600 !w-12 !h-12 !bg-white/90 !rounded-full !shadow-lg after:!text-2xl"></div>
+            <div className="swiper-button-prev !text-emerald-600 !w-12 !h-12 !bg-white/90 !rounded-full !shadow-lg after:!text-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+            <div className="swiper-button-next !text-emerald-600 !w-12 !h-12 !bg-white/90 !rounded-full !shadow-lg after:!text-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
             
             {/* Pagination */}
             <div className="swiper-pagination !bottom-0"></div>
           </Swiper>
+        </motion.div>
+
+        {/* Action Buttons */}
+        <motion.div 
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ delay: 0.5, duration: 0.5 }}
+          className="flex flex-col sm:flex-row gap-4 justify-center items-center mt-12 px-4"
+        >
+          <motion.button
+            whileHover={{ scale: 1.02 }}
+            whileTap={{ scale: 0.98 }}
+            className="w-full sm:w-auto bg-emerald-600 text-white px-8 py-4 rounded-xl font-medium hover:bg-emerald-700 transition-colors duration-300 flex items-center justify-center space-x-3 shadow-lg min-w-[200px]"
+            onClick={() => {
+              const contactSection = document.getElementById('contact');
+              if (contactSection) {
+                contactSection.scrollIntoView({ behavior: 'smooth' });
+              }
+            }}
+          >
+            <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+            </svg>
+            <span className="text-lg">Contact Us</span>
+          </motion.button>
+
+          <motion.button
+            whileHover={{ scale: 1.02 }}
+            whileTap={{ scale: 0.98 }}
+            className="w-full sm:w-auto bg-cyan-700 text-white px-8 py-4 rounded-xl font-medium hover:bg-cyan-800 transition-colors duration-300 flex items-center justify-center space-x-3 shadow-lg min-w-[200px]"
+          >
+            <a href="tel:0457230191" className="flex items-center gap-2 text-white font-medium  transition-colors text-base sm:text-lg justify-center sm:justify-start">
+              <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
+              </svg>
+              <span className="text-lg">Buy Now</span>
+            </a>
+          </motion.button>
         </motion.div>
 
         {/* Enhanced Property Details Modal */}
@@ -254,7 +275,7 @@ const ImgGallery = () => {
                       <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-xl" />
                     </motion.div>
                     
-                    <div className="grid grid-cols-4 gap-3">
+                    <div className="grid grid-cols-3 md:grid-cols-4 gap-3">
                       {selectedProperty.gallery.map((img, idx) => (
                         <motion.div 
                           key={idx}
@@ -339,11 +360,18 @@ const ImgGallery = () => {
                         whileHover={{ scale: 1.02 }}
                         whileTap={{ scale: 0.98 }}
                         className="w-full bg-emerald-600 text-white py-4 rounded-xl font-medium hover:bg-emerald-700 transition-colors duration-300 flex items-center justify-center space-x-2"
+                        onClick={() => {
+                          setSelectedProperty(null);
+                          const contactSection = document.getElementById('contact');
+                          if (contactSection) {
+                            contactSection.scrollIntoView({ behavior: 'smooth' });
+                          }
+                        }}
                       >
                         <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
                         </svg>
-                        <span>Contact Agent</span>
+                        <span>Contact</span>
                       </motion.button>
                     </motion.div>
                   </div>

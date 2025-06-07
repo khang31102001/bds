@@ -84,7 +84,7 @@ const Header = () => {
         scrolled ? 'text-emerald-900 bg-white' : 'text-white bg-transparent'
       }`}>
         <Link 
-          to="/#summary"
+          to="/"
           className="font-bold text-h3 cursor-pointer"
           onClick={() => {
             window.scrollTo({ top: 0, behavior: 'smooth' });

@@ -2,7 +2,7 @@ import { HelmetProvider, Helmet } from 'react-helmet-async';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import { lazy, useEffect, useState } from 'react';
 import { MainLayout } from './Layout/MainLayout';
-import { AnimatePresence } from 'framer-motion';
+import { AnimatePresence, motion } from 'framer-motion';
 import Loading from './components/Common/Loading';
 
 // Lazy load components
@@ -46,6 +46,12 @@ const App = () => {
         <Loading progress={progress} key="loading" />
       ) : (
         <BrowserRouter>
+        <motion.div
+          key="content"
+          initial={{ opacity: 0, y: 0 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.5 }}
+        >
           <HelmetProvider>
             <div className="min-h-screen w-full max-w-[2050px] mx-auto">
               <Helmet>
@@ -69,6 +75,7 @@ const App = () => {
               </div>
             </div>
           </HelmetProvider>
+          </motion.div>
         </BrowserRouter>
       )}
     </AnimatePresence>

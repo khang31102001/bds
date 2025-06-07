@@ -68,7 +68,7 @@ export default function Description() {
         <div className="text-center mb-12 md:mb-16">
           <Title 
             mainTitle="Description" 
-            subtitle="Discover Your Dream Rural Estate in Western Australia's Picturesque Southwest"
+            subtitle="301 approx Acres - Your Opportunity to Own Prime Rural Property near Boyup Brook, WA"
             className='text-emerald-900'
           />
         </div>

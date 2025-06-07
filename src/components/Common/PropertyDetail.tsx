@@ -1,5 +1,5 @@
 import { FaShare, FaRuler, FaMapMarker } from 'react-icons/fa';
-import { Link } from 'react-router-dom';
+
 import { motion } from 'framer-motion';
 import { propertyData } from '../../data/propertyData'
 
@@ -119,13 +119,17 @@ const PropertyDetail = () => {
             </div>
 
             {/* Contact Button */}
-            <Link
-              to={'/contact'}
-              className="bg-red-600 text-white font-semibold py-3 rounded-md hover:bg-red-700 transition duration-300 text-center"
-              onClick={() => window.scrollTo(0, 0)}
+            <div className="bg-red-600 text-white font-semibold py-3 rounded-md hover:bg-red-700 transition duration-300 text-center cursor-pointer"
+              onClick={(e) => {
+                e.preventDefault();
+                const contactSection = document.getElementById('contact-section');
+                if (contactSection) {
+                  contactSection.scrollIntoView({ behavior: 'smooth' });
+                }
+              }}
             >
               Get in touch
-            </Link>
+            </div>
           </div>
         </div>  
       </div>

@@ -2,12 +2,6 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { heroImages } from '../constants/images';
 import { useState, useEffect } from 'react';
 
-const socialLinks = [
-  { name: 'facebook', icon: 'fab fa-facebook-f', link: 'https://www.facebook.com/profile.php?id=100088916504867' },
-  { name: 'instagram', icon: 'fab fa-instagram', link: 'https://www.instagram.com/boyupbrook/' },
-  { name: 'twitter', icon: 'fab fa-twitter', link: 'https://twitter.com/boyupbrook' },
-  { name: 'phone', icon: 'fas fa-phone', link: 'tel:0457230191' }
-];
 
 const detailsGroups = [
   [

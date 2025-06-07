@@ -61,7 +61,7 @@ const Summary = () => {
   const [showControls, setShowControls] = useState(false);
   const [currentTime, setCurrentTime] = useState(0);
   const [duration, setDuration] = useState(0);
-  const [isVideoFullscreen, setIsVideoFullscreen] = useState(false);
+  const [_isVideoFullscreen, setIsVideoFullscreen] = useState(false);
   
   const videoRef = useRef<HTMLVideoElement>(null);
   const videoContainerRef = useRef<HTMLDivElement>(null);

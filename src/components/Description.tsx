@@ -67,7 +67,7 @@ export default function Description() {
         {/* Title Section */}
         <div className="text-center mb-12 md:mb-16">
           <Title 
-            mainTitle="Description" 
+            mainTitle="Description Property" 
             subtitle="301 approx Acres - Your Opportunity to Own Prime Rural Property near Boyup Brook, WA"
             className='text-emerald-900'
           />
@@ -133,7 +133,7 @@ export default function Description() {
           })}
         </div>
         {/* BounceCards */}
-        <div className="flex justify-center mb-12 md:mb-20">
+        <div id='bridgetown' className="flex justify-center mb-12 md:mb-20">
           <BounceCards
             className="custom-bounceCards"
             images={images}

@@ -8,7 +8,7 @@ import Loading from './components/Common/Loading';
 // Lazy load components
 const Home = lazy(() => import('./components/Home'));
 const Description = lazy(() => import('./components/Description'));
-const Gallery = lazy(() => import('./pages/Gallery'));
+const GalleryAndVideo = lazy(() => import('./components/GalleryAndVideo'));
 const ContactSection = lazy(() => import('./components/ContactSection'));
 const Summary = lazy(() => import('./components/Summary'));
 
@@ -66,11 +66,11 @@ const App = () => {
                     <MainLayout>
                       <Home />
                       <Description />
+                      <GalleryAndVideo/>
                       <ContactSection />
                       <Summary />
                     </MainLayout>
                   } />
-                  <Route path="/gallery" element={<Gallery />} />
                 </Routes>
               </div>
             </div>

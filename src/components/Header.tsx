@@ -13,7 +13,7 @@ const Header = () => {
       setScrolled(window.scrollY > 0);
 
       // Check which section is in view
-      const sections = ['home', 'description', 'summary', 'contact'];
+      const sections = ['home', 'description', 'gallery','contact','summary'];
       for (const section of sections) {
         const element = document.getElementById(section);
         if (element) {
@@ -33,7 +33,7 @@ const Header = () => {
   const navLinks = [
     { name: 'Home', href: '/', isHash: false, id: 'home' },
     { name: 'Description', href: '#description', isHash: true, id: 'description' },
-    { name: 'Gallery', href: '/gallery', isHash: false, id: 'gallery' },
+    { name: 'Gallery & Video', href: '#gallery', isHash: true, id: 'gallery' },
     { name: 'Contact', href: '#contact', isHash: true, id: 'contact' },
     { name: 'Summary', href: '#summary', isHash: true, id: 'summary' },
   ];
@@ -72,7 +72,7 @@ const Header = () => {
   };
 
   const isActive = (id: string) => {
-    if (location.pathname === '/gallery') return id === 'gallery';
+    // if (location.pathname === '/gallery') return id === 'gallery';
     return activeSection === id;
   };
 
@@ -86,12 +86,19 @@ const Header = () => {
         <Link 
           to="/"
           className="font-bold text-h3 cursor-pointer"
-          onClick={() => {
-            window.scrollTo({ top: 0, behavior: 'smooth' });
+          onClick={(e) => {
+            e.preventDefault();
+            const section = document.getElementById("bridgetown");
+            if (section) {
+              const yOffset = -100; // Điều chỉnh khoảng cách phía trên, ví dụ: -100px tạo khoảng trống đẹp
+              const y = section.getBoundingClientRect().top + window.pageYOffset + yOffset;
+            
+              window.scrollTo({ top: y, behavior: 'smooth' });
+            }
             setIsMenuOpen(false);
           }}
         >
-          Boyup Brook / Bridgetown
+          Boyup Brook: Bridgetown
         </Link>
         
         {/* Mobile menu button */}

@@ -34,8 +34,8 @@ const Header = () => {
     { name: 'Home', href: '/', isHash: false, id: 'home' },
     { name: 'Description', href: '#description', isHash: true, id: 'description' },
     { name: 'Gallery', href: '/gallery', isHash: false, id: 'gallery' },
-    { name: 'Summary', href: '#summary', isHash: true, id: 'summary' },
     { name: 'Contact', href: '#contact', isHash: true, id: 'contact' },
+    { name: 'Summary', href: '#summary', isHash: true, id: 'summary' },
   ];
 
   const handleNavClick = (e: React.MouseEvent<HTMLAnchorElement>, href: string, isHash: boolean, id: string) => {
@@ -84,7 +84,7 @@ const Header = () => {
         scrolled ? 'text-emerald-900 bg-white' : 'text-white bg-transparent'
       }`}>
         <Link 
-          to="/"
+          to="/#summary"
           className="font-bold text-h3 cursor-pointer"
           onClick={() => {
             window.scrollTo({ top: 0, behavior: 'smooth' });

@@ -60,8 +60,8 @@ const App = () => {
                     <MainLayout>
                       <Home />
                       <Description />
-                      <Summary />
                       <ContactSection />
+                      <Summary />
                     </MainLayout>
                   } />
                   <Route path="/gallery" element={<Gallery />} />

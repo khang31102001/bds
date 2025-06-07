@@ -122,7 +122,7 @@ const PropertyDetail = () => {
             <div className="bg-red-600 text-white font-semibold py-3 rounded-md hover:bg-red-700 transition duration-300 text-center cursor-pointer"
               onClick={(e) => {
                 e.preventDefault();
-                const contactSection = document.getElementById('contact-section');
+                const contactSection = document.getElementById('contact');
                 if (contactSection) {
                   contactSection.scrollIntoView({ behavior: 'smooth' });
                 }

@@ -133,7 +133,10 @@ export default function ContactSection() {
   }
 
   return (
-    <section id="contact-section" className="w-full bg-white py-16 md:py-24">
+    <section 
+      id="contact" 
+      className="w-full mx-auto "
+    >
       <div className="max-w-7xl mx-auto px-4 py-8 sm:px-6 lg:px-8">
         <div className='bg-white rounded-xl flex flex-col gap-16'>
           <Title

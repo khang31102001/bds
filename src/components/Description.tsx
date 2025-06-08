@@ -6,6 +6,7 @@ import BounceCards from '../components/BounceCards';
 import { heroImages } from '../constants/images';
 import { FaMapMarker, FaRuler } from 'react-icons/fa';
 import { propertyData } from '../data/propertyData';
+import PropertyOverviewMap from './OverViewPropertyMap';
 
 export default function Description() {
   const [windowWidth, setWindowWidth] = useState(typeof window !== 'undefined' ? window.innerWidth : 768);
@@ -146,6 +147,9 @@ export default function Description() {
             enableHover={windowWidth >= 768}
           />
         </div>
+
+        <PropertyOverviewMap/>
+
       </div>
     </section>
   );

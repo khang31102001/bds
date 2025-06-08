@@ -2,7 +2,7 @@ import { motion } from 'framer-motion';
 import { useRef, useState } from 'react';
 import emailjs from '@emailjs/browser';
 import { FaPhone, FaEnvelope, FaMapMarkerAlt, FaUser } from 'react-icons/fa';
-import { heroImages } from '../constants/images';
+import { Avatar } from '../constants/images';
 import Title from './Common/Title';
 
 export default function ContactSection() {
@@ -154,7 +154,7 @@ export default function ContactSection() {
                 transition={{ duration: 0.5 }}
                 className="w-36 h-36 mx-auto rounded-full overflow-hidden border-4 border-emerald-100 shadow flex-shrink-0"
               >
-                <img src={heroImages.john} className="w-full h-full object-cover" alt="Agent" />
+                <img src={Avatar.john} className="w-full h-full object-cover" alt="Agent" />
               </motion.div>
               <div className="">
                 {/* Contact Info Cards */}

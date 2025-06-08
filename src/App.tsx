@@ -1,16 +1,10 @@
 import { HelmetProvider, Helmet } from 'react-helmet-async';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
-import { lazy, useEffect, useState } from 'react';
+import { useEffect, useState } from 'react';
 import { MainLayout } from './Layout/MainLayout';
 import { AnimatePresence, motion } from 'framer-motion';
 import Loading from './components/Common/Loading';
-
-// Lazy load components
-const Home = lazy(() => import('./components/Home'));
-const Description = lazy(() => import('./components/Description'));
-const GalleryAndVideo = lazy(() => import('./components/GalleryAndVideo'));
-const ContactSection = lazy(() => import('./components/ContactSection'));
-const Summary = lazy(() => import('./components/Summary'));
+import { IndexPage } from './pages';
 
 const App = () => {
   const [isLoading, setIsLoading] = useState(true);
@@ -64,11 +58,7 @@ const App = () => {
                 <Routes>
                   <Route path="/" element={
                     <MainLayout>
-                      <Home />
-                      <Description />
-                      <GalleryAndVideo/>
-                      <ContactSection />
-                      <Summary />
+                      <IndexPage />
                     </MainLayout>
                   } />
                 </Routes>

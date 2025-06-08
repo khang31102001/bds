@@ -220,7 +220,7 @@ const GalleryAndVideo = () => {
   // Render video controls
   const renderVideoControls = useCallback(() => (
     <div 
-      className={`absolute inset-0 flex flex-col justify-between bg-gradient-to-t from-black/60 to-transparent transition-opacity duration-300 ${
+      className={`absolute inset-0 flex flex-col justify-between bg-transparent transition-opacity duration-300 ${
         showControls || !isPlaying ? 'opacity-100' : 'opacity-0'
       }`}
     >
@@ -321,7 +321,7 @@ const GalleryAndVideo = () => {
                         </video>
                         
                         {/* Video Overlay */}
-                        <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent flex flex-col justify-between">
+                        <div className="absolute inset-0 bg-transparent flex flex-col justify-between">
                         <div className="p-4">
                             <h3 className="text-white text-lg font-semibold">
                             {allMedia[0].title}
@@ -371,7 +371,7 @@ const GalleryAndVideo = () => {
                             >
                             <source src={media.src} type="video/mp4" />
                             </video>
-                            <div className="absolute inset-0 bg-black/30 flex items-center justify-center">
+                            <div className="absolute inset-0  flex items-center justify-center">
                             <div className="bg-white/90 p-2 rounded-full">
                                 <FaPlay className="w-3 h-3 text-emerald-600" />
                             </div>
@@ -419,10 +419,10 @@ const GalleryAndVideo = () => {
                 >
                 {allMedia[0].type === 'video' ? (
                     <div 
-                    ref={videoContainerRef}
-                    className="relative w-full h-full"
-                    onMouseEnter={handleMouseEnter}
-                    onMouseLeave={handleMouseLeave}
+                      ref={videoContainerRef}
+                      className="relative w-full h-full"
+                      onMouseEnter={handleMouseEnter}
+                      onMouseLeave={handleMouseLeave}
                     >
                     <video
                         ref={videoRef}
@@ -577,7 +577,7 @@ const GalleryAndVideo = () => {
                 </SwiperSlide>
               ))}
               <div>
-                <button
+                    <button
                     className="custom-button-prev absolute left-2 top-1/2 -translate-y-1/2 bg-gray-200 hover:bg-gray-400 text-emerald-700 hover:text-white rounded-full p-2"
                     onClick={() => {}}
                     >

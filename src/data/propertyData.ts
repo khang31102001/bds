@@ -1,4 +1,4 @@
-import { heroImages } from "../constants/images";
+import { Avatar} from "../constants/images";
 
 export  const propertyData = {
     title: "121 Hectares approx - Your Opportunity to own a Prime Rural Lifestyle Property near Boyup Brook and Bridgetown, WA",
@@ -9,7 +9,7 @@ export  const propertyData = {
     agent: {
       name: "John",
       phone: "0457 234 191",
-      image: heroImages.john
+      image: Avatar.john
     },
     features: [
       {
@@ -17,8 +17,8 @@ export  const propertyData = {
         title: "Actual map of the property - Landgate Aerial View - Boyup Brook / Bridgetown",
         description: "This property is a rare opportunity to own a large, prime rural property in the heart of Western Australia's beautiful South West region. Located just 25 kilometres east of Bridgetown, this property offers a unique blend of natural beauty, historical significance, and potential for a wide range of agricultural and lifestyle pursuits",
         subtitle: "Plan view and location of the property",
-        img: heroImages.landgateAerial,
-        img2: heroImages.planView,
+        // img: heroImages.landgateAerial,
+        // img2: heroImages.planView,
       }
     ]
   };

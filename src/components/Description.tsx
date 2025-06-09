@@ -7,6 +7,7 @@ import { heroImages } from '../constants/images';
 import { FaMapMarker, FaRuler } from 'react-icons/fa';
 import { propertyData } from '../data/propertyData';
 import PropertyOverviewMap from './OverViewPropertyMap';
+import PropertyDetail from './Common/PropertyDetail';
 
 export default function Description() {
   const [windowWidth, setWindowWidth] = useState(typeof window !== 'undefined' ? window.innerWidth : 768);
@@ -133,8 +134,18 @@ export default function Description() {
             );
           })}
         </div>
+     
+         {/* Property Detail */}
+         <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.5, delay: 0.2 }}
+          className="bg-white"
+        >
+          <PropertyDetail />
+        </motion.div>
         {/* BounceCards */}
-        <div id='bridgetown' className="flex justify-center mb-12 md:mb-20">
+        {/* <div id='bridgetown' className="flex justify-center mb-12 md:mb-20">
           <BounceCards
             className="custom-bounceCards"
             images={images}
@@ -147,8 +158,11 @@ export default function Description() {
             enableHover={windowWidth >= 768}
           />
         </div>
+       */}
+      <div id='bridgetown'>
 
         <PropertyOverviewMap/>
+      </div>
 
       </div>
     </section>

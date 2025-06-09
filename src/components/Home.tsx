@@ -6,8 +6,8 @@ import { useState, useEffect } from 'react';
 const detailsGroups = [
   [
     "301 acres freehold",
-    "70% cleared land",
-    "New shed with lockable bay",
+    "Part cleared",
+    "Modern, 3 bay shed",
     "Large water tank",
     "One dam, one soak",
     "Power through block"
@@ -95,6 +95,9 @@ export default function Home() {
             <span className="text-emerald-200">Boyup Brook Acreage</span> <br />
             For Private Sale
           </h1>
+          <p className="text-white text-sm sm:text-base md:text-lg tracking-wide text-center md:text-left w-full">
+           301 acres freehold with 2km Blackwood River frontage. Perfect for eco-tourism, lifestyle development, and agricultural opportunities
+          </p>
           <div className="flex flex-col items-center">
             <div className="relative min-h-[180px] sm:min-h-[200px] md:min-h-[220px] w-full">
               {/* Fixed grid layout */}

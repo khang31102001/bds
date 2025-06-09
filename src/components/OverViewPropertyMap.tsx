@@ -16,10 +16,10 @@ const PropertyOverviewMap = () => {
   const [selectedImage, setSelectedImage] = useState<number | null>(null);
 
   return (
-    <section id="property-map" className="w-full pb-20 bg-white">
-      <div className="max-w-7xl mx-auto px-4 text-center">
-        <h2 className="text-3xl font-bold text-green-900 mb-6">Property Overview Map</h2>
-        <p className="text-gray-600 mb-12 max-w-2xl mx-auto">
+    <section id="property-map" className="w-full py-20 bg-white">
+      <div className=" flex flex-col max-w-7xl mx-auto px-4 text-start">
+        <h2 className="text-3xl font-bold text-emerald-900 mb-6">Property Overview Map</h2>
+        <p className="text-gray-600 mb-12 max-w-2xl">
           Explore the full layout of the property including boundaries, river frontage, infrastructure, and land features.
         </p>
 

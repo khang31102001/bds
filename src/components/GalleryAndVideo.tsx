@@ -1,7 +1,7 @@
 import { motion, AnimatePresence } from "framer-motion";
 import { heroImages } from "../constants/images";
 import { ScrollToTop } from "../components";
-import PropertyDetail from "./Common/PropertyDetail";
+
 import { useEffect, useRef, useState, useCallback, useMemo } from "react";
 import { FaTimes, FaPause, FaPlay } from "react-icons/fa";
 import { Swiper, SwiperSlide } from 'swiper/react';
@@ -479,15 +479,7 @@ const GalleryAndVideo = () => {
             </div>
         </div>
 
-        {/* Property Detail */}
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5, delay: 0.2 }}
-          className="bg-white"
-        >
-          <PropertyDetail />
-        </motion.div>
+       
       </div>
 
       {/* Fullscreen Gallery */}

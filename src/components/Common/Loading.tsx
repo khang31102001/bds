@@ -12,9 +12,9 @@ const Loading = ({ progress }: LoadingProps) => {
         <img 
           src={heroImages.img_hill} 
           alt="Background" 
-          className="w-full h-full object-cover opacity-40"
+          className="w-full h-full object-cover "
         />
-        <div className="absolute inset-0 to-transparent" />
+        <div className="absolute inset-0 " />
       </div>
 
       <div className="relative w-full max-w-[800px] px-6 md:px-8">

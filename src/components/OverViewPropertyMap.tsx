@@ -30,7 +30,11 @@ const PropertyOverviewMap = () => {
               className="w-64 h-64 overflow-hidden rounded-xl shadow-lg transform hover:scale-105 transition duration-300 cursor-pointer"
               onClick={() => setSelectedImage(index)}
             >
-              <img src={img.src} alt={img.alt} className="w-full h-full object-cover" />
+              <img
+               style={{ filter: 'brightness(1.25)' }}
+               src={img.src} 
+               alt={img.alt} 
+               className="w-full h-full object-cover" />
             </div>
           ))}
         </div>

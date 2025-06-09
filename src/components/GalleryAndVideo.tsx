@@ -568,6 +568,7 @@ const GalleryAndVideo = () => {
                       </div>
                     ) : (
                       <img
+                        style={{ filter: 'brightness(1.25)' }}
                         src={media.src}
                         className="max-w-[95%] max-h-[90vh] object-contain mx-auto"
                         alt={`Gallery item ${index + 1}`}

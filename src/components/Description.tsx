@@ -4,8 +4,8 @@ import { useEffect } from 'react';
 import { useState } from 'react';
 // import BounceCards from '../components/BounceCards';
 // import { heroImages } from '../constants/images';
-import { FaTree, FaHome, FaWater, FaMountain, FaSeedling, FaMapMarker, FaRuler } from 'react-icons/fa';
-import { propertyData } from '../data/propertyData';
+import { FaTree, FaHome, FaWater, FaMountain, FaSeedling } from 'react-icons/fa';
+// import { propertyData } from '../data/propertyData';
 import PropertyOverviewMap from './OverViewPropertyMap';
 import PropertyDetail from './Common/PropertyDetail';
 

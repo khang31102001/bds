@@ -5,7 +5,6 @@ import { MainLayout } from './Layout/MainLayout';
 import { AnimatePresence, motion } from 'framer-motion';
 import Loading from './components/Common/Loading';
 import { IndexPage } from './pages';
-import { Description } from './components';
 import DescriptionTest from './components/descriptiontest';
 
 const App = () => {

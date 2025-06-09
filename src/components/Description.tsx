@@ -2,15 +2,15 @@ import { motion } from 'framer-motion';
 import Title from '../components/Common/Title';
 import { useEffect } from 'react';
 import { useState } from 'react';
-import BounceCards from '../components/BounceCards';
-import { heroImages } from '../constants/images';
+// import BounceCards from '../components/BounceCards';
+// import { heroImages } from '../constants/images';
 import { FaMapMarker, FaRuler } from 'react-icons/fa';
 import { propertyData } from '../data/propertyData';
 import PropertyOverviewMap from './OverViewPropertyMap';
 import PropertyDetail from './Common/PropertyDetail';
 
 export default function Description() {
-  const [windowWidth, setWindowWidth] = useState(typeof window !== 'undefined' ? window.innerWidth : 768);
+  const [_windowWidth, setWindowWidth] = useState(typeof window !== 'undefined' ? window.innerWidth : 768);
 
   useEffect(() => {
     const handleResize = () => {
@@ -21,21 +21,21 @@ export default function Description() {
     return () => window.removeEventListener('resize', handleResize);
   }, []);
 
-  const images = [
-    heroImages.hero1,
-    heroImages.hero2,
-    heroImages.hero3,
-    heroImages.hero4,
-    heroImages.hero5,
-  ];
+  // const images = [
+  //   heroImages.hero1,
+  //   heroImages.hero2,
+  //   heroImages.hero3,
+  //   heroImages.hero4,
+  //   heroImages.hero5,
+  // ];
 
-  const transformStyles = [
-    "rotate(5deg) translate(-150px)",
-    "rotate(0deg) translate(-70px)",
-    "rotate(-5deg)",
-    "rotate(5deg) translate(70px)",
-    "rotate(-5deg) translate(150px)"
-  ];
+  // const transformStyles = [
+  //   "rotate(5deg) translate(-150px)",
+  //   "rotate(0deg) translate(-70px)",
+  //   "rotate(-5deg)",
+  //   "rotate(5deg) translate(70px)",
+  //   "rotate(-5deg) translate(150px)"
+  // ];
 
   const landInfo = [
     { value: 121, label: 'Hectares Approx', desc: 'Total land area (121 hectares approx)' },

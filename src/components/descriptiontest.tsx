@@ -9,7 +9,7 @@ import { propertyData } from '../data/propertyData';
 import PropertyOverviewMap from './OverViewPropertyMap';
 import PropertyDetail from './Common/PropertyDetail';
 
-export default function Description() {
+export default function DescriptionTest() {
   const [windowWidth, setWindowWidth] = useState(typeof window !== 'undefined' ? window.innerWidth : 768);
 
   useEffect(() => {

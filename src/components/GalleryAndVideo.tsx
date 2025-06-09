@@ -583,7 +583,11 @@ const GalleryAndVideo = () => {
                     <svg width={24} height={24} fill="none" stroke="currentColor" strokeWidth={2}><path strokeLinecap="round" strokeLinejoin="round" d="M9 5l7 7-7 7"/></svg>
                     </button>
                 </div>
-              <div className="swiper-pagination"></div>
+              <div className="swiper-pagination">
+                  <span className="swiper-pagination-bullet swiper-pagination-bullet-active"></span>
+                  <span className="swiper-pagination-bullet"></span>
+                  ...
+              </div>
             </Swiper>
           </motion.div>
         )}

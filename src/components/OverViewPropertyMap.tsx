@@ -13,7 +13,7 @@ const images = [
 ];
 
 const PropertyOverviewMap = () => {
-  const [selectedImage, setSelectedImage] = useState<number | null>(0);
+  const [selectedImage, setSelectedImage] = useState<number | null>(null);
 
   return (
     <section id="property-map" className="w-full pb-20 bg-white">

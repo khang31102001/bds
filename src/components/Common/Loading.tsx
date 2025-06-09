@@ -7,14 +7,14 @@ interface LoadingProps {
 
 const Loading = ({ progress }: LoadingProps) => {
   return (
-    <div className="fixed inset-0 bg-black/90 z-50 flex flex-col items-center justify-center">
+    <div className="fixed inset-0 z-50 flex flex-col items-center justify-center">
       <div className="absolute inset-0">
         <img 
           src={heroImages.img_hill} 
           alt="Background" 
           className="w-full h-full object-cover opacity-40"
         />
-        <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/30 to-transparent" />
+        <div className="absolute inset-0 to-transparent" />
       </div>
 
       <div className="relative w-full max-w-[800px] px-6 md:px-8">

@@ -6,14 +6,14 @@ import { propertyData } from '../../data/propertyData'
 const PropertyDetail = () => {
   return (
     <div className="max-w-7xl mx-auto">
-      <div className="flex flex-col md:flex-row justify-between items-start mb-8">
-        <div className='flex flex-col gap-2'>
-          <div className='flex flex-col gap-2'>
-            <span className="text-3xl font-bold text-emerald-900">Offers invited</span>
-            <span className="text-4xl font-bold text-emerald-900 mb-6">{propertyData.price}</span>
+      <div className="flex flex-row md:flex-col justify-between items-start mb-8">
+        <div className='flex flex-col gap-4 w-full'>
+          <div className='flex flex-col md:flex-row justify-center items-center gap-2'>
+            <span className="text-3xl font-bold text-emerald-900">Offers invited: </span>
+            <span className="text-4xl font-bold text-emerald-900 ">{propertyData.price}</span>
           </div>
 
-          <div className="flex gap-4 flex-col justify-center w-fit">
+          {/* <div className="flex gap-4 flex-col justify-center w-fit">
             <div className='flex gap-4 items-center '>
               <div className="flex w-fit items-center bg-green-50 text-green-700 px-4 py-2 rounded-md">
                 <FaRuler className="mr-2" />
@@ -30,9 +30,28 @@ const PropertyDetail = () => {
               <FaMapMarker className="mr-2" />
               <span>{propertyData.location}</span>
             </div>
+          </div> */}
 
 
+          <div className="flex gap-4 flex-row justify-center w-full ">
+            <div className='flex gap-4 items-center '>
+              <div className="flex w-fit items-center bg-green-50 text-green-700 px-4 py-2 rounded-md">
+                <FaRuler className="mr-2" />
+                <span>{propertyData.landSize}</span>
+              </div>
+              <a href="tel:+0457230191" className="text-emerald-900 w-fit flex items-center border border-gray-300 px-4 py-2 rounded-md hover:bg-gray-50">
+                <FaShare className="mr-2" />
+                Contact Owner
+              </a>
+              <div className='flex items-center w-fit bg-green-50 text-green-700 px-4 py-2 rounded-md'>
+              <FaMapMarker className="mr-2" />
+              <span>{propertyData.location}</span>
+            </div>
+            </div>
+
+           
           </div>
+
         </div>
       </div>
 
@@ -43,7 +62,7 @@ const PropertyDetail = () => {
             <p className="text-gray-700 leading-relaxed">{propertyData.description}</p>
           </div>
           <div className='flex flex-col gap-4'>
-            <div className='flex flex-col gap-2'>
+            <div className='flex flex-col gap-2 my-12'>
             <motion.div
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
@@ -62,8 +81,6 @@ const PropertyDetail = () => {
                   loading="lazy"
                   className="transition-opacity duration-300"
                 />
-
-
                 
                 <div className="absolute top-2 left-2 bg-white backdrop-blur-sm p-4 rounded-xl shadow-lg max-w-sm">
                   <h4 className="text-lg font-semibold text-emerald-800 mb-2">Boyup Brook</h4>

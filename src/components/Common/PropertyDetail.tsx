@@ -6,7 +6,7 @@ import { propertyData } from '../../data/propertyData'
 const PropertyDetail = () => {
   return (
     <div className="max-w-7xl mx-auto">
-      <div className="flex flex-row md:flex-col justify-between items-start mb-8">
+      <div className="flex flex-col md:flex-row justify-between items-start mb-8">
         <div className='flex flex-col gap-4 w-full'>
           <div className='flex flex-col md:flex-row justify-center items-center gap-2'>
             <span className="text-3xl font-bold text-emerald-900">Offers invited: </span>
@@ -33,8 +33,8 @@ const PropertyDetail = () => {
           </div> */}
 
 
-          <div className="flex gap-4 flex-row justify-center w-full ">
-            <div className='flex gap-4 items-center '>
+          <div className="flex gap-4 flex-col md:flex-row justify-center w-full ">
+            <div className='flex gap-4 flex-col md:flex-row items-start md:items-center '>
               <div className="flex w-fit items-center bg-green-50 text-green-700 px-4 py-2 rounded-md">
                 <FaRuler className="mr-2" />
                 <span>{propertyData.landSize}</span>
@@ -48,8 +48,6 @@ const PropertyDetail = () => {
               <span>{propertyData.location}</span>
             </div>
             </div>
-
-           
           </div>
 
         </div>

@@ -115,7 +115,7 @@ const Header = () => {
         {/* Desktop menu */}
         <ul className={`md:flex md:gap-10 font-medium text-normal transform transition-all duration-300 ${
           isMenuOpen 
-            ? `absolute top-full left-0 w-full ${ scrolled ? 'text-emerald-900 bg-white shadow-lg' : 'text-white bg-transparent'} py-4 flex flex-col items-end gap-4 px-4 opacity-100`
+            ? `md:brightness-100 brightness-125 absolute top-full left-0 w-full ${ scrolled ? 'text-emerald-900 bg-white shadow-lg' : 'text-white bg-transparent'} py-4 flex flex-col items-end gap-4 px-4 opacity-100`
             : 'hidden md:flex opacity-0 md:opacity-100'
         }`}>
           {navLinks.map(({ href, name, isHash, id }) => (

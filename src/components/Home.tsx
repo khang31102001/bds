@@ -163,13 +163,15 @@ export default function Home() {
       {/* Content Overlay */}
       <div className="absolute inset-0 -z-1">
         <img 
+          style={{ filter: 'brightness(1.25)' }}
           src={heroImages.img_asp3} 
           alt="Boyup Brook lifestyle"
           className="w-full h-full object-cover select-none hidden md:block"
         />
 
         <img 
-          src={heroImages.img_family} 
+       
+          src={heroImages.img_hill} 
           alt="Boyup Brook lifestyle"
           className="w-full h-full object-cover select-none block md:hidden"
         />

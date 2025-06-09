@@ -27,6 +27,7 @@ import img_family2 from '../public/img/img_family-2.jpg'
 import img_family3 from '../public/img/img_family-3.jpg'
 import img_family4 from '../public/img/img_family-4.jpg'
 
+
 import john from '../public/img/john.jpg'
 // import planView from '../public/img/PlanView.jpg'
 // import landgateAerial from '../public/img/LandgateAerial.jpg'

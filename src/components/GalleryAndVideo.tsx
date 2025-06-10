@@ -13,7 +13,7 @@ import 'swiper/css/pagination';
 import Title from "../components/Common/Title";
 import { ArrowsPointingOutIcon } from "@heroicons/react/24/outline";
 import { videoData } from "../constants/video";
-
+import PropertyOverviewMap from "./OverViewPropertyMap";
 // Media type definitions
 interface VideoMedia {
   type: 'video';
@@ -284,6 +284,7 @@ const GalleryAndVideo = () => {
 
   return (
     <section className='bg-white' id="gallery">
+      {/* //gallery and video */}
       <div className='max-w-7xl mx-auto py-0 px-4 md:px-8'>
         <div className="flex flex-col gap-16">
             <Title 
@@ -592,7 +593,11 @@ const GalleryAndVideo = () => {
           </motion.div>
         )}
       </AnimatePresence>
-
+       {/* // map location */}
+       
+       <div id='map'>
+        <PropertyOverviewMap/>
+      </div>
       <ScrollToTop />
     </section>
   );

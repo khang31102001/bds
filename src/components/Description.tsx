@@ -6,7 +6,7 @@ import { useState } from 'react';
 // import { heroImages } from '../constants/images';
 import { FaTree, FaHome, FaWater, FaMountain, FaSeedling } from 'react-icons/fa';
 // import { propertyData } from '../data/propertyData';
-import PropertyOverviewMap from './OverViewPropertyMap';
+// import PropertyOverviewMap from './OverViewPropertyMap';
 import PropertyDetail from './Common/PropertyDetail';
 
 
@@ -102,22 +102,7 @@ export default function Description() {
           />
         </div>
 
-        {/* <div className="w-full mx-auto">
-      
-            <div className="flex flex-col sm:flex-row sm:flex-wrap justify-center gap-3 mb-6">
-              <div className="flex items-center justify-center sm:justify-start bg-green-50 text-green-700 px-4 py-3 rounded-lg">
-                  <FaRuler className="mr-3 text-base flex-shrink-0" />
-                  <span className="font-medium text-sm md:text-base">{propertyData.landSize}</span>
-              </div>
-              
-              <div className='flex items-center justify-center sm:justify-start bg-green-50 text-green-700 px-4 py-3 rounded-lg'>
-                  <FaMapMarker className="mr-3 text-base flex-shrink-0" />
-                  <span className="font-medium text-sm md:text-base">{propertyData.location}</span>
-              </div>
-            
-            
-            </div>
-        </div> */}
+       
         
         {/* Description Text */}
         <motion.div
@@ -188,10 +173,7 @@ export default function Description() {
           />
         </div>
        */}
-      <div id='bridgetown'>
-
-        <PropertyOverviewMap/>
-      </div>
+     
 
       {/* Additional Features Grid */}
       <div className="bg-white rounded-xl">

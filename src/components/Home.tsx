@@ -177,7 +177,7 @@ export default function Home() {
       <img 
           src={heroImages.img_river5}
           alt="River view"
-          className='absolute w-80 h-64 bottom-4 right-4 rounded-lg shadow-lg object-cover'
+          className='absolute w-64 h-40 md:w-[28rem] md:h-72 bottom-4 right-4 rounded-lg shadow-lg object-cover'
         />
   
       

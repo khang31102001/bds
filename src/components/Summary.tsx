@@ -18,8 +18,8 @@ const Summary = ()=>{
                     <div className="metric-label">Hectares</div>
                 </div>
                 <div className="metric">
-                    <div className="metric-number">14+</div>
-                    <div className="metric-label">Years Income</div>
+                    <div className="metric-number">$</div>
+                    <div className="metric-label">Investment Cash flow</div>
                 </div>
             </div>
 
@@ -27,10 +27,10 @@ const Summary = ()=>{
             <div className="content-grid">
                 <div className="content-block">
                     <h3>Property Features</h3>
-                    <p>This exceptional rural property offers exclusive frontage to the pristine Blackwood River, combining natural beauty with practical agricultural potential.</p>
+                    <p>This exceptional rural lifestyle property offers exclusive frontage to the pristine Blackwood River, combining natural beauty with practical agricultural potential.</p>
                     <ul className="highlight-list">
                         <li>Private Blackwood River frontage with deep pools</li>
-                        <li>Mature Redgum and Jarrah trees throughout</li>
+                        <li>Mature Redgum  Jarrah Blackbutt and River gums trees throughout</li>
                         <li>Wide open fields and treed river flats</li>
                         <li>Private walking trails and camping areas</li>
                         <li>Existing dam with potential for more</li>
@@ -42,10 +42,7 @@ const Summary = ()=>{
                     <h3>Investment Opportunity</h3>
                     <p>Currently generating reliable income through an established sheep operation with a proven track record and dependable tenant.</p>
                     <ul className="highlight-list">
-                        <li>Established crossbreed sheep operation</li>
                         <li>Annual rent paid in advance each January</li>
-                        <li>Property regularly fertilized and maintained</li>
-                        <li>Fat lamb production with strong returns</li>
                         <li>Fire breaks and water catchment systems</li>
                         <li>Vast potential for development projects</li>
                     </ul>

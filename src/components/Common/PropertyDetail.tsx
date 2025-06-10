@@ -7,31 +7,11 @@ const PropertyDetail = () => {
   return (
     <div className="max-w-7xl mx-auto">
       <div className="flex flex-col md:flex-row justify-between items-start mb-8">
-        <div className='flex flex-col gap-4 w-full'>
+        <div className='flex flex-col gap-8 w-full'>
           <div className='flex flex-col md:flex-row justify-center items-center gap-2'>
             <span className="text-3xl font-bold text-emerald-900">Offers invited: </span>
             <span className="text-4xl font-bold text-emerald-900 ">{propertyData.price}</span>
           </div>
-
-          {/* <div className="flex gap-4 flex-col justify-center w-fit">
-            <div className='flex gap-4 items-center '>
-              <div className="flex w-fit items-center bg-green-50 text-green-700 px-4 py-2 rounded-md">
-                <FaRuler className="mr-2" />
-                <span>{propertyData.landSize}</span>
-              </div>
-              <a href="tel:+0457230191" className="text-emerald-900 w-fit flex items-center border border-gray-300 px-4 py-2 rounded-md hover:bg-gray-50">
-                <FaShare className="mr-2" />
-                Contact Owner
-              </a>
-
-            </div>
-
-            <div className='flex items-center w-fit bg-green-50 text-green-700 px-4 py-2 rounded-md'>
-              <FaMapMarker className="mr-2" />
-              <span>{propertyData.location}</span>
-            </div>
-          </div> */}
-
 
           <div className="flex gap-4 flex-col md:flex-row justify-center w-full ">
             <div className='flex gap-4 flex-col md:flex-row items-start md:items-center '>
@@ -44,22 +24,23 @@ const PropertyDetail = () => {
                 Contact Owner
               </a>
               <div className='flex items-center w-fit bg-green-50 text-green-700 px-4 py-2 rounded-md'>
-              <FaMapMarker className="mr-2" />
-              <span>{propertyData.location}</span>
-            </div>
+                <FaMapMarker className="mr-2" />
+                <span>{propertyData.location}</span>
+              </div>
             </div>
           </div>
-
+          <div className='flex flex-col gap-4'>
+            <h2 className="text-2xl font-bold text-emerald-900">{propertyData.title}</h2>
+            <p className="text-gray-700 leading-relaxed">{propertyData.description}</p>
+          </div>
         </div>
       </div>
 
       <div className='grid grid-cols-1 md:grid-cols-4 gap-6'>
         <div className="col-span-3 flex flex-col gap-4">
-          <div className='flex flex-col gap-4'>
-            <h2 className="text-2xl font-bold text-emerald-900">{propertyData.title}</h2>
-            <p className="text-gray-700 leading-relaxed">{propertyData.description}</p>
-          </div>
-          <div className='flex flex-col gap-4'>
+          
+          {/* // map  */}
+          {/* <div className='flex flex-col gap-4'>
             <div className='flex flex-col gap-2 my-12'>
             <motion.div
                 initial={{ opacity: 0, y: 20 }}
@@ -88,52 +69,53 @@ const PropertyDetail = () => {
                 </div>
               </motion.div>
             </div>
-          </div>
-          
+          </div> */}
+
         </div>
-            <div className=" hidden md:block h-fit col-span-1 bg-white rounded-lg shadow-lg p-6">
-              <div className="flex flex-col gap-4">
-                {/* Agent Info Section */}
+
+        {/* <div className=" hidden md:block h-fit col-span-1 bg-white rounded-lg shadow-lg p-6">
+          <div className="flex flex-col gap-4">
+        
             <div className="flex flex-col gap-4">
-              {/* Avatar */}
+          
               <div className="w-36 h-36 mx-auto rounded-full overflow-hidden border-4 border-emerald-100 shadow flex-shrink-0">
                 <img src={propertyData.agent.image} className="w-full h-full object-cover" alt="Agent" />
               </div>
 
-              {/* Contact Info */}
+            
               <div className="flex flex-col justify-center gap-3">
-                {/* Name */}
+            
                 <div className="font-bold text-lg text-emerald-900 text-center">
                   {propertyData.agent.name}
                 </div>
 
-                <div className='flex flex-col justify-center items-center gap-2 py-4 border-y border-emerald-100'> 
-                {/* Email */}
-                <div className='flex items-center gap-2'>
-                  <span className='text-emerald-900'>📧</span>
-                  <a
-                    href="mailto:eaglescreensjr@gmail.com"
-                    className="text-emerald-900 hover:text-emerald-700"
-                  >
-                    eaglescreensjr@gmail.com
-                  </a>
-                </div>
+                <div className='flex flex-col justify-center items-center gap-2 py-4 border-y border-emerald-100'>
+             
+                  <div className='flex items-center gap-2'>
+                    <span className='text-emerald-900'>📧</span>
+                    <a
+                      href="mailto:eaglescreensjr@gmail.com"
+                      className="text-emerald-900 hover:text-emerald-700"
+                    >
+                      eaglescreensjr@gmail.com
+                    </a>
+                  </div>
 
-                {/* Phone */}
-                <div className='flex items-center gap-2'>
-                  <span className='text-emerald-900'>📞</span>
-                  <a
-                    href="tel:+0457230191"
-                    className="text-emerald-900 hover:text-emerald-700"
-                  >
-                    0457 230 191
-                  </a>
-                </div>
+                
+                  <div className='flex items-center gap-2'>
+                    <span className='text-emerald-900'>📞</span>
+                    <a
+                      href="tel:+0457230191"
+                      className="text-emerald-900 hover:text-emerald-700"
+                    >
+                      0457 230 191
+                    </a>
+                  </div>
                 </div>
               </div>
             </div>
 
-            {/* Contact Button */}
+         
             <div className="bg-red-600 text-white font-semibold py-3 rounded-md hover:bg-red-700 transition duration-300 text-center cursor-pointer"
               onClick={(e) => {
                 e.preventDefault();
@@ -146,9 +128,11 @@ const PropertyDetail = () => {
               Get in touch
             </div>
           </div>
-        </div>  
+        </div> */}
+
+
       </div>
-      
+
     </div>
   );
 };

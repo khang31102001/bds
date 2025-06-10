@@ -69,8 +69,58 @@ export default function Home() {
       aria-label="Explore Boyup Brook Acreage"
       id="home"
     >
+       {/* Content Overlay */}
+      <div className="absolute inset-0 -z-1">
+        <img 
+          style={{ filter: 'brightness(1.25)' }}
+          src={heroImages.img_asp3} 
+          alt="Boyup Brook lifestyle"
+          className="w-full h-full object-cover select-none hidden md:block"
+        />
+        
+        {/* River image - positioned in bottom right corner, smaller size */}
+        {/* <img 
+            src={heroImages.img_river5}
+            alt="River view"
+            className='absolute w-64 h-40 md:w-[28rem] md:h-72 bottom-4 right-4 rounded-lg shadow-lg object-cover'
+          />
+     */}
+        
+        <img 
+          src={heroImages.img_hill}
+          alt="Boyup Brook lifestyle"
+          className="w-full h-full object-cover select-none block md:hidden"
+        />
+      </div>
+      <div className='hidden md:block absolute top-[16%] right-2 max-w-[64%] w-full '>
+          <div className=" backdrop-blur-sm rounded-2xl shadow-2xl w-full h-full p-6">
+              <span className="text-white text-sm sm:text-base xl:text-lg tracking-wide text-center md:text-left w-full">
+                    301 acres 121 ha freehold with 2km approx Blackwood River frontage. 
+                    Perfect for eco-tourism, lifestyle, development and agricultural opportunities
+              </span>
+                <div className="relative min-h-[180px] sm:min-h-[200px] md:min-h-[220px] w-full ">
+                  {/* Fixed grid layout */}
+                  <div className='grid grid-cols-1 sm:grid-cols-2  md:grid-cols-3 gap-0'>
+                    {detailsGroups.map((group, groupIndex)=>(
+                      <ul
+                        key={`placeholder-${groupIndex}`}
+                        className="text-white tex-xs space-y-2 sm:text-sm xl:text-base list-disc w-full p-6"
+                      >
+                       {group.map((detail, idx)=>(
+                        <li key={`${groupIndex}-${idx}`}>
+                          {detail}
+                        </li>
+                       ))}
+                      </ul>
+                    ))}
+                  </div>
+                  
+                </div>
+          </div>
+     </div>
+
       {/* Main Content */}
-      <div className="flex w-full justify-center md:justify-start items-center md:items-start z-10 select-none px-4 md:px-6 lg:px-10">
+      <div className="flex w-full justify-center md:justify-start items-center md:items-start z-10 select-none ">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
@@ -82,7 +132,7 @@ export default function Home() {
             rounded-2xl
             shadow-none md:shadow-2xl
             border-none md:border border-white/10
-            backdrop-blur-0 md:backdrop-blur-sm
+            backdrop-blur-0
             px-4 sm:px-6 md:px-8
             py-6 sm:py-8 md:py-10
             flex flex-col
@@ -90,16 +140,18 @@ export default function Home() {
             mx-2 ms:mx-4 md:mx-8 xl:mx-0
           `}
         >
-          <span className="text-emerald-200 text-xs sm:text-sm md:text-base font-semibold tracking-wide uppercase mb-1 sm:mb-2 text-center md:text-left">Boyup Brook / Bridgetown</span>
-          <h1 className="text-white text-3xl sm:text-4xl md:text-5xl font-extrabold leading-tight text-center md:text-left">
-            <span className="text-emerald-200">Boyup Brook Acreage</span> <br />
-            For Private Sale
-          </h1>
-          <span className="text-white text-sm sm:text-base md:text-lg tracking-wide text-center md:text-left w-full">
-           301 acres freehold with approx 2km Blackwood River frontage. 
-           Perfect for eco-tourism, lifestyle development and agricultural opportunities
+         <div className='md:hidden'>
+              <h1 className="text-white text-3xl sm:text-4xl md:text-5xl font-extrabold leading-tight text-center md:text-left">
+                <span>For Private Sale</span><br />
+                <span className="text-emerald-200">Boyup Brook Acreage</span> 
+            </h1>
+        </div>
+       
+          <div className="md:hidden flex flex-col items-center">
+            <span className="text-white text-sm sm:text-base md:text-lg tracking-wide text-center md:text-left w-full">
+                301 acres freehold with approx 2km Blackwood River frontage. 
+                Perfect for eco-tourism, lifestyle development and agricultural opportunities
           </span>
-          <div className="flex flex-col items-center">
             <div className="relative min-h-[180px] sm:min-h-[200px] md:min-h-[220px] w-full">
               {/* Fixed grid layout */}
               <div className="grid grid-cols-1 gap-1.5 sm:gap-2 absolute inset-0">
@@ -148,8 +200,8 @@ export default function Home() {
                 ))}
               </AnimatePresence>
             </div>
-            
-            <div className="flex flex-col-reverse md:flex-row md:items-start items-center gap-3 sm:gap-4 md:gap-6 mt-4 sm:mt-6 w-full justify-center md:justify-start">
+           
+            <div className=" md:hidden flex flex-col-reverse md:flex-row md:items-start items-center gap-3 sm:gap-4 md:gap-6 mt-4 sm:mt-6 w-full justify-center md:justify-start">
               <a href="tel:0457230191" className="flex items-center gap-2 text-white font-medium hover:text-emerald-200 transition-colors text-sm sm:text-base md:text-lg justify-center md:justify-start">
                 <i className="fas fa-phone text-emerald-300"></i>
                 0457 230 191
@@ -163,30 +215,21 @@ export default function Home() {
           </div>
         </motion.div>
       </div>
-
-      {/* Content Overlay */}
-      <div className="absolute inset-0 -z-1">
-      <img 
-        style={{ filter: 'brightness(1.25)' }}
-        src={heroImages.img_asp3} 
-        alt="Boyup Brook lifestyle"
-        className="w-full h-full object-cover select-none hidden md:block"
-      />
-      
-      {/* River image - positioned in bottom right corner, smaller size */}
-      <img 
-          src={heroImages.img_river5}
-          alt="River view"
-          className='absolute w-64 h-40 md:w-[28rem] md:h-72 bottom-4 right-4 rounded-lg shadow-lg object-cover'
-        />
-  
-      
-      <img 
-        src={heroImages.img_hill}
-        alt="Boyup Brook lifestyle"
-        className="w-full h-full object-cover select-none block md:hidden"
-      />
-    </div>
+    {/* // contact for desktop */}
+      <div className='hidden sm:block absolute bottom-4 right-4 backdrop-blur-sm rounded-2xl p-4 shadow-2xl'>
+        <div className=" flex flex-col md:flex-row gap-3 items-center">
+                <a href="tel:0457230191" className="flex items-center gap-2 text-black font-medium hover:text-emerald-200 transition-colors text-sm sm:text-base md:text-lg justify-center md:justify-start">
+                  <i className="fas fa-phone text-emerald-300"></i>
+                  0457 230 191
+                </a>
+              
+                <a href="mailto:eaglescreensjr@gmail.com" className="flex items-center gap-2 text-black font-medium hover:text-emerald-200 transition-colors text-sm sm:text-base md:text-lg justify-center md:justify-start">
+                  <i className="fas fa-envelope text-emerald-300"></i>
+                  eaglescreensjr@gmail.com
+                </a>
+          </div>
+      </div>
+     
     </section>
   );
 }

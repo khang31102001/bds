@@ -4,10 +4,11 @@ import { useEffect } from 'react';
 import { useState } from 'react';
 // import BounceCards from '../components/BounceCards';
 // import { heroImages } from '../constants/images';
-import { FaMapMarker, FaRuler } from 'react-icons/fa';
-import { propertyData } from '../data/propertyData';
+import { FaTree, FaHome, FaWater, FaMountain, FaSeedling } from 'react-icons/fa';
+// import { propertyData } from '../data/propertyData';
 import PropertyOverviewMap from './OverViewPropertyMap';
 import PropertyDetail from './Common/PropertyDetail';
+
 
 export default function Description() {
   const [_windowWidth, setWindowWidth] = useState(typeof window !== 'undefined' ? window.innerWidth : 768);
@@ -43,7 +44,33 @@ export default function Description() {
     { value: 5, label: 'Distinct Areas', desc: 'River Flats, River Escarment, Rolling Pastures, Native Bushland, Farming Areas' },
     { value: 3, label: 'Bay', desc: 'Modern Shed' },
   ];
-
+  const features = [
+    {
+      icon: <FaWater className="w-6 h-6 md:w-8 md:h-8" />,
+      title: "Blackwood River Frontage",
+      description: "2km approx of pristine river frontage offering stunning views and recreational opportunities"
+    },
+    {
+      icon: <FaTree className="w-6 h-6 md:w-8 md:h-8" />,
+      title: "Natural Bushland",
+      description: "Significant areas of natural bushland providing wildlife habitat and natural beauty"
+    },
+    {
+      icon: <FaMountain className="w-6 h-6 md:w-8 md:h-8" />,
+      title: "Rolling Hills",
+      description: "Gentle, rolling hills creating picturesque landscapes and varied terrain"
+    },
+    {
+      icon: <FaHome className="w-6 h-6 md:w-8 md:h-8" />,
+      title: "Modern Infrastructure",
+      description: "3-bay shed with concrete slab floor"
+    },
+    {
+      icon: <FaSeedling className="w-6 h-6 md:w-8 md:h-8" />,
+      title: "Agricultural Potential",
+      description: "Suitable areas for farming and agricultural development"
+    }
+  ];
 
   function useCountUp(end: number, duration = 1.5): number {
     const [count, setCount] = useState(0);
@@ -74,22 +101,24 @@ export default function Description() {
             className='text-emerald-900'
           />
         </div>
-        <div className="w-full mx-auto">
-            {/* Mobile: Stack vertically */}
+
+        {/* <div className="w-full mx-auto">
+      
             <div className="flex flex-col sm:flex-row sm:flex-wrap justify-center gap-3 mb-6">
-            <div className="flex items-center justify-center sm:justify-start bg-green-50 text-green-700 px-4 py-3 rounded-lg">
-                <FaRuler className="mr-3 text-base flex-shrink-0" />
-                <span className="font-medium text-sm md:text-base">{propertyData.landSize}</span>
-            </div>
+              <div className="flex items-center justify-center sm:justify-start bg-green-50 text-green-700 px-4 py-3 rounded-lg">
+                  <FaRuler className="mr-3 text-base flex-shrink-0" />
+                  <span className="font-medium text-sm md:text-base">{propertyData.landSize}</span>
+              </div>
+              
+              <div className='flex items-center justify-center sm:justify-start bg-green-50 text-green-700 px-4 py-3 rounded-lg'>
+                  <FaMapMarker className="mr-3 text-base flex-shrink-0" />
+                  <span className="font-medium text-sm md:text-base">{propertyData.location}</span>
+              </div>
             
-            <div className='flex items-center justify-center sm:justify-start bg-green-50 text-green-700 px-4 py-3 rounded-lg'>
-                <FaMapMarker className="mr-3 text-base flex-shrink-0" />
-                <span className="font-medium text-sm md:text-base">{propertyData.location}</span>
-            </div>
-            
             
             </div>
-        </div>
+        </div> */}
+        
         {/* Description Text */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -163,6 +192,33 @@ export default function Description() {
 
         <PropertyOverviewMap/>
       </div>
+
+      {/* Additional Features Grid */}
+      <div className="bg-white rounded-xl">
+            
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
+              {features.map((feature, idx) => (
+                <motion.div
+                  key={feature.title}
+                  className="bg-white rounded-xl p-4 md:p-6 shadow-md hover:shadow-lg transition-all duration-300"
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.5, delay: idx * 0.1 }}
+                >
+                  <div className="text-emerald-600 mb-4">
+                    {feature.icon}
+                  </div>
+                  <h3 className="text-lg md:text-xl font-semibold text-emerald-900 mb-2">
+                    {feature.title}
+                  </h3>
+                  <p className="text-gray-600 text-sm md:text-base leading-relaxed">
+                    {feature.description}
+                  </p>
+                </motion.div>
+              ))}
+            </div>
+          </div>
 
       </div>
     </section>

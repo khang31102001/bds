@@ -166,20 +166,27 @@ export default function Home() {
 
       {/* Content Overlay */}
       <div className="absolute inset-0 -z-1">
-        <img 
-          style={{ filter: 'brightness(1.25)' }}
-          src={heroImages.img_asp3} 
-          alt="Boyup Brook lifestyle"
-          className="w-full h-full object-cover select-none hidden md:block"
+      <img 
+        style={{ filter: 'brightness(1.25)' }}
+        src={heroImages.img_asp3} 
+        alt="Boyup Brook lifestyle"
+        className="w-full h-full object-cover select-none hidden md:block"
+      />
+      
+      {/* River image - positioned in bottom right corner, smaller size */}
+      <img 
+          src={heroImages.img_river5}
+          alt="River view"
+          className='absolute w-80 h-64 bottom-4 right-4 rounded-lg shadow-lg object-cover'
         />
-
-        <img 
-       
-          src={heroImages.img_hill} 
-          alt="Boyup Brook lifestyle"
-          className="w-full h-full object-cover select-none block md:hidden"
-        />
-      </div>
+  
+      
+      <img 
+        src={heroImages.img_hill}
+        alt="Boyup Brook lifestyle"
+        className="w-full h-full object-cover select-none block md:hidden"
+      />
+    </div>
     </section>
   );
 }

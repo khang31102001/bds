@@ -95,9 +95,10 @@ export default function Home() {
             <span className="text-emerald-200">Boyup Brook Acreage</span> <br />
             For Private Sale
           </h1>
-          <p className="text-white text-sm sm:text-base md:text-lg tracking-wide text-center md:text-left w-full">
-           301 acres freehold with 2km Blackwood River frontage. Perfect for eco-tourism, lifestyle development, and agricultural opportunities
-          </p>
+          <span className="text-white text-sm sm:text-base md:text-lg tracking-wide text-center md:text-left w-full">
+           301 acres freehold with approx 2km Blackwood River frontage. 
+           Perfect for eco-tourism, lifestyle development and agricultural opportunities
+          </span>
           <div className="flex flex-col items-center">
             <div className="relative min-h-[180px] sm:min-h-[200px] md:min-h-[220px] w-full">
               {/* Fixed grid layout */}

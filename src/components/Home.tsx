@@ -78,13 +78,7 @@ export default function Home() {
           className="w-full h-full object-cover select-none hidden md:block"
         />
         
-        {/* River image - positioned in bottom right corner, smaller size */}
-        {/* <img 
-            src={heroImages.img_river5}
-            alt="River view"
-            className='absolute w-64 h-40 md:w-[28rem] md:h-72 bottom-4 right-4 rounded-lg shadow-lg object-cover'
-          />
-     */}
+     
         
         <img 
           src={heroImages.img_hill}
@@ -92,19 +86,19 @@ export default function Home() {
           className="w-full h-full object-cover select-none block md:hidden"
         />
       </div>
-      <div className='hidden md:block absolute top-[16%] right-2 max-w-[64%] w-full '>
-          <div className=" backdrop-blur-sm rounded-2xl shadow-2xl w-full h-full p-6">
-              <span className="text-white text-sm sm:text-base xl:text-lg tracking-wide text-center md:text-left w-full">
+      <div className='hidden md:flex absolute md:top-[24%] lg:top-[20%] right-2 max-w-[64%] w-full '>
+          <div className="flex flex-col justify-between items-center backdrop-blur-sm rounded-2xl shadow-2xl w-full h-full p-6">
+              <span className="text-white text-sm sm:text-[0.8] md:text-base xl:text-lg tracking-wide text-center md:text-left w-full">
                     301 acres 121 ha freehold with 2km approx Blackwood River frontage. 
                     Perfect for eco-tourism, lifestyle, development and agricultural opportunities
               </span>
                 <div className="relative min-h-[180px] sm:min-h-[200px] md:min-h-[220px] w-full ">
                   {/* Fixed grid layout */}
-                  <div className='grid grid-cols-1 sm:grid-cols-2  md:grid-cols-3 gap-0'>
+                  <div className='grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-0'>
                     {detailsGroups.map((group, groupIndex)=>(
                       <ul
                         key={`placeholder-${groupIndex}`}
-                        className="text-white tex-xs space-y-2 sm:text-sm xl:text-base list-disc w-full p-6"
+                        className="text-white tex-xs space-y-2 sm:text-[0.7rem] md:text-sm xl:text-base list-disc w-full p-6"
                       >
                        {group.map((detail, idx)=>(
                         <li key={`${groupIndex}-${idx}`}>
@@ -140,12 +134,12 @@ export default function Home() {
             mx-2 ms:mx-4 md:mx-8 xl:mx-0
           `}
         >
-         <div className='md:hidden'>
+         {/* <div className='md:hidden'>
               <h1 className="text-white text-3xl sm:text-4xl md:text-5xl font-extrabold leading-tight text-center md:text-left">
                 <span>For Private Sale</span><br />
                 <span className="text-emerald-200">Boyup Brook Acreage</span> 
             </h1>
-        </div>
+        </div> */}
        
           <div className="md:hidden flex flex-col items-center">
             <span className="text-white text-sm sm:text-base md:text-lg tracking-wide text-center md:text-left w-full">
@@ -201,22 +195,32 @@ export default function Home() {
               </AnimatePresence>
             </div>
            
-            <div className=" md:hidden flex flex-col-reverse md:flex-row md:items-start items-center gap-3 sm:gap-4 md:gap-6 mt-4 sm:mt-6 w-full justify-center md:justify-start">
-              <a href="tel:0457230191" className="flex items-center gap-2 text-white font-medium hover:text-emerald-200 transition-colors text-sm sm:text-base md:text-lg justify-center md:justify-start">
+            {/* <div className=" md:hidden flex flex-col-reverse md:flex-row md:items-start items-center gap-3 sm:gap-4 md:gap-6 mt-4 sm:mt-6 w-full justify-center md:justify-start">
+              <a href="tel:0457230191" className="flex items-center gap-2 text-black font-bold hover:text-emerald-200 transition-colors text-sm sm:text-base md:text-lg justify-center md:justify-start">
                 <i className="fas fa-phone text-emerald-300"></i>
                 0457 230 191
               </a>
             
-              <a href="mailto:eaglescreensjr@gmail.com" className="flex items-center gap-2 text-white font-medium hover:text-emerald-200 transition-colors text-sm sm:text-base md:text-lg justify-center md:justify-start">
+              <a href="mailto:eaglescreensjr@gmail.com" className="flex items-center gap-2 text-black font-bold hover:text-emerald-200 transition-colors text-sm sm:text-base md:text-lg justify-center md:justify-start">
                 <i className="fas fa-envelope text-emerald-300"></i>
                 eaglescreensjr@gmail.com
               </a>
-            </div>
+            </div> */}
           </div>
         </motion.div>
       </div>
+      <div className='absolute  right-4 w-[12.5rem] h-[8rem] sm:block md:hidden lg:block bottom-[6rem] lg:w-[16rem] lg:h-[10rem] overflow-hidden rounded-lg shadow-lg '>
+            {/* River image - positioned in bottom right corner, smaller size */}
+        <img 
+           style={{ filter: 'brightness(1.25)' }}
+            src={heroImages.img_river1}
+            alt="River view"
+            className=' w-full h-full object-cover'
+          />
+     
+      </div>
     {/* // contact for desktop */}
-      <div className='hidden sm:block absolute bottom-4 right-4 backdrop-blur-sm rounded-2xl p-4 shadow-2xl'>
+      <div className=' absolute bottom-4 right-4 backdrop-blur-sm rounded-2xl p-2 md:p-4 shadow-2xl'>
         <div className=" flex flex-col md:flex-row gap-3 items-center">
                 <a href="tel:0457230191" className="flex items-center gap-2 text-black font-medium hover:text-emerald-200 transition-colors text-sm sm:text-base md:text-lg justify-center md:justify-start">
                   <i className="fas fa-phone text-emerald-300"></i>

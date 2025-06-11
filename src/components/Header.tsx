@@ -99,7 +99,7 @@ const Header = () => {
           }}
         >
           
-          <h1 className="text-white text-3xl sm:text-4xl md:text-[3rem] font-extrabold leading-tight text-center md:text-left">
+          <h1 className="text-white text-2xl sm:text-3xl md:text-[2.2rem] lg:text-[2.8rem] font-extrabold leading-tight text-left mx-2">
                 <span className={`${scrolled ? "text-emerald-900" : "text-white"}`}>For Private Sale</span><br />
                 <span className="relative inline-block">
                   <span className="text-emerald-200">Boyup Brook Acreage</span>

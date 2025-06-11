@@ -490,10 +490,10 @@ const GalleryAndVideo = () => {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
-            className="fixed inset-0 bg-black z-[101]"
+            className="fixed inset-0 bg-[#f7f7f7] z-[101]"
           >
             <button
-              className="absolute top-3 right-3 md:top-4 md:right-4 text-white p-2 rounded-full hover:bg-white/10 transition-colors z-[102]"
+              className="absolute top-3 right-3 md:top-4 md:right-4 text-emerald-900 p-2 rounded-full bg-gray-200 hover:gray-400 hover:text-white transition-colors z-[102]"
               onClick={handleCloseFullscreen}
             >
               <FaTimes size={20} className="md:w-6 md:h-6" />

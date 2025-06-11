@@ -7,7 +7,7 @@ import { heroImages } from '../constants/images';
 import { FaMapMarker, FaRuler, FaHome, FaDollarSign } from 'react-icons/fa';
 import { propertyData } from '../data/propertyData';
 import PropertyOverviewMap from './OverViewPropertyMap';
-import PropertyDetail from './Common/PropertyDetail';
+import PropertyDetail from './PropertyDetail';
 
 export default function DescriptionTest() {
   const [windowWidth, setWindowWidth] = useState(typeof window !== 'undefined' ? window.innerWidth : 768);

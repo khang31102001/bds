@@ -1,5 +1,5 @@
 import { FaShare, FaRuler, FaMapMarker } from 'react-icons/fa';
-import { propertyData } from '../../data/propertyData'
+import { propertyData } from '../data/propertyData'
 
 const PropertyDetail = () => {
   return (
@@ -17,8 +17,8 @@ const PropertyDetail = () => {
                 <FaRuler className="mr-2" />
                 <span>{propertyData.landSize}</span>
               </div>
-              <a href="tel:+0457230191" className=" text-emerald-900 w-fit flex items-center border border-gray-300 px-4 py-2 rounded-md  hover:text-red-500 transform transition-all duration-300 ease-in-out">
-                <FaShare className="mr-2 group-hover:text-red-800" />
+              <a href="tel:+0457230191" className=" text-emerald-900 w-fit flex items-center border border-gray-300 px-4 py-2 rounded-md  hover:text-green-700 transform transition-all duration-300 ease-in-out">
+                <FaShare className="mr-2 " />
                 Contact Owner
               </a>
               <div className='flex items-center w-fit bg-green-50 text-green-700 px-4 py-2 rounded-md'>

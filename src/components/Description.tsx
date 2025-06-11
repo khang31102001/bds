@@ -7,7 +7,7 @@ import { useState } from 'react';
 import { FaTree, FaHome, FaWater, FaMountain, FaSeedling } from 'react-icons/fa';
 // import { propertyData } from '../data/propertyData';
 // import PropertyOverviewMap from './OverViewPropertyMap';
-import PropertyDetail from './Common/PropertyDetail';
+import PropertyDetail from './PropertyDetail';
 
 
 export default function Description() {
@@ -40,8 +40,8 @@ export default function Description() {
 
   const landInfo = [
     { value: 121, label: 'Hectares Approx', desc: 'Total land area (121 hectares approx)' },
-    { value: 2, label: 'Kilometers Approx', desc: 'Blackwood River frontage' },
-    { value: 5, label: 'Distinct Areas', desc: 'River Flats, River Escarment, Rolling Pastures, Native Bushland, Farming Areas' },
+    { value: 2, label: 'Private River frontage', desc: '' },
+    { value: 5, label: 'Distinct Areas', desc: 'Framing, River flats, Rolling hills, Granite escapement, River frontage, Private Bushland' },
     { value: 3, label: 'Bay', desc: 'Modern Shed' },
   ];
   const features = [
@@ -51,19 +51,19 @@ export default function Description() {
       description: "2km approx of pristine river frontage offering stunning views and recreational opportunities"
     },
     {
+        icon: <FaHome className="w-6 h-6 md:w-8 md:h-8" />,
+        title: "Modern Infrastructure",
+        description: "3-bay shed with concrete slab floor"
+    },
+    {
       icon: <FaTree className="w-6 h-6 md:w-8 md:h-8" />,
       title: "Natural Bushland",
-      description: "Significant areas of natural bushland providing wildlife habitat and natural beauty"
+      description: "Some areas of natural bushland"
     },
     {
       icon: <FaMountain className="w-6 h-6 md:w-8 md:h-8" />,
       title: "Rolling Hills",
       description: "Gentle, rolling hills creating picturesque landscapes and varied terrain"
-    },
-    {
-      icon: <FaHome className="w-6 h-6 md:w-8 md:h-8" />,
-      title: "Modern Infrastructure",
-      description: "3-bay shed with concrete slab floor"
     },
     {
       icon: <FaSeedling className="w-6 h-6 md:w-8 md:h-8" />,
@@ -96,8 +96,8 @@ export default function Description() {
         {/* Title Section */}
         <div className="text-center mb-12 md:mb-16">
           <Title 
-            mainTitle="Description Property" 
-            subtitle="301 approx Acres - Your Opportunity to Own Prime Rural Property near Boyup Brook, WA"
+            mainTitle="Property Description" 
+            subtitle="301 approx Acres 121 hectares - Your Opportunity to Own Prime Rural Property near Boyup Brook, WA"
             className='text-emerald-900'
           />
         </div>
@@ -112,7 +112,9 @@ export default function Description() {
           className="mb-12 md:mb-16"
         >
           <p className='text-emerald-900 text-sm md:text-lg max-w-3xl lg:max-w-4xl mx-auto leading-relaxed text-justify'>
-            Own an expansive 301-acre property between Boyup Brook and Bridgetown – the heart of Western Australia's Southwest. This remarkable property features diverse landscapes: long private frontage to the scenic Blackwood River, gentle, rolling hills, open pastures, natural bushland, and farming areas. It's an ideal setting for peaceful living, family bonding, outdoor activities agricultural or eco-tourism development, ... or all of the above.
+            This 301-acre property is located about 8 kilometers  Boyup Brook and 23 kilometers East of Bridgetown – the heart of Western Australia's Southwest. 
+            This remarkable property features diverse landscapes: long private frontage to the scenic Blackwood River, gentle, rolling hills, open pastures, natural bushland, and farming areas. 
+            It's an ideal setting for peaceful living, family 4WD outings, outdoor activities, agricultural or eco-tourism development, ... or all of the above.
           </p>
         </motion.div>
         {/* Stats Cards */}
@@ -139,11 +141,15 @@ export default function Description() {
                   transition={{ duration: 0.5, delay: idx * 0.15 }}
                   className="text-2xl md:text-3xl font-bold text-emerald-900 mb-2"
                 >
-                  {count.toLocaleString()}
+                  {idx === 1 ? `${count.toLocaleString()} kmls`: count.toLocaleString()}
                 </motion.div>
                 <div className="text-gray-700 text-sm md:text-base font-medium px-2">
                   {item.label}
                 </div>
+                <div className="text-gray-700 text-sm md:text-base font-medium px-2">
+                  {item.desc}
+                </div>
+                
               </motion.div>
             );
           })}

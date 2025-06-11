@@ -11,12 +11,9 @@ import { motion } from 'framer-motion';
 
 
 const images = [
-  { src: LandGatePlan.landgatePlan1, alt: 'Aerial View' },
-  { src: LandGatePlan.landgatePlan2, alt: 'Cadastral Boundary' },
+
   { src: LandGatePlan.landgatePlan3, alt: 'Vegetation Overlay' },
-  { src: LandGatePlan.landgatePlan4, alt: 'Powerlines Infrastructure' },
   { src: LandGatePlan.landgatePlan5, alt: 'Powerlines Infrastructure' },
-  { src: LandGatePlan.landgatePlan6, alt: 'Powerlines Infrastructure' },
 ];
 
 const PropertyOverviewMap = () => {
@@ -25,11 +22,7 @@ const PropertyOverviewMap = () => {
   return (
     <section id="property-map" className="w-full bg-white">
       <div className=" flex flex-col max-w-7xl mx-auto px-4 text-center">
-        <h2 className="text-3xl font-bold text-emerald-900 mb-6">Property Overview Map</h2>
-        <p className="text-gray-600 mb-12 max-w-2xl mx-auto">
-          Explore the full layout of the property including boundaries, river frontage, infrastructure, and land features.
-        </p>
-
+        <h2 className="text-3xl font-bold text-emerald-900 mb-6">Property Overview Map</h2>   
         <div className='w-auto h-full p-2 mb-8' >
                 <motion.div
                     initial={{ opacity: 0, y: 20 }}
@@ -39,7 +32,7 @@ const PropertyOverviewMap = () => {
                 >
                     <iframe
                     title="Boyup Brook Location"
-                    src="https://www.google.com/maps/embed?pb=!1m17!1m12!1m3!1d3311.1241957041457!2d116.38427!3d-33.912203!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m2!1m1!2zMzPCsDU0JzQzLjkiUyAxMTbCsDIzJzAzLjQiRQ!5e0!3m2!1svi!2s!4v1749030033985!5m2!1svi!2s&language=en&zoom=0&maptype=roadmap&style=feature:all|element:labels|visibility:on&style=feature:administraive|element:geometry|visibility:off&style=feature:landscape|element:geometry|color:0xf5f5f5&style=feature:poi|element:geometry|color:0xe8e8e8&style=feature:road|element:geometry|color:0xffffff&style=feature:road|element:labels|visibility:simplified&style=feature:transit|visibility:off&style=feature:water|element:geometry"
+                    src="https://www.google.com/maps/embed?pb=!1m17!1m12!1m3!1d3311.1241957041457!2d116.38427!3d-33.912203!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m2!1m1!2zMzPCsDU0JzQzLjkiUyAxMTbCsDIzJzAzLjQiRQ!5e0!3m2!1sen!2s!4v1749030033985!5m2!1sen!2s&hl=en"
 
                     
                     width="100%"
@@ -57,7 +50,7 @@ const PropertyOverviewMap = () => {
                     </p>
                     </div>
                 </motion.div>
-            </div>
+        </div>
 
         <div className="flex flex-wrap justify-center gap-6">
           {images.map((img, index) => (

@@ -88,9 +88,9 @@ const Header = () => {
           className="font-bold text-h3 cursor-pointer"
           onClick={(e) => {
             e.preventDefault();
-            const section = document.getElementById("bridgetown");
+            const section = document.getElementById("gallery");
             if (section) {
-              const yOffset = -100; // Điều chỉnh khoảng cách phía trên, ví dụ: -100px tạo khoảng trống đẹp
+              const yOffset = -100; 
               const y = section.getBoundingClientRect().top + window.pageYOffset + yOffset;
             
               window.scrollTo({ top: y, behavior: 'smooth' });

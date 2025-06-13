@@ -2,7 +2,6 @@ import { motion } from 'framer-motion';
 import { useRef, useState } from 'react';
 import emailjs from '@emailjs/browser';
 import { FaPhone, FaEnvelope, FaMapMarkerAlt, FaUser } from 'react-icons/fa';
-import { Avatar } from '../constants/images';
 import Title from './Common/Title';
 
 export default function ContactSection() {
@@ -144,18 +143,11 @@ export default function ContactSection() {
             mainTitle="Contact"
             subtitle="Contact the owner of the property to get more information about the property."
           />
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 mb-16 items-center">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 mb-16 items-stretch">
             {/* Left Column - Contact Info */}
             <div className="bg-emerald-700 rounded-2xl p-8 text-white">
               
-              <motion.div 
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.5 }}
-                className="w-36 h-36 mx-auto rounded-full overflow-hidden border-4 border-emerald-100 shadow flex-shrink-0"
-              >
-                <img src={Avatar.john} className="w-full h-full object-cover" alt="Agent" />
-              </motion.div>
+            
               <div className="">
                 {/* Contact Info Cards */}
                 <motion.div
@@ -169,7 +161,7 @@ export default function ContactSection() {
                       <FaUser className="w-6 h-6" />
                     </div>
                     <div>
-                      <h3 className="font-semibold">John Smith</h3>
+                      <h3 className="font-semibold">John Rogers</h3>
                       <p className="text-emerald-200">Property Owner</p>
                     </div>
                   </div>
@@ -200,7 +192,7 @@ export default function ContactSection() {
                     </div>
                     <div>
                       <h3 className="font-semibold">Location</h3>
-                      <p className="text-emerald-200">Boyup Brook, Western Australia</p>
+                      <p className="text-emerald-200">Boyup Brook, Jayes, Bridgetown Road</p>
                     </div>
                   </div>
                 </motion.div>

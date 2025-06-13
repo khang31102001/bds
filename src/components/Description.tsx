@@ -39,9 +39,9 @@ export default function Description() {
   // ];
 
   const landInfo = [
-    { value: 121, label: 'Hectares Approx', desc: 'Total land area (121 hectares approx)' },
-    { value: 2, label: 'Private River frontage', desc: '' },
-    { value: 5, label: 'Distinct Areas', desc: 'Framing, River flats, Rolling hills, Granite escapement, River frontage, Private Bushland' },
+    { value: 121, label: '', desc: 'Hectares Approx' },
+    { value: 2, label: 'Klms', desc: 'Private River frontage' },
+    { value: 5, label: 'Distinct Areas', desc: 'Farming, River flats, Rolling hills, Granite escapement, River frontage, Private Bushland' },
     { value: 3, label: 'Bay', desc: 'Modern Shed' },
   ];
   const features = [
@@ -100,7 +100,7 @@ export default function Description() {
         <div className="text-center mb-12 md:mb-16">
           <Title 
             mainTitle="Property Description" 
-            subtitle="301 approx Acres 121 hectares - Your Opportunity to Own Prime Rural Property near Boyup Brook, WA"
+            subtitle="301 approx Acres 121 hectares - Your Opportunity to Own Prime Rural Property near Bridgetown and Boyup Brook, WA"
             className='text-emerald-900'
           />
         </div>
@@ -115,8 +115,8 @@ export default function Description() {
           className="mb-12 md:mb-16"
         >
           <p className='text-emerald-900 text-sm md:text-lg max-w-3xl lg:max-w-4xl mx-auto leading-relaxed text-justify'>
-            This 301-acre property is located about 8 kilometers  Boyup Brook and 23 kilometers East of Bridgetown – the heart of Western Australia's Southwest. 
-            This remarkable property features diverse landscapes: long private frontage to the scenic Blackwood River, gentle, rolling hills, open pastures, natural bushland, and farming areas. 
+            This 301-acre property is located about 8 kilometres  Boyup Brook and 23 kilometres East of Bridgetown – the heart of Western Australia's Southwest. 
+            This remarkable property features diverse landscapes: long private frontage to the scenic Blackwood River, gentle rolling hills, open pastures, natural bushland, and farming areas. 
             It's an ideal setting for peaceful living, family 4WD outings, outdoor activities, agricultural or eco-tourism development, ... or all of the above.
           </p>
         </motion.div>
@@ -135,7 +135,7 @@ export default function Description() {
                   scale: 1.02,
                   transition: { type: "spring", stiffness: 400, damping: 10 }
                 }}
-                className="text-center bg-white rounded-xl shadow-md p-4 md:p-6 transition-all duration-300 cursor-pointer hover:bg-emerald-50"
+                className="text-center bg-white rounded-xl shadow-md p-2 md:p-4 transition-all duration-300 cursor-pointer hover:bg-emerald-50"
               >
                 <motion.div 
                   initial={{ scale: 0.5 }}
@@ -144,12 +144,13 @@ export default function Description() {
                   transition={{ duration: 0.5, delay: idx * 0.15 }}
                   className="text-2xl md:text-3xl font-bold text-emerald-900 mb-2"
                 >
-                  {idx === 1 ? `${count.toLocaleString()} kmls`: count.toLocaleString()}
-                </motion.div>
-                <div className="text-gray-700 text-sm md:text-base font-medium px-2">
+                  {count.toLocaleString()}
+                  <span className="text-gray-700 text-sm md:text-base font-medium px-2">
                   {item.label}
-                </div>
-                <div className="text-gray-700 text-sm md:text-base font-medium px-2">
+                </span>
+                </motion.div>
+               
+                <div className=" text-gray-700 text-sm md:text-base font-medium px-2">
                   {item.desc}
                 </div>
                 

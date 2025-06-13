@@ -5,7 +5,7 @@ import { MainLayout } from './Layout/MainLayout';
 import { AnimatePresence, motion } from 'framer-motion';
 import Loading from './components/Common/Loading';
 import { IndexPage } from './pages';
-import DescriptionTest from './components/descriptiontest';
+
 
 const App = () => {
   const [isLoading, setIsLoading] = useState(true);
@@ -62,7 +62,6 @@ const App = () => {
                       <IndexPage />
                     </MainLayout>
                   } />
-                  <Route path= "/desc" element={<DescriptionTest/>} />
                 </Routes>
               </div>
             </div>

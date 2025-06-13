@@ -51,6 +51,16 @@ export default function Description() {
       description: "2km approx of pristine river frontage offering stunning views and recreational opportunities"
     },
     {
+      icon: <FaSeedling className="w-6 h-6 md:w-8 md:h-8" />,
+      title: "Agricultural Potential",
+      description: "Suitable areas for farming and agricultural development"
+    },
+    {
+      icon: <FaMountain className="w-6 h-6 md:w-8 md:h-8" />,
+      title: "Rolling Hills",
+      description: "Gentle, rolling hills creating picturesque landscapes and varied terrain"
+    },
+    {
         icon: <FaHome className="w-6 h-6 md:w-8 md:h-8" />,
         title: "Modern Infrastructure",
         description: "3-bay shed with concrete slab floor"
@@ -60,16 +70,9 @@ export default function Description() {
       title: "Natural Bushland",
       description: "Some areas of natural bushland"
     },
-    {
-      icon: <FaMountain className="w-6 h-6 md:w-8 md:h-8" />,
-      title: "Rolling Hills",
-      description: "Gentle, rolling hills creating picturesque landscapes and varied terrain"
-    },
-    {
-      icon: <FaSeedling className="w-6 h-6 md:w-8 md:h-8" />,
-      title: "Agricultural Potential",
-      description: "Suitable areas for farming and agricultural development"
-    }
+    
+    
+    
   ];
 
   function useCountUp(end: number, duration = 1.5): number {

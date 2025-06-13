@@ -121,12 +121,13 @@ const GalleryAndVideo = () => {
     return `${minutes}:${seconds < 10 ? '0' : ''}${seconds}`;
   }, []);
 
-  // Handle mouse enter/leave for video container
-  const handleMouseEnter = useCallback(() => {
+
+  // Add new handlers for play button
+  const handlePlayButtonEnter = useCallback(() => {
     setShowControls(true);
   }, []);
 
-  const handleMouseLeave = useCallback(() => {
+  const handlePlayButtonLeave = useCallback(() => {
     if (!isPlaying) return;
     setShowControls(false);
   }, [isPlaying]);
@@ -233,6 +234,8 @@ const GalleryAndVideo = () => {
       <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
         <button
           onClick={togglePlay}
+          onMouseEnter={handlePlayButtonEnter}
+          onMouseLeave={handlePlayButtonLeave}
           className={`bg-white/80 p-4 rounded-full hover:bg-white transition-all transform hover:scale-110 pointer-events-auto ${
             showControls || !isPlaying ? 'opacity-100 scale-100' : 'opacity-0 scale-90'
           }`}
@@ -273,14 +276,14 @@ const GalleryAndVideo = () => {
               e.stopPropagation();
               handleFullscreenVideo();
             }}
-            className="hover:text-emerald-400 transition-colors ml-2"
+            className="hover:text-emerald-400 transition-colors ml-2 bg-white p-2 rounded-full hover:scale-110 hover:bg-emerald-500 hover:text-white "
           >
             <ArrowsPointingOutIcon className="w-5 h-5" />
           </button>
         </div>
       </div>
     </div>
-  ), [showControls, isPlaying, currentTime, duration, formatTime, handleVideoProgress, handleFullscreenVideo, togglePlay]);
+  ), [showControls, isPlaying, currentTime, duration, formatTime, handleVideoProgress, handleFullscreenVideo, togglePlay, handlePlayButtonEnter, handlePlayButtonLeave]);
 
   return (
     <section className='bg-white' id="gallery">
@@ -422,8 +425,6 @@ const GalleryAndVideo = () => {
                     <div 
                       ref={videoContainerRef}
                       className="relative w-full h-full"
-                      onMouseEnter={handleMouseEnter}
-                      onMouseLeave={handleMouseLeave}
                     >
                     <video
                         ref={videoRef}
@@ -484,9 +485,10 @@ const GalleryAndVideo = () => {
       </div>
 
       {/* Fullscreen Gallery */}
-      <AnimatePresence>
+      <AnimatePresence mode="sync">
         {isFullscreen && (
           <motion.div
+            key="fullscreen-gallery"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
@@ -525,8 +527,6 @@ const GalleryAndVideo = () => {
                     {media.type === 'video' ? (
                       <div 
                         className="relative w-full h-full flex items-center justify-center"
-                        onMouseEnter={handleMouseEnter}
-                        onMouseLeave={handleMouseLeave}
                       >
                         <video
                           ref={index === activeIndex ? fullscreenVideoRef : null}
@@ -546,6 +546,8 @@ const GalleryAndVideo = () => {
                           >
                             <button
                               onClick={togglePlay}
+                              onMouseEnter={handlePlayButtonEnter}
+                              onMouseLeave={handlePlayButtonLeave}
                               className={`bg-white/80 p-4 md:p-6 rounded-full hover:bg-white transition-all transform hover:scale-110 ${
                                 showControls || !isPlaying ? 'opacity-100 scale-100' : 'opacity-0 scale-90'
                               }`}
@@ -584,11 +586,7 @@ const GalleryAndVideo = () => {
                     <svg width={24} height={24} fill="none" stroke="currentColor" strokeWidth={2}><path strokeLinecap="round" strokeLinejoin="round" d="M9 5l7 7-7 7"/></svg>
                     </button>
                 </div>
-              <div className="swiper-pagination">
-                  <span className="swiper-pagination-bullet swiper-pagination-bullet-active"></span>
-                  <span className="swiper-pagination-bullet"></span>
-                  ...
-              </div>
+              <div className="swiper-pagination"></div>
             </Swiper>
           </motion.div>
         )}

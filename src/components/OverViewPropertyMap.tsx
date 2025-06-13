@@ -70,7 +70,13 @@ const PropertyOverviewMap = () => {
       </div>
 
       {selectedImage !== null && (
-        <div className="fixed inset-0 bg-black bg-opacity-80 flex items-center justify-center z-50">
+        <div className="fixed inset-0 bg-white  flex items-center justify-center z-50">
+          <button
+            className="absolute top-3 right-3 md:top-4 md:right-4 bg-white text-green-900 p-2 rounded-full hover:bg-white/40 transition-colors z-[102]  hover:scale-110 hover:bg-emerald-500 hover:text-white"
+            onClick={() => setSelectedImage(null)}
+          >
+            <FaTimes size={20} className="md:w-6 md:h-6" />
+          </button>
           <Swiper
             modules={[Pagination, Navigation]}
             pagination={{
@@ -92,12 +98,7 @@ const PropertyOverviewMap = () => {
 
                 <div className='flex items-center justify-center w-full h-full'>
                   <div className="relative max-w-3xl w-full mx-4">
-                    <button
-                      className="absolute top-3 right-3 md:top-4 md:right-4 bg-white text-green-900 p-2 rounded-full hover:bg-white/40 transition-colors z-[102]"
-                      onClick={() => setSelectedImage(null)}
-                    >
-                      <FaTimes size={20} className="md:w-6 md:h-6" />
-                    </button>
+                    
                     <img src={img.src} alt={img.alt} className="w-full max-h-[80vh] object-contain rounded-lg" />
                     <p className="mt-4 text-white text-center">{img.alt}</p>
                   </div>
@@ -124,9 +125,7 @@ const PropertyOverviewMap = () => {
               </button>
             </div>
             <div className="swiper-pagination">
-              <span className="swiper-pagination-bullet swiper-pagination-bullet-active"></span>
-              <span className="swiper-pagination-bullet hover:swiper-pagination-bullet"></span>
-              ...
+            
             </div>
           </Swiper>
 

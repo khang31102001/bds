@@ -276,7 +276,7 @@ const GalleryAndVideo = () => {
               e.stopPropagation();
               handleFullscreenVideo();
             }}
-            className="hover:text-emerald-400 transition-colors ml-2 bg-white p-2 rounded-full hover:scale-110 hover:bg-emerald-500 hover:text-white "
+            className=" transition-colors ml-2 bg-white p-2 rounded-full hover:scale-110 hover:bg-emerald-500 hover:text-white "
           >
             <ArrowsPointingOutIcon className="w-5 h-5" />
           </button>
@@ -288,7 +288,7 @@ const GalleryAndVideo = () => {
   return (
     <section className='bg-white' id="gallery">
       {/* //gallery and video */}
-      <div className='max-w-7xl mx-auto py-0 px-4 md:px-8'>
+      <div className='max-w-7xl mx-auto py-16 px-4 md:px-8'>
         <div className="flex flex-col gap-16">
             <Title 
                 mainTitle="Gallery & Video" 

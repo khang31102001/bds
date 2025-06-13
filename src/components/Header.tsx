@@ -103,8 +103,11 @@ const Header = () => {
                 <span className={`${scrolled ? "text-emerald-900" : "text-white"}`}>For Private Sale</span><br />
                 <span className="relative inline-block">
                   <span className="text-emerald-200">Boyup Brook Acreage</span>
+                  
                   <span className ={`absolute -bottom-1 left-0 ${scrolled ? "bg-emerald-900" : " bg-white"} rounded-full w-[80%] h-1`}></span>
                 </span>
+                
+                <p className={`${scrolled ? "text-yellow-500" : "text-yellow-200"} mt-4`}>$780,000 - $840,000</p>
           </h1>
         </Link>
         
@@ -130,7 +133,7 @@ const Header = () => {
               <a 
                 href={href}
                 onClick={(e) => handleNavClick(e, href, isHash, id)}
-                className={`${isActive(id) ? 'border-b-2' : 'hover:border-b-2'} pb-1 ${
+                className={`text-sm sm:text-base md:text-lg ${isActive(id) ? 'border-b-2' : 'hover:border-b-2'} pb-1 ${
                   (scrolled || isMenuOpen) 
                     ? (isActive(id) ? 'border-emerald-900' : 'hover:border-emerald-900') 
                     : (isActive(id) ? 'border-white' : 'hover:border-white')

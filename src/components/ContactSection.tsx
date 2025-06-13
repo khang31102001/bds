@@ -137,7 +137,7 @@ export default function ContactSection() {
       id="contact" 
       className="w-full mx-auto "
     >
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="max-w-7xl py-16 mx-auto px-4 sm:px-6 lg:px-8">
         <div className='bg-white rounded-xl flex flex-col gap-16'>
           <Title
             className='text-emerald-900'

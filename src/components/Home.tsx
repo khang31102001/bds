@@ -86,7 +86,7 @@ export default function Home() {
           className="w-full h-full object-cover select-none block md:hidden"
         />
       </div>
-      <div className='hidden md:flex absolute md:top-[24%] lg:top-[20%] right-2 max-w-[64%] w-full '>
+      <div className='hidden md:flex absolute md:top-[20%] lg:top-[12%] right-2 max-w-[64%] w-full '>
           <div className="flex flex-col justify-between items-center backdrop-blur-sm rounded-2xl shadow-2xl w-full h-full p-6">
               <span className="text-white text-sm sm:text-[0.8] md:text-base xl:text-lg tracking-wide text-center md:text-left w-full">
                     301 acres 121 ha freehold with 2km approx Blackwood River frontage. 
@@ -114,12 +114,13 @@ export default function Home() {
      </div>
 
       {/* Main Content */}
-      <div className="flex w-full justify-center md:justify-start items-center md:items-start z-10 select-none ">
+      <div className="flex w-full justify-center md:justify-start items-center md:items-start z-10 select-none mb-20 md:mb-0 ">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.6 }}
           className={`
+            
             w-full md:w-auto
             max-w-full md:max-w-2xl lg:max-w-3xl
             bg-transparent
@@ -134,15 +135,9 @@ export default function Home() {
             mx-2 ms:mx-4 md:mx-8 xl:mx-0
           `}
         >
-         {/* <div className='md:hidden'>
-              <h1 className="text-white text-3xl sm:text-4xl md:text-5xl font-extrabold leading-tight text-center md:text-left">
-                <span>For Private Sale</span><br />
-                <span className="text-emerald-200">Boyup Brook Acreage</span> 
-            </h1>
-        </div> */}
        
           <div className="md:hidden flex flex-col items-center">
-            <span className="text-white text-sm sm:text-base md:text-lg tracking-wide text-center md:text-left w-full">
+            <span className="text-white text-sm sm:text-base md:text-lg tracking-wide text-left md:text-left w-full">
                 301 acres freehold with approx 2km Blackwood River frontage. 
                 Perfect for eco-tourism, lifestyle development and agricultural opportunities
           </span>
@@ -158,7 +153,7 @@ export default function Home() {
               </div>
 
               {/* Animated content */}
-              <AnimatePresence mode="wait">
+              <AnimatePresence mode="sync">
                 {visibleDetails.map((detail, index) => (
                   <motion.div 
                     key={`${activeGroupIndex}-${index}`}
@@ -185,7 +180,7 @@ export default function Home() {
                         ease: "easeOut"
                       }}
                     />
-                    <span className="text-white text-sm sm:text-base md:text-lg tracking-wide text-center md:text-left w-full" style={{ 
+                    <span className="text-white text-sm sm:text-base md:text-lg tracking-wide text-left md:text-left w-full" style={{ 
                       textShadow: '0 1px 2px rgba(0,0,0,0.3), 0 2px 4px rgba(0,0,0,0.2)'
                     }}>
                       {detail}
@@ -194,29 +189,18 @@ export default function Home() {
                 ))}
               </AnimatePresence>
             </div>
-           
-            {/* <div className=" md:hidden flex flex-col-reverse md:flex-row md:items-start items-center gap-3 sm:gap-4 md:gap-6 mt-4 sm:mt-6 w-full justify-center md:justify-start">
-              <a href="tel:0457230191" className="flex items-center gap-2 text-black font-bold hover:text-emerald-200 transition-colors text-sm sm:text-base md:text-lg justify-center md:justify-start">
-                <i className="fas fa-phone text-emerald-300"></i>
-                0457 230 191
-              </a>
-            
-              <a href="mailto:eaglescreensjr@gmail.com" className="flex items-center gap-2 text-black font-bold hover:text-emerald-200 transition-colors text-sm sm:text-base md:text-lg justify-center md:justify-start">
-                <i className="fas fa-envelope text-emerald-300"></i>
-                eaglescreensjr@gmail.com
-              </a>
-            </div> */}
+        
           </div>
         </motion.div>
       </div>
       <div className='absolute  right-4 w-[12.5rem] h-[8rem] sm:block md:hidden lg:block bottom-[6rem] lg:w-[16rem] lg:h-[10rem] overflow-hidden rounded-lg shadow-lg '>
             {/* River image - positioned in bottom right corner, smaller size */}
         <img 
-           style={{ filter: 'brightness(1.25)' }}
-            src={heroImages.img_river1}
-            alt="River view"
-            className=' w-full h-full object-cover'
-          />
+          style={{ filter: 'brightness(1.25)' }}
+          src={heroImages.img_river3}
+          alt="River view"
+          className=' w-full h-full object-cover'
+        />
      
       </div>
     {/* // contact for desktop */}

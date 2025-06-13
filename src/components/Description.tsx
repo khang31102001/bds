@@ -95,7 +95,7 @@ export default function Description() {
 
   return (
     <section className="min-h-screen relative bg-white" id="description">
-      <div className="max-w-5xl mx-auto py-8 px-4 md:px-8">
+      <div className="max-w-5xl mx-auto py-20 px-4 md:px-8">
         {/* Title Section */}
         <div className="text-center mb-12 md:mb-16">
           <Title 

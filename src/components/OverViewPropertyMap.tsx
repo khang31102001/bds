@@ -56,13 +56,13 @@ const PropertyOverviewMap = () => {
                 </motion.div>
         </div>
 
-        <div className="relative w-full max-w-3xl mx-auto h-[320px] sm:h-[420px] md:h-[520px] lg:h-[600px]">
+        <div className="relative w-full max-w-3xl mx-auto h-[380px] sm:h-[420px] md:h-[520px] lg:h-[600px]">
           {/* Ảnh bên trái */}
           <div className="
-            absolute left-0 top-12
-            w-[80vw] max-w-[350px] sm:max-w-[420px] md:max-w-[500px] lg:max-w-[600px]
-            h-[200px] sm:h-[280px] md:h-[360px] lg:h-[440px]
-            rounded-xl overflow-hidden shadow-lg z-10
+            absolute top-0 left-0 
+            w-[228px] sm:w-[372px] md:w-[420px] lg:w-[510px]
+            h-[152px] sm:h-[260px] md:h-[300px] lg:h-[356px]
+            overflow-hidden shadow-lg z-10
             cursor-pointer
           "
             onClick={() => setSelectedIndex(0)}
@@ -71,20 +71,20 @@ const PropertyOverviewMap = () => {
               style={{ filter: 'brightness(1.25)' }}
               src={LandGatePlan.landgatePlan3}
               alt="Aerial 1"
-              className="w-full h-full object-cover"
+              className="w-full h-[184%]  object-cover"
             />
           </div>
           {/* Ảnh bên phải, chồng lên và có viền trắng, nghiêng nhẹ, viền dày hơn */}
           <div className="
-            absolute left-[40vw] top-[112px] sm:left-[180px] md:left-[220px] lg:left-[260px] 
-            md:top-[180px]
-            w-[65vw] max-w-[350px] sm:max-w-[420px] md:max-w-[500px] lg:max-w-[600px]
-            h-[200px] sm:h-[280px] md:h-[360px] lg:h-[440px]
-            rounded-xl overflow-hidden shadow-2xl border-8 border-white z-10
+           absolute left-[12.5rem] sm:left-[20rem] md:left-[23rem] lg:left-[27.5rem] top-[5rem] sm:top-[9rem] md:top-[10rem] lg:top-[11rem] 
+              w-[192px] sm:w-[310px] md:w-[392px] lg:w-[460px]
+              
+             overflow-hidden shadow-2xl border-8 border-white z-10
             cursor-pointer
           "
             onClick={() => setSelectedIndex(1)}
           >
+            <div className="absolute top-[46%] right-[50%] w-full h-full  bg-white z-20"></div>
             <img
               style={{ filter: 'brightness(1.25)' }}
               src={LandGatePlan.landgatePlan5}
@@ -115,12 +115,14 @@ const PropertyOverviewMap = () => {
           >
             {images.map((img, idx) => (
               <SwiperSlide key={idx} className="flex items-center justify-center h-full">
-                <img
-                  src={img.src}
-                  alt={img.alt}
-                  className="max-h-[80vh] max-w-full w-auto h-auto rounded-xl object-contain m-auto block"
-                  style={{ filter: 'brightness(1.25)' }}
-                />
+               <div className="flex flex-col items-center justify-center h-full">
+                  <img
+                    src={img.src}
+                    alt={img.alt}
+                    className="max-h-[80vh] max-w-full w-auto h-auto rounded-xl object-contain m-auto block"
+                    style={{ filter: 'brightness(1.25)' }}
+                  />
+               </div>
               </SwiperSlide>
             ))}
           </Swiper>

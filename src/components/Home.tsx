@@ -45,8 +45,8 @@ export default function Home() {
         setVisibleDetails([]);
         setCurrentDetailIndex(0);
         setIsTransitioning(false);
-      }, 300); // Wait for fade out before changing group
-    }, 5000);
+      }, 500); // Increased from 300 to 500 for smoother transition
+    }, 10000); // Increased from 5000 to 8000 for longer display time
 
     return () => clearInterval(groupInterval);
   }, []);
@@ -57,7 +57,7 @@ export default function Home() {
       const detailInterval = setInterval(() => {
         setVisibleDetails(prev => [...prev, detailsGroups[activeGroupIndex][currentDetailIndex]]);
         setCurrentDetailIndex(prev => prev + 1);
-      }, 350);
+      }, 600); // Increased from 350 to 600 for slower detail appearance
 
       return () => clearInterval(detailInterval);
     }
@@ -118,7 +118,7 @@ export default function Home() {
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 0.6 }}
+          transition={{ duration: 0.8, delay: 0.8 }}
           className={`
             
             w-full md:w-auto
@@ -165,8 +165,8 @@ export default function Home() {
                     animate={{ opacity: 1, x: 0 }}
                     exit={{ opacity: 0, x: 20 }}
                     transition={{
-                      duration: 0.3,
-                      delay: index * 0.08,
+                      duration: 1,
+                      delay: index * 0.01,
                       ease: "easeOut"
                     }}
                   >
@@ -175,8 +175,8 @@ export default function Home() {
                       initial={{ scale: 0 }}
                       animate={{ scale: 1 }}
                       transition={{
-                        delay: index * 0.08,
-                        duration: 0.2,
+                        delay: index * 0.01,
+                        duration: 1,
                         ease: "easeOut"
                       }}
                     />

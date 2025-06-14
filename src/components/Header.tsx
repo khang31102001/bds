@@ -6,11 +6,10 @@ const Header = () => {
   const [activeSection, setActiveSection] = useState('home');
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const navigate = useNavigate();
-  // const location = useLocation();
 
   useEffect(() => {
     const handleScroll = () => {
-      setScrolled(window.scrollY > 0);
+      setScrolled(window.scrollY > 0 );
 
       // Check which section is in view
       const sections = ['home', 'description', 'gallery','contact','summary'];
@@ -49,20 +48,35 @@ const Header = () => {
         const elementPosition = targetElement.getBoundingClientRect().top;
         const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
 
+        // Check if device is mobile
+        const isMobile = window.innerWidth < 768;
+        
         window.scrollTo({
           top: offsetPosition,
-          behavior: 'smooth'
+          behavior: 'smooth',
+          // Add custom duration for mobile
+          ...(isMobile && { duration: 1000 }) // Slower scroll on mobile
         });
       }
     } else {
       // Handle route links (navigate to page)
       if (href === '/') {
-        window.scrollTo({ top: 0, behavior: 'smooth' });
+        const isMobile = window.innerWidth < 768;
+        window.scrollTo({ 
+          top: 0, 
+          behavior: 'smooth',
+          ...(isMobile && { duration: 1000 })
+        });
       } else if (href === '/gallery') {
-        window.scrollTo({ top: 0, behavior: 'smooth' });
+        const isMobile = window.innerWidth < 768;
+        window.scrollTo({ 
+          top: 0, 
+          behavior: 'smooth',
+          ...(isMobile && { duration: 1000 })
+        });
         setTimeout(() => {
           navigate(href);
-        }, 500); // Wait for scroll animation to complete
+        }, isMobile ? 1000 : 500); // Longer delay for mobile
       } else {
         navigate(href);
       }

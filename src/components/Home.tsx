@@ -86,7 +86,7 @@ export default function Home() {
           className="w-full h-full object-cover select-none block md:hidden"
         />
       </div>
-      <div className='hidden md:flex absolute md:top-[20%] lg:top-[14%] right-2 max-w-[64%] w-full '>
+      <div className='hidden md:flex absolute md:top-[20%] lg:top-[14%] right-2 max-w-[64%] w-full z-1'>
           <div className="flex flex-col justify-between items-center backdrop-blur-sm rounded-2xl shadow-2xl w-full h-full p-6">
               <span className="text-white text-sm sm:text-[0.8] md:text-base xl:text-lg tracking-wide text-center md:text-left w-full">
                     301 acres 121 ha freehold with 2km approx Blackwood River frontage. 
@@ -193,11 +193,11 @@ export default function Home() {
           </div>
         </motion.div>
       </div>
-      <div className='absolute  right-4 w-[12.5rem] h-[8rem] sm:block md:hidden lg:block bottom-[6rem] lg:w-[16rem] lg:h-[10rem] overflow-hidden rounded-lg shadow-lg '>
+      <div className='absolute  right-4 w-[12.5rem] h-[20rem]  lg:block bottom-[5rem] lg:w-[10rem] lg:h-[20rem] overflow-hidden rounded-lg shadow-lg z-0 '>
             {/* River image - positioned in bottom right corner, smaller size */}
         <img 
           style={{ filter: 'brightness(1.25)' }}
-          src={heroImages.img_river3}
+          src={heroImages.img_river2}
           alt="River view"
           className=' w-full h-full object-cover'
         />

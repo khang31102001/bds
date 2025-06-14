@@ -76,8 +76,9 @@ const PropertyOverviewMap = () => {
           </div>
           {/* Ảnh bên phải, chồng lên và có viền trắng, nghiêng nhẹ, viền dày hơn */}
           <div className="
-            absolute left-[35vw] sm:left-[180px] md:left-[220px] lg:left-[260px] top-[180px]
-            w-[80vw] max-w-[350px] sm:max-w-[420px] md:max-w-[500px] lg:max-w-[600px]
+            absolute left-[40vw] top-[112px] sm:left-[180px] md:left-[220px] lg:left-[260px] 
+            md:top-[180px]
+            w-[65vw] max-w-[350px] sm:max-w-[420px] md:max-w-[500px] lg:max-w-[600px]
             h-[200px] sm:h-[280px] md:h-[360px] lg:h-[440px]
             rounded-xl overflow-hidden shadow-2xl border-8 border-white z-10
             cursor-pointer

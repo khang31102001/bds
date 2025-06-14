@@ -41,7 +41,7 @@ export default function Description() {
   const landInfo = [
     { value: 121, label: '', desc: 'Hectares Approx' },
     { value: 2, label: 'Klms', desc: 'Private River frontage' },
-    { value: 5, label: 'Distinct Areas', desc: 'Farming, River flats, Rolling hills, Granite escapement, River frontage, Private Bushland' },
+    { value: 5, label: 'Distinct Areas', desc: 'Farming, River flats, Rolling hills, Granite Escarpment, River frontage, Private Bushland' },
     { value: 3, label: 'Bay', desc: 'Modern Shed' },
   ];
   const features = [
@@ -104,9 +104,7 @@ export default function Description() {
             className='text-emerald-900'
           />
         </div>
-
-       
-        
+ 
         {/* Description Text */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -115,7 +113,7 @@ export default function Description() {
           className="mb-12 md:mb-16"
         >
           <p className='text-emerald-900 text-sm md:text-lg max-w-3xl lg:max-w-4xl mx-auto leading-relaxed text-justify'>
-            This 301-acre property is located about 8 kilometres  Boyup Brook and 23 kilometres East of Bridgetown – the heart of Western Australia's Southwest. 
+            This 301-acre property is located about 8 kilometres south of Boyup Brook and 23 kilometres East of Bridgetown – the heart of Western Australia's Southwest. 
             This remarkable property features diverse landscapes: long private frontage to the scenic Blackwood River, gentle rolling hills, open pastures, natural bushland, and farming areas. 
             It's an ideal setting for peaceful living, family 4WD outings, outdoor activities, agricultural or eco-tourism development, ... or all of the above.
           </p>

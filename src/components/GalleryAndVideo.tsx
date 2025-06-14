@@ -292,7 +292,7 @@ const GalleryAndVideo = () => {
         <div className="flex flex-col gap-16">
             <Title 
                 mainTitle="Gallery & Video" 
-                subtitle="Discover our property through the following the videos and photos showcasing the stunning river frontage and just part of beautiful property"
+                subtitle="Discover our property through the following the videos and photos showcasing the stunning river frontage and just Part of this beautiful property"
                 className="text-emerald-900"
             />
             {/* Main Gallery Container - Responsive */}

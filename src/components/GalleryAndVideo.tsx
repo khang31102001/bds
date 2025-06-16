@@ -12,7 +12,7 @@ import 'swiper/css/navigation';
 import 'swiper/css/pagination';
 import Title from "../components/Common/Title";
 import { ArrowsPointingOutIcon } from "@heroicons/react/24/outline";
-import { videoData } from "../constants/video";
+// import { videoData } from "../constants/video";
 import PropertyOverviewMap from "./OverViewPropertyMap";
 import { videos } from "../data/video";
 // Media type definitions
@@ -49,6 +49,7 @@ const GalleryAndVideo = () => {
     }))
   ], []);
 
+ 
   // Get first 3 images for thumbnails (excluding videos)
   const thumbnailImages = useMemo(() => 
     allMedia

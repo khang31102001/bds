@@ -40,11 +40,11 @@ const Summary = ()=>{
 
                 <div className="content-block">
                     <h3>Investment Opportunity</h3>
-                    <p>Currently generating reliable income through an established sheep operation with a proven track record and dependable tenant.</p>
+                    <p>Currently generating reliable income from an established stud sheep operation with a proven track record and dependable, friendly tenant.</p>
                     <ul className="highlight-list">
-                        <li>Annual rent paid in advance each January</li>
-                        <li>Fire breaks and water catchment systems</li>
-                        <li>Vast potential for development projects</li>
+                        <li>Water catchment systems</li>
+                        <li>Potential for development projects</li>
+                        <li>Sheep-Lease has been renewed yearly for many, many years. Rent paid in advance covers all outgoings</li>
                     </ul>
                 </div>
             </div>

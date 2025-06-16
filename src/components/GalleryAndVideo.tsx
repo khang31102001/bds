@@ -14,11 +14,12 @@ import Title from "../components/Common/Title";
 import { ArrowsPointingOutIcon } from "@heroicons/react/24/outline";
 import { videoData } from "../constants/video";
 import PropertyOverviewMap from "./OverViewPropertyMap";
+import { videos } from "../data/video";
 // Media type definitions
 interface VideoMedia {
   type: 'video';
   src: string;
-  id: string;
+  id: number;
   title: string;
   description: string;
 }
@@ -34,7 +35,7 @@ const GalleryAndVideo = () => {
   // Move memoized values inside component
   const allMedia = useMemo<Media[]>(() => [
     // Videos first
-    ...videoData.map(video => ({
+    ...videos.map(video => ({
       type: 'video' as const,
       src: video.src,
       id: video.id,

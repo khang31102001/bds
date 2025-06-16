@@ -56,5 +56,5 @@ export const videos = [
     src: "https://res.cloudinary.com/dw5tfsz53/video/upload/v1749999569/c553ef4d-9464-49da-8d0c-89f97b3bb657_zmc9hc.mp4",
     title: 'Horse Riding',
     description: 'Explore the beautiful Blackwood River frontage'
-  }
+  },
 ];

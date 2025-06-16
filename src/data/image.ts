@@ -3,7 +3,6 @@ interface Image {
     id: number
     src: string
 }
-
 export const images:Image[] =  [
     { id: 1, src: "https://res.cloudinary.com/dw5tfsz53/image/upload/v1750000773/20161029_132019_e8xoja.jpg" },
     { id: 2, src: "https://res.cloudinary.com/dw5tfsz53/image/upload/v1750000764/IMG_20230818_145919_eoigxb.jpg" },
@@ -24,14 +23,12 @@ export const images:Image[] =  [
     { id: 17, src: "https://res.cloudinary.com/dw5tfsz53/image/upload/v1750000722/IMG_20200920_102823_t8sz66.jpg" },
     { id: 18, src: "https://res.cloudinary.com/dw5tfsz53/image/upload/v1750000721/IMG_20200919_162000_kvuvqk.jpg" },
     { id: 19, src: "https://res.cloudinary.com/dw5tfsz53/image/upload/v1750000710/cid_EDBC50148B594B48BF1CB52EC954FB47_OwnerPC_lizfrz.jpg" },
-    { id: 20, src: "https://res.cloudinary.com/dw5tfsz53/image/upload/v1750000029/b292fe1f-96b7-47f2-9e5d-62bc6a8d0ad8_v1yrc6.jpg" },
     { id: 21, src: "https://res.cloudinary.com/dw5tfsz53/image/upload/v1750000029/b292fe1f-96b7-47f2-9e5d-62bc6a8d0ad8_v1yrc6.jpg" },
     { id: 22, src: "https://res.cloudinary.com/dw5tfsz53/image/upload/v1750000028/2ac20961-1029-4857-9f26-39fc55bede97_xuov5z.jpg" },
     { id: 23, src: "https://res.cloudinary.com/dw5tfsz53/image/upload/v1750000008/72cc06d5-7ce3-4218-982a-b292104df3c3_j4bwuk.jpg" },
     { id: 24, src: "https://res.cloudinary.com/dw5tfsz53/image/upload/v1750000007/1c42fa08-d5be-4d09-9298-6cfc0adff641_mexf8s.jpg" },
     { id: 25, src: "https://res.cloudinary.com/dw5tfsz53/image/upload/v1750000006/ta%CC%89i_xuo%CC%82%CC%81ng_xpmkqu.jpg" },
     { id: 26, src: "https://res.cloudinary.com/dw5tfsz53/image/upload/v1749999522/b723677b-02ca-4c76-a870-39bd9eba59af_xpezzc.jpg" },
-    { id: 27, src: "https://res.cloudinary.com/dw5tfsz53/image/upload/v1749999522/9f5f637f-8ba4-47db-9460-a9266c7cdd32_mdjrds.jpg" },
     { id: 28, src: "https://res.cloudinary.com/dw5tfsz53/image/upload/v1749999522/9f5f637f-8ba4-47db-9460-a9266c7cdd32_mdjrds.jpg" },
     { id: 29, src: "https://res.cloudinary.com/dw5tfsz53/image/upload/v1749999522/ab522cee-3e1a-4d23-ab16-63b3f64c24e9_1_bexbgk.jpg" },
     { id: 30, src: "https://res.cloudinary.com/dw5tfsz53/image/upload/v1749999521/d2329944-9ca9-432e-ac18-67db388ea393_okl0jf.jpg" },

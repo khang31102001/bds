@@ -1,5 +1,5 @@
 import { motion, AnimatePresence } from "framer-motion";
-import { heroImages } from "../constants/images";
+// import { heroImages } from "../constants/images";
 import { ScrollToTop } from "../components";
 
 import { useEffect, useRef, useState, useCallback, useMemo } from "react";
@@ -12,9 +12,9 @@ import 'swiper/css/navigation';
 import 'swiper/css/pagination';
 import Title from "../components/Common/Title";
 import { ArrowsPointingOutIcon } from "@heroicons/react/24/outline";
-// import { videoData } from "../constants/video";
 import PropertyOverviewMap from "./OverViewPropertyMap";
 import { videos } from "../data/video";
+import { images } from "../data/image";
 // Media type definitions
 interface VideoMedia {
   type: 'video';
@@ -26,6 +26,7 @@ interface VideoMedia {
 
 interface ImageMedia {
   type: 'image';
+  id: number;
   src: string;
 }
 
@@ -43,9 +44,10 @@ const GalleryAndVideo = () => {
       description: video.description
     })),
     // Then images
-    ...Object.values(heroImages).map(src => ({ 
+    ...Object.values(images).map((src, index) => ({ 
       type: 'image' as const, 
-      src 
+      id: src.id || index,
+      src: src.src,
     }))
   ], []);
 

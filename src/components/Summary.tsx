@@ -24,8 +24,8 @@ const Summary = ()=>{
             </div>
 
             {/* <!-- Main Content --> */}
-            <div className="content-grid">
-                <div className="content-block">
+            <div className="">
+                {/* <div className="content-block">
                     <h3>Property Features</h3>
                     <p>This exceptional rural lifestyle property offers exclusive frontage to the pristine Blackwood River, combining natural beauty with practical agricultural potential.</p>
                     <ul className="highlight-list">
@@ -36,7 +36,7 @@ const Summary = ()=>{
                         <li>Existing dam with potential for more</li>
                         <li>Power line runs through property</li>
                     </ul>
-                </div>
+                </div> */}
 
                 <div className="content-block">
                     <h3>Investment Opportunity</h3>

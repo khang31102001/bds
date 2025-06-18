@@ -8,6 +8,7 @@ import { FaTree, FaHome, FaWater, FaMountain, FaSeedling } from 'react-icons/fa'
 // import { propertyData } from '../data/propertyData';
 // import PropertyOverviewMap from './OverViewPropertyMap';
 import PropertyDetail from './PropertyDetail';
+import { GiRiver } from 'react-icons/gi';
 
 
 export default function Description() {
@@ -48,7 +49,7 @@ export default function Description() {
     {
       icon: <FaWater className="w-6 h-6 md:w-8 md:h-8" />,
       title: "Blackwood River Frontage",
-      description: "2km approx of pristine river frontage offering stunning views and recreational opportunities"
+      description: "2km approx of pristine river frontage offering stunning views, recreational opportunities and Private Blackwood River frontage with deep pools"
     },
     {
       icon: <FaSeedling className="w-6 h-6 md:w-8 md:h-8" />,
@@ -68,7 +69,12 @@ export default function Description() {
     {
       icon: <FaTree className="w-6 h-6 md:w-8 md:h-8" />,
       title: "Natural Bushland",
-      description: "Some areas of natural bushland"
+      description: "Some areas of natural bushland, Mature Redgum  Jarrah Blackbutt and River gums trees throughout"
+    },
+    {
+      icon: <GiRiver className="w-6 h-6 md:w-8 md:h-8" />,
+      title: "Land’s Unique Features",
+      description: "Wide open fields and treed river flats, Private walking trails and camping areas, Existing dam with potential for more, Power line runs through property"
     },
     
     

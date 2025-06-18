@@ -1,14 +1,19 @@
 {
     "@context": "https://schema.org",
-    "@type": "Property",
-    "name": "121 Hectares Freehold Land – Boyup Brook, Jayes, Bridgetown Road",
-    "description": "A rare 121-hectare freehold land in WA with 2km private river frontage.",
+    "@type": "Place",
+    "name": "Rural Land in These Areas",
+    "description": "Details about rural land for sale in specific areas.",
     "image": [
       "https://riverslane.org/images/img_asp-1.jpg",
       "https://riverslane.org/images/img_asp.jpg",
       "https://riverslane.org/images/img_hill-1.jpg",
       "https://riverslane.org/images/img_river-3.jpg"
     ],
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "Boyup Brook, Jayes, Bridgetown Road",
+      "addressRegion": "Western Australia"
+    },
     "offers": {
       "@type": "Offer",
       "priceCurrency": "AUD",

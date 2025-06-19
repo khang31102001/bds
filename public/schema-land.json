@@ -1,6 +1,6 @@
 {
     "@context": "https://schema.org",
-    "@type": "Place",
+    "@type": "Product",
     "name": "Rural Land in These Areas",
     "description": "Details about rural land for sale in specific areas.",
     "image": [
@@ -17,7 +17,7 @@
     "offers": {
       "@type": "Offer",
       "priceCurrency": "AUD",
-      "price": "780000",
+      "price": "900000",
       "availability": "https://schema.org/InStock",
       "url": "https://riverslane.org"
     },

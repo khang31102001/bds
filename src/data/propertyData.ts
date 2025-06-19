@@ -1,6 +1,6 @@
 import { Avatar} from "../constants/images";
 
-export  const propertyData = {
+export const propertyData = {
     title: "121 Hectares approx - Your Opportunity to own a Prime Rural Lifestyle Property near Boyup Brook and Bridgetown, WA",
     location: "Boyup Brook / Bridgetown, Western Australia",
     price: "$900,000",
@@ -11,5 +11,10 @@ export  const propertyData = {
       phone: "0457 234 191",
       image: Avatar.john
     },
+    Investment: {
+       title: "Investment Opportunity",
+       subTitle: "Currently generating reliable income from an established stud sheep operation with a proven track record and dependable, friendly tenant.",
+       description: ["Water catchment systems", "Potential for development projects", "Sheep-Lease has been renewed yearly for many, many years. Rent paid in advance covers all outgoings"]
+    }
   };
   

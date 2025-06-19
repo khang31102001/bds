@@ -117,11 +117,9 @@ const Header = () => {
                 <span className={`${scrolled ? "text-emerald-900" : "text-white"}`}>For Private Sale</span><br />
                 <span className="relative inline-block">
                   <span className="text-emerald-200">Boyup Brook Acreage</span>
-                  
                   <span className ={`absolute -bottom-1 left-0 ${scrolled ? "bg-emerald-900" : " bg-white"} rounded-full w-[80%] h-1`}></span>
                 </span>
-                
-                <p className={`${scrolled ? "text-yellow-500" : "text-yellow-200"} mt-4`}>$900,000 </p>
+                <p className={`${scrolled ? "text-yellow-500" : "text-yellow-200"} mt-4`}>Asking $900,000</p>
           </h1>
         </Link>
         

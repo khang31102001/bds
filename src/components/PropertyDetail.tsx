@@ -6,11 +6,10 @@ const PropertyDetail = () => {
     <div className="max-w-7xl mx-auto">
       <div className="flex flex-col md:flex-row justify-between items-start mb-8 ">
         <div className='flex flex-col gap-8 w-full'>
+
           <div className='flex flex-col md:flex-row justify-center items-center gap-2'>
-           
-            <span className="md:text-4xl text-3xl font-bold text-emerald-900 ">{propertyData.price}</span>
+            <span className="md:text-4xl text-3xl font-bold text-emerald-900 ">Asking {propertyData.price}</span>
           </div>
-          
 
           <div className="flex gap-4 flex-col md:flex-row justify-center w-full ">
             <div className='flex gap-4 flex-col md:flex-row items-start md:items-center '>
@@ -28,10 +27,23 @@ const PropertyDetail = () => {
               </div>
             </div>
           </div>
+
           <div className='flex flex-col gap-4'>
             <h2 className="text-2xl font-bold text-emerald-900">{propertyData.title}</h2>
             <p className="text-gray-700 leading-relaxed">{propertyData.description}</p>
+          
+            <h3 className="text-2xl  text-emerald-900 font-semibold mb-2 pb-2 border-b-2 border-[#e8f4ea]">{propertyData.Investment.title}</h3>
+            <p className="text-gray-600 leading-2" >{propertyData.Investment.subTitle}</p>
+            <ul className="highlight-list">
+              {propertyData.Investment.description.map((string, idx)=> {
+                return(
+                    <li key={idx}>{string}</li>
+                )
+              })}
+            </ul>
+             
           </div>
+
         </div>
       </div>
 

@@ -23,31 +23,6 @@ const Summary = ()=>{
                 </div>
             </div>
 
-            {/* <!-- Main Content --> */}
-            <div className="">
-                {/* <div className="content-block">
-                    <h3>Property Features</h3>
-                    <p>This exceptional rural lifestyle property offers exclusive frontage to the pristine Blackwood River, combining natural beauty with practical agricultural potential.</p>
-                    <ul className="highlight-list">
-                        <li>Private Blackwood River frontage with deep pools</li>
-                        <li>Mature Redgum  Jarrah Blackbutt and River gums trees throughout</li>
-                        <li>Wide open fields and treed river flats</li>
-                        <li>Private walking trails and camping areas</li>
-                        <li>Existing dam with potential for more</li>
-                        <li>Power line runs through property</li>
-                    </ul>
-                </div> */}
-
-                <div className="content-block">
-                    <h3>Investment Opportunity</h3>
-                    <p>Currently generating reliable income from an established stud sheep operation with a proven track record and dependable, friendly tenant.</p>
-                    <ul className="highlight-list">
-                        <li>Water catchment systems</li>
-                        <li>Potential for development projects</li>
-                        <li>Sheep-Lease has been renewed yearly for many, many years. Rent paid in advance covers all outgoings</li>
-                    </ul>
-                </div>
-            </div>
 
             {/* <!-- Value Proposition --> */}
             <div className="value-proposition">

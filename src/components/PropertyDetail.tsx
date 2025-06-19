@@ -17,7 +17,16 @@ const PropertyDetail = () => {
                 <FaRuler className="mr-2" />
                 <span>{propertyData.landSize}</span>
               </div>
-              <a href="sms:+0457230191" className=" text-emerald-900 w-fit flex items-center border border-gray-300 px-4 py-2 rounded-md  hover:text-green-700 transform transition-all duration-300 ease-in-out">
+              <a
+               onClick={() => {
+                if (typeof window.gtag === 'function') {
+                  window.gtag('event', 'sms_click', {
+                    method: 'sms',
+                    phone: '+0457230191'
+                  });
+                }
+              }}
+               href="sms:+0457230191" className=" text-emerald-900 w-fit flex items-center border border-gray-300 px-4 py-2 rounded-md  hover:text-green-700 transform transition-all duration-300 ease-in-out">
                 <FaShare className="mr-2 " />
                 Contact Owner
               </a>

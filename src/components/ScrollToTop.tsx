@@ -31,6 +31,7 @@ const ScrollToTop = () => {
     <div className="fixed z-[100] right-2 md:right-8 bottom-2 md:bottom-8 flex flex-col gap-4">
       <div className="relative group">
         <a 
+          onClick={() => (window as any).gtag?.('event', 'contact_click', { method: 'phone' })}
           href="tel:+61123456789"
           className={`bg-emerald-900 text-white p-3 rounded-full shadow-lg transition-all duration-300 ${
             isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10 pointer-events-none'

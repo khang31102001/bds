@@ -76,6 +76,12 @@ export default function ContactSection() {
     .then((_result) => {
       setLoading(false)
       showPopup('success', 'Your message has been sent successfully');
+      if (typeof window.gtag === 'function') {
+        window.gtag('event', 'contact_form_submitted', {
+          method: 'emailjs',
+          email: form.email
+        });
+      }
       setForm({
         name: '',
         email: '',

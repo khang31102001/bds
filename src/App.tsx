@@ -1,10 +1,11 @@
 
-import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom';
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import { useEffect, useState } from 'react';
 import { MainLayout } from './Layout/MainLayout';
 import { AnimatePresence, motion } from 'framer-motion';
 import Loading from './components/Common/Loading';
 import { IndexPage } from './pages';
+import NotFound from './pages/NotFound';
 
 
 
@@ -58,7 +59,7 @@ const App = () => {
                     </MainLayout>
 
                   } />
-                  <Route path="*" element={<Navigate to="/" replace />} />
+                  <Route path="*" element={<NotFound/>} />
 
                 </Routes>
               </div>

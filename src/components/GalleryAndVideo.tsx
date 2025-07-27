@@ -377,7 +377,7 @@ const GalleryAndVideo = () => {
                             muted
                             playsInline
                             preload="metadata"
-                            poster={allMedia[0].src}
+                            poster={media.src}
                             controls={false}
                           >
                             <source src={media.src} type="video/mp4" />
@@ -535,6 +535,10 @@ const GalleryAndVideo = () => {
                         className="relative w-full h-full flex items-center justify-center"
                       >
                         <video
+                          muted
+                          playsInline
+                          controls={false}
+                          preload="metadata"
                           ref={index === activeIndex ? fullscreenVideoRef : null}
                           className="max-w-[95%] max-h-[90vh] object-contain mx-auto"
                           onClick={togglePlay}

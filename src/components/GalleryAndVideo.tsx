@@ -314,7 +314,6 @@ const GalleryAndVideo = () => {
                         ref={videoRef}
                         className="w-full h-full object-cover"
                         muted
-                        playsInline
                         preload="metadata"
                         poster={allMedia[0].src}
                         controls={false}
@@ -374,10 +373,9 @@ const GalleryAndVideo = () => {
                           <video
                             className="w-full h-full object-cover"
                             muted
-                            playsInline
                             preload="metadata"
                             poster={media.src}
-                            controls={false}
+                            
                           >
                             <source src={media.src} type="video/mp4" />
                           </video>
@@ -535,7 +533,7 @@ const GalleryAndVideo = () => {
                       >
                         <video
                           muted
-                          playsInline
+                          poster={media.src}
                           controls={false}
                           preload="metadata"
                           ref={index === activeIndex ? fullscreenVideoRef : null}

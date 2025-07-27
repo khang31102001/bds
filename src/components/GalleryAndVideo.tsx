@@ -66,7 +66,6 @@ const GalleryAndVideo = () => {
   const [currentTime, setCurrentTime] = useState(0);
   const [duration, setDuration] = useState(0);
   const [_isVideoFullscreen, setIsVideoFullscreen] = useState(false);
-
   const videoRef = useRef<HTMLVideoElement>(null);
   const videoContainerRef = useRef<HTMLDivElement>(null);
   const fullscreenVideoRef = useRef<HTMLVideoElement>(null);
@@ -348,7 +347,7 @@ const GalleryAndVideo = () => {
                       <img
                         src={allMedia[0].src}
                         className="w-full h-full object-cover"
-                        alt="Featured gallery image"
+                        alt="Rural Land in Western Australia"
                       />
                       <div className="absolute inset-0 bg-black/20 opacity-0 hover:opacity-100 transition-opacity flex items-center justify-center">
                         <div className="bg-white/90 p-3 rounded-full">
@@ -392,7 +391,7 @@ const GalleryAndVideo = () => {
                         <img
                           src={media.src}
                           className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
-                          alt={`Thumbnail ${index + 2}`}
+                          alt="Rural Land in Western Australia"
                         />
                       )}
 
@@ -448,7 +447,7 @@ const GalleryAndVideo = () => {
                   <img
                     src={allMedia[0].src}
                     className="w-full h-full object-cover"
-                    alt="Featured gallery image"
+                    alt="Rural Land in Western Australia"
                     onClick={() => handleImageClick(0)}
                   />
                 )}
@@ -469,7 +468,7 @@ const GalleryAndVideo = () => {
                       src={image.src}
                       className={`w-full h-full object-cover transition-transform duration-500 hover:scale-110 ${index === 2 ? 'brightness-50' : ''
                         }`}
-                      alt={`Thumbnail ${index + 1}`}
+                      alt="Rural Land in Western Australia"
                     />
                     {index === 2 ? (
                       <div className="absolute inset-0 flex items-center justify-center">
@@ -574,7 +573,7 @@ const GalleryAndVideo = () => {
                         style={{ filter: 'brightness(1.25)' }}
                         src={media.src}
                         className="max-w-[95%] max-h-[90vh] object-contain mx-auto"
-                        alt={`Gallery item ${index + 1}`}
+                        alt="Rural Land in Western Australia"
                       />
                     )}
                   </div>

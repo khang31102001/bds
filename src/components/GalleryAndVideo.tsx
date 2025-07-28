@@ -49,7 +49,7 @@ const GalleryAndVideo = () => {
       id: src.id || index,
       src: src.src,
     }))
-  ], []);
+  ], [videos, images]);
 
 
   // Get first 3 images for thumbnails (excluding videos)
@@ -308,7 +308,13 @@ const GalleryAndVideo = () => {
                   className="relative rounded-xl overflow-hidden aspect-video bg-gray-100 cursor-pointer"
                   onClick={() => handleImageClick(0)}
                 >
-                  {allMedia[0].type === 'video' ? (
+                  
+                  {!allMedia[0] ? (
+                    <div className="absolute insert-0 flex items-center justify-center h-64">
+                      <div className="w-10 h-10 border-4 border-emerald-600 border-t-transparent rounded-full animate-spin"></div>
+                      <span className="text-gray-500">loading...</span>
+                    </div>
+                  ) : allMedia[0].type === 'video' ? (
                     <div className="relative w-full h-full">
                       <video
                         ref={videoRef}
@@ -530,6 +536,7 @@ const GalleryAndVideo = () => {
                         className="relative w-full h-full flex items-center justify-center"
                       >
                         <video
+                        
                           muted
                           poster={media.src}
                           ref={index === activeIndex ? fullscreenVideoRef : null}
@@ -576,13 +583,13 @@ const GalleryAndVideo = () => {
               <div>
                 <button
                   className="custom-button-prev absolute left-2 top-1/2 -translate-y-1/2 bg-gray-200 hover:bg-gray-400 text-emerald-700 hover:text-white rounded-full p-2"
-                  onClick={() => { }}
+                  onClick={() => setActiveIndex((prev) => (prev - 1 + allMedia.length) % allMedia.length)}
                 >
                   <svg width={24} height={24} fill="none" stroke="currentColor" strokeWidth={2}><path strokeLinecap="round" strokeLinejoin="round" d="M15 19l-7-7 7-7" /></svg>
                 </button>
                 <button
                   className="custom-button-next absolute right-2 top-1/2 -translate-y-1/2 bg-gray-200 hover:bg-gray-400 text-emerald-700 hover:text-white rounded-full p-2"
-                  onClick={() => { }}
+                  onClick={()=> setActiveIndex((prev)=> (prev + 1) % allMedia.length)}
                 >
                   <svg width={24} height={24} fill="none" stroke="currentColor" strokeWidth={2}><path strokeLinecap="round" strokeLinejoin="round" d="M9 5l7 7-7 7" /></svg>
                 </button>

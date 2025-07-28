@@ -373,9 +373,7 @@ const GalleryAndVideo = () => {
                           <video
                             className="w-full h-full object-cover"
                             muted
-                            preload="metadata"
                             poster={media.src}
-                            
                           >
                             <source src={media.src} type="video/mp4" />
                           </video>
@@ -534,7 +532,6 @@ const GalleryAndVideo = () => {
                         <video
                           muted
                           poster={media.src}
-                         
                           ref={index === activeIndex ? fullscreenVideoRef : null}
                           className="max-w-[95%] max-h-[90vh] object-contain mx-auto"
                           onClick={togglePlay}

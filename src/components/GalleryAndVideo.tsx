@@ -19,6 +19,7 @@ import { images } from "../data/image";
 interface VideoMedia {
   type: 'video';
   src: string;
+  Thumbsnail: string;
   id: number;
   title: string;
   description: string;
@@ -39,6 +40,7 @@ const GalleryAndVideo = () => {
     ...videos.map(video => ({
       type: 'video' as const,
       src: video.src,
+      Thumbsnail: video.Thumbsnail,
       id: video.id,
       title: video.title,
       description: video.description
@@ -50,7 +52,6 @@ const GalleryAndVideo = () => {
       src: src.src,
     }))
   ], [videos, images]);
-
 
   // Get first 3 images for thumbnails (excluding videos)
   const thumbnailImages = useMemo(() =>
@@ -309,10 +310,10 @@ const GalleryAndVideo = () => {
                   onClick={() => handleImageClick(0)}
                 >
                   
-                  {!allMedia[0] ? (
+                  {allMedia.length === 0 || !allMedia[0] ? (
                     <div className="absolute insert-0 flex items-center justify-center h-64">
                       <div className="w-10 h-10 border-4 border-emerald-600 border-t-transparent rounded-full animate-spin"></div>
-                      <span className="text-gray-500">loading...</span>
+                      <div className="text-gray-500">loading...</div>
                     </div>
                   ) : allMedia[0].type === 'video' ? (
                     <div className="relative w-full h-full">
@@ -321,8 +322,7 @@ const GalleryAndVideo = () => {
                         className="w-full h-full object-cover"
                         muted
                         preload="metadata"
-                        poster={allMedia[0].src}
-                        controls={false}
+                        poster={allMedia[0].Thumbsnail}     
                         onClick={(e) => {
                           e.stopPropagation();
                           togglePlay();
@@ -379,7 +379,8 @@ const GalleryAndVideo = () => {
                           <video
                             className="w-full h-full object-cover"
                             muted
-                            poster={media.src}
+                          poster={media.Thumbsnail}
+                            
                           >
                             <source src={media.src} type="video/mp4" />
                           </video>
@@ -538,7 +539,7 @@ const GalleryAndVideo = () => {
                         <video
                         
                           muted
-                          poster={media.src}
+                          poster={media.Thumbsnail}
                           ref={index === activeIndex ? fullscreenVideoRef : null}
                           className="max-w-[95%] max-h-[90vh] object-contain mx-auto"
                           onClick={togglePlay}
@@ -582,12 +583,14 @@ const GalleryAndVideo = () => {
               ))}
               <div>
                 <button
+                  type="button"
                   className="custom-button-prev absolute left-2 top-1/2 -translate-y-1/2 bg-gray-200 hover:bg-gray-400 text-emerald-700 hover:text-white rounded-full p-2"
                   onClick={() => setActiveIndex((prev) => (prev - 1 + allMedia.length) % allMedia.length)}
                 >
                   <svg width={24} height={24} fill="none" stroke="currentColor" strokeWidth={2}><path strokeLinecap="round" strokeLinejoin="round" d="M15 19l-7-7 7-7" /></svg>
                 </button>
                 <button
+                   type="button"
                   className="custom-button-next absolute right-2 top-1/2 -translate-y-1/2 bg-gray-200 hover:bg-gray-400 text-emerald-700 hover:text-white rounded-full p-2"
                   onClick={()=> setActiveIndex((prev)=> (prev + 1) % allMedia.length)}
                 >

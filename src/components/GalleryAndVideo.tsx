@@ -535,7 +535,7 @@ const GalleryAndVideo = () => {
                         className="relative w-full h-full flex items-center justify-center"
                       >
                         <video
-                          muted
+                          
                           poster={media.Thumbsnail}
                           ref={index === activeIndex ? fullscreenVideoRef : null}
                           className="max-w-[95%] max-h-[90vh] object-contain mx-auto"

@@ -309,7 +309,7 @@ const GalleryAndVideo = () => {
                   className="relative rounded-xl overflow-hidden aspect-video bg-gray-100 cursor-pointer"
                   onClick={() => handleImageClick(0)}
                 >
-                  
+
                   {allMedia.length === 0 || !allMedia[0] ? (
                     <div className="absolute insert-0 flex items-center justify-center h-64">
                       <div className="w-10 h-10 border-4 border-emerald-600 border-t-transparent rounded-full animate-spin"></div>
@@ -322,7 +322,7 @@ const GalleryAndVideo = () => {
                         className="w-full h-full object-cover"
                         muted
                         preload="metadata"
-                        poster={allMedia[0].Thumbsnail}     
+                        poster={allMedia[0].Thumbsnail}
                         onClick={(e) => {
                           e.stopPropagation();
                           togglePlay();
@@ -379,8 +379,7 @@ const GalleryAndVideo = () => {
                           <video
                             className="w-full h-full object-cover"
                             muted
-                          poster={media.Thumbsnail}
-                            
+                            poster={media.Thumbsnail}
                           >
                             <source src={media.src} type="video/mp4" />
                           </video>
@@ -437,6 +436,7 @@ const GalleryAndVideo = () => {
                   >
                     <video
                       ref={videoRef}
+                      poster={allMedia[0].Thumbsnail}
                       className="w-full h-full object-cover"
                       onClick={togglePlay}
                     >
@@ -488,8 +488,6 @@ const GalleryAndVideo = () => {
             </div>
           </div>
         </div>
-
-
       </div>
 
       {/* Fullscreen Gallery */}
@@ -537,7 +535,6 @@ const GalleryAndVideo = () => {
                         className="relative w-full h-full flex items-center justify-center"
                       >
                         <video
-                        
                           muted
                           poster={media.Thumbsnail}
                           ref={index === activeIndex ? fullscreenVideoRef : null}
@@ -590,9 +587,9 @@ const GalleryAndVideo = () => {
                   <svg width={24} height={24} fill="none" stroke="currentColor" strokeWidth={2}><path strokeLinecap="round" strokeLinejoin="round" d="M15 19l-7-7 7-7" /></svg>
                 </button>
                 <button
-                   type="button"
+                  type="button"
                   className="custom-button-next absolute right-2 top-1/2 -translate-y-1/2 bg-gray-200 hover:bg-gray-400 text-emerald-700 hover:text-white rounded-full p-2"
-                  onClick={()=> setActiveIndex((prev)=> (prev + 1) % allMedia.length)}
+                  onClick={() => setActiveIndex((prev) => (prev + 1) % allMedia.length)}
                 >
                   <svg width={24} height={24} fill="none" stroke="currentColor" strokeWidth={2}><path strokeLinecap="round" strokeLinejoin="round" d="M9 5l7 7-7 7" /></svg>
                 </button>

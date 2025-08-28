@@ -7,8 +7,9 @@ const PropertyDetail = () => {
       <div className="flex flex-col md:flex-row justify-between items-start mb-8 ">
         <div className='flex flex-col gap-8 w-full'>
 
-          <div className='flex flex-col md:flex-row justify-center items-center gap-2'>
-            <span className="md:text-4xl text-3xl font-bold text-emerald-900 ">Asking {propertyData.price}</span>
+          <div className='flex flex-col  justify-center items-center gap-2'>
+            <span className="md:text-4xl text-3xl font-bold text-emerald-900 line-through ">Asking {propertyData.price}</span>
+            <span className="md:text-4xl text-3xl font-bold text-red-500  "> {propertyData.down}</span>
           </div>
 
           <div className="flex gap-4 flex-col md:flex-row justify-center w-full ">

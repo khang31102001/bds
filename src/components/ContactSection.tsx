@@ -47,7 +47,7 @@ export default function ContactSection() {
 
     setLoading(true)
     emailjs.send(
-      'service_k52q99s',
+      'service_hoiqbxb',
       'template_5g34lzb',
       {
         from_name: form.name,
